@@ -1,0 +1,5 @@
+{
+  "idea_scope": "composite",
+  "retune_slots_per_incumbent": 4,
+  "model": "us.anthropic.claude-opus-5[1m]"
+}

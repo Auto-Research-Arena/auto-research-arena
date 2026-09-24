@@ -1,0 +1,34 @@
+--- a/gear.py
++++ b/gear.py
+@@ -464,6 +464,8 @@
+     status = candidate["status"]
+     if status == "crash":
+         return False, None, "crash"
++    if not candidate.get("eligible", True):
++        return False, None, candidate["eligibility_reason"]
+     if not frontier:
+         return True, "elite/0", "baseline frontier"
+
+@@ -565,7 +567,13 @@
+         parent_val = float(commit_map[args.parent1]["val_bpb"])
+     child_gain = 0.0 if parent_val is None or args.status == "crash" else (parent_val - val_bpb)
+
++    eligible = args.eligible == "true"
++    if not eligible:
++        child_gain = min(child_gain, 0.0)
++
+     candidate = {
++        "eligible": eligible,
++        "eligibility_reason": args.eligibility_reason,
+         "commit": commit,
+         "parent1": args.parent1,
+         "parent2": args.parent2,
+@@ -695,6 +703,8 @@
+     p_record.add_argument("--mutation-kind", choices=["baseline", "mutate", "crossover"], required=True)
+     p_record.add_argument("--description", required=True)
+     p_record.add_argument("--status", choices=["ok", "crash"], required=True)
++    p_record.add_argument("--eligible", choices=["true", "false"], default="true")
++    p_record.add_argument("--eligibility-reason", default="task constraints failed")
+     p_record.add_argument("--val-bpb")
+     p_record.add_argument("--memory-gb")
+     p_record.add_argument("--params-m")

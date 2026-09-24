@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "upstream_repository": "https://github.com/ferreirafabio/autoresearch-automl",
+  "upstream_revision": "150cd1418b7bd65c3821a844a91598110d3b36b8",
+  "upstream_changes": [
+    {
+      "file": "autoresearch_automl/core/runner.py",
+      "patch": "runtime.patch",
+      "scope": "Optional experiment executor, supplied baseline and declared search-space filter; native trial loop unchanged."
+    }
+  ],
+  "native_source_sha256": {
+    "autoresearch_automl/core/search_space.py": "2948d3f0fb3752fb21f72b31b14230c99863b38c4843e040dc1bcd2032b11bcd",
+    "autoresearch_automl/core/config_injector.py": "1048bfb91d53709975a31af1f1b310ca89501bfebe90befe9745488cc5f5bde4",
+    "autoresearch_automl/backends/optuna_backend.py": "bfcaafa63e17f794f3775d1250a4a80b0d1a93432417c9b0abc8e2c8bfbcf891",
+    "autoresearch_automl/core/runner.py": "1f1feebf34e7e1346f6ab39c62827d31b6b60a0305f88d7ce050e4d5bb5414f5"
+  },
+  "python": "3.12",
+  "packages": {
+    "optuna": "4.8.0",
+    "ConfigSpace": "1.2.2",
+    "numpy": "2.4.3",
+    "pandas": "3.0.1"
+  },
+  "space": "native KNOWN_HP_METADATA fourteen dimensions; native ConfigSpace iteration order",
+  "sampler_seed": 0,
+  "scoring": {
+    "source": "tpe_scoring.py",
+    "function": "scalar",
+    "admissible": "measured target / this run's measured reference target",
+    "quality_gate_violation": "1000 + abs(quality - gate threshold)",
+    "other_constraint_violation": 2000,
+    "unavailable_measurement_or_reference": 3000
+  },
+  "reviewed_adaptations": [
+    "Use the upstream Runner.run trial loop and native result database.",
+    "Replace experiment execution with the canonical API.",
+    "Seed this run's already measured reference and restrict extraction to the fourteen native dimensions.",
+    "Use one reference-normalized target score and shared constraint penalties for every task; retain raw canonical observations.",
+    "Use native completed-trial replay on resume; incomplete API/native feedback requires reconciliation.",
+    "Default to 99 candidate trials plus the engine reference."
+  ]
+}

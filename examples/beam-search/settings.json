@@ -1,0 +1,8 @@
+{
+  "beam_width": 4,
+  "children_per_parent": 2,
+  "retune_slots": 2,
+  "retune_stall_generations": 2,
+  "idea_scope": "composite",
+  "model": "us.anthropic.claude-opus-5[1m]"
+}

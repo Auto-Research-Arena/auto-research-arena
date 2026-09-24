@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autoarena-client"
+version = "0.1.0"
+description = "Lightweight Python and CLI client for AutoArena experiments"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+autoarena = "autoarena:main"
+
+[tool.setuptools]
+packages = []
+py-modules = ["autoarena"]
+package-dir = {"" = "engine"}

@@ -1,0 +1,10 @@
+{
+  "method_id": "gear",
+  "population_size": 4,
+  "research_model": "us.anthropic.claude-opus-5[1m]",
+  "gear_sha256": "3cf48a697a15cd41226bf8df0a4e0991d1efc4c6e8351933f665c5958d5b98ba",
+  "gear_bytes": 25528,
+  "upstream_revision": "3b9aa272360d4630a14758f5ab11ee48c979618d",
+  "memory_divisor": 1073741824,
+  "parameters_divisor": 1000000
+}

@@ -1,0 +1,1473 @@
+{
+  "schema": "autoarena/site-submission/1",
+  "run_id": "beam-search--params",
+  "method_id": "beam-search",
+  "task_id": "params",
+  "metric": "num_params_total",
+  "unit": "parameters",
+  "direction": "minimize",
+  "best_value": 14221456,
+  "reference_value": 50332176,
+  "relative_improvement": 0.7174480197319504,
+  "rank_key": [
+    14221456.0,
+    823132160.0,
+    -0.0003993871397383053
+  ],
+  "best_launch_seq": 88,
+  "best_candidate_id": "g13-c1-ve1qh2-mlp-edge-hidden-640",
+  "best_is_reference": false,
+  "budget": {
+    "spent": 95,
+    "max_launches": 100
+  },
+  "compute": {
+    "backend": "pluto",
+    "gpu_instance_type": "p4de.24xlarge",
+    "gpu_model": [
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB"
+    ],
+    "workers": 4,
+    "gpus_per_evaluation": 1,
+    "evaluation_capacity_gpus": 4
+  },
+  "research_llm": {
+    "model": "us.anthropic.claude-opus-5[1m]",
+    "provider": null
+  },
+  "evaluation_gpu_hours": 17.70368277777777,
+  "measurements": [
+    {
+      "launch_seq": 1,
+      "candidate_id": "reference",
+      "is_reference": true,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47198976512,
+        "total_tokens": 393216000,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0478633336891718
+      }
+    },
+    {
+      "launch_seq": 2,
+      "candidate_id": "g01-c1-shared-value-embed",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 37749264,
+        "peak_vram_bytes": 46293006848,
+        "total_tokens": 394264576,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0524590633088473
+      }
+    },
+    {
+      "launch_seq": 3,
+      "candidate_id": "g01-c2-gqa-half-kv-heads",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 226493952,
+        "num_params_total": 39846160,
+        "peak_vram_bytes": 43323438592,
+        "total_tokens": 424673280,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0464012100166533
+      }
+    },
+    {
+      "launch_seq": 4,
+      "candidate_id": "g02-c1-mqa-single-kv-head",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 220201728,
+        "num_params_total": 34603152,
+        "peak_vram_bytes": 41384621056,
+        "total_tokens": 430964736,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0519008919126906
+      }
+    },
+    {
+      "launch_seq": 5,
+      "candidate_id": "g02-c3-ve-pair-share",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 41943568,
+        "peak_vram_bytes": 46594996736,
+        "total_tokens": 401604608,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0489830928424173
+      }
+    },
+    {
+      "launch_seq": 6,
+      "candidate_id": "g02-c2-mlp-pair-share",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 226493952,
+        "num_params_total": 31457552,
+        "peak_vram_bytes": 43204883968,
+        "total_tokens": 419954688,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0629152395571067
+      }
+    },
+    {
+      "launch_seq": 7,
+      "candidate_id": "g02-c4-mlp-expansion-3x",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 213912576,
+        "num_params_total": 46137872,
+        "peak_vram_bytes": 42855479808,
+        "total_tokens": 433586176,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0446119197322368
+      }
+    },
+    {
+      "launch_seq": 8,
+      "candidate_id": "g03-c1-gqa-mlp-expansion-3x",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 201328128,
+        "num_params_total": 35651856,
+        "peak_vram_bytes": 38977844736,
+        "total_tokens": 456130560,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.051105151377916
+      }
+    },
+    {
+      "launch_seq": 9,
+      "candidate_id": "g03-c3-ve-pair-share-gqa",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 226493952,
+        "num_params_total": 35651856,
+        "peak_vram_bytes": 43020400128,
+        "total_tokens": 425197568,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0475833177569058
+      }
+    },
+    {
+      "launch_seq": 10,
+      "candidate_id": "g03-c5-mlp-expansion-2x",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 188746752,
+        "num_params_total": 41943568,
+        "peak_vram_bytes": 38493633024,
+        "total_tokens": 471859200,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0442927860413205
+      }
+    },
+    {
+      "launch_seq": 11,
+      "candidate_id": "g03-c7-ve-placement-deep-half",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 239076864,
+        "num_params_total": 41943312,
+        "peak_vram_bytes": 46590798336,
+        "total_tokens": 401080320,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0519227106167968
+      }
+    },
+    {
+      "launch_seq": 12,
+      "candidate_id": "g03-c2-gqa-depth-7",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 202900992,
+        "num_params_total": 36962574,
+        "peak_vram_bytes": 38574413312,
+        "total_tokens": 464519168,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0462567569474874
+      }
+    },
+    {
+      "launch_seq": 13,
+      "candidate_id": "g03-c4-ve-pair-share-update-granularity",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 41943568,
+        "peak_vram_bytes": 46452387328,
+        "total_tokens": 396623872,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0024630172090596
+      }
+    },
+    {
+      "launch_seq": 14,
+      "candidate_id": "g03-c6-mlp3x-ve-pair-share",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 213912576,
+        "num_params_total": 37749264,
+        "peak_vram_bytes": 42251500032,
+        "total_tokens": 431489024,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0489078807193455
+      }
+    },
+    {
+      "launch_seq": 15,
+      "candidate_id": "g03-c8-tied-unembedding",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 46137872,
+        "peak_vram_bytes": 47123479040,
+        "total_tokens": 396886016,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0557915774997
+      }
+    },
+    {
+      "launch_seq": 16,
+      "candidate_id": "g04-c1-ve-pair-gqa-depth-7",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 202900992,
+        "num_params_total": 32768270,
+        "peak_vram_bytes": 38271768064,
+        "total_tokens": 465043456,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0506786706851496
+      }
+    },
+    {
+      "launch_seq": 17,
+      "candidate_id": "g04-c5-gqa-depth7-ve-head-width",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 202900992,
+        "num_params_total": 32768270,
+        "peak_vram_bytes": 38273996288,
+        "total_tokens": 476053504,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0478074078181188
+      }
+    },
+    {
+      "launch_seq": 18,
+      "candidate_id": "g04-c3-mlp3x-ve-pair-update-granularity",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 213912576,
+        "num_params_total": 37749264,
+        "peak_vram_bytes": 42121604608,
+        "total_tokens": 427032576,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0056493382017677
+      }
+    },
+    {
+      "launch_seq": 19,
+      "candidate_id": "g04-c7-gqa-attn-pair-share",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 226493952,
+        "num_params_total": 36700432,
+        "peak_vram_bytes": 43279365632,
+        "total_tokens": 421003264,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0536351402348987
+      }
+    },
+    {
+      "launch_seq": 20,
+      "candidate_id": "g04-c2-ve-pair-gqa-update-granularity",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 226493952,
+        "num_params_total": 35651856,
+        "peak_vram_bytes": 42894567936,
+        "total_tokens": 414449664,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0068420485883538
+      }
+    },
+    {
+      "launch_seq": 21,
+      "candidate_id": "g04-c6-gqa-depth7-unembedding-rank-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 191104512,
+        "num_params_total": 34996494,
+        "peak_vram_bytes": 38667869696,
+        "total_tokens": 481296384,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0547288741298981
+      }
+    },
+    {
+      "launch_seq": 22,
+      "candidate_id": "g04-c4-ve-pair-mlp-expansion-2x",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 188746752,
+        "num_params_total": 33554960,
+        "peak_vram_bytes": 37889653248,
+        "total_tokens": 479199232,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0468812406760966
+      }
+    },
+    {
+      "launch_seq": 23,
+      "candidate_id": "g04-c8-gqa-ve-stride-3",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 226493568,
+        "num_params_total": 37748944,
+        "peak_vram_bytes": 43170344960,
+        "total_tokens": 422576128,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0485248968613368
+      }
+    },
+    {
+      "launch_seq": 24,
+      "candidate_id": "g05-c1-vehw-update-granularity",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 202900992,
+        "num_params_total": 32768270,
+        "peak_vram_bytes": 38159698432,
+        "total_tokens": 460849152,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0078169915243418
+      }
+    },
+    {
+      "launch_seq": 25,
+      "candidate_id": "g05-c3-ve-pair-head-width",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 188746752,
+        "num_params_total": 27263504,
+        "peak_vram_bytes": 37434571264,
+        "total_tokens": 482869248,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0522799279995103
+      }
+    },
+    {
+      "launch_seq": 26,
+      "candidate_id": "g05-c5-gqa-mlp-expansion-2x",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 176162304,
+        "num_params_total": 27263248,
+        "peak_vram_bytes": 34221730304,
+        "total_tokens": 501481472,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0168403163921442
+      }
+    },
+    {
+      "launch_seq": 27,
+      "candidate_id": "g05-c7-gqa-depth7-ve-stride-3",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 202900608,
+        "num_params_total": 34865358,
+        "peak_vram_bytes": 38421843968,
+        "total_tokens": 471334912,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0465506672878202
+      }
+    },
+    {
+      "launch_seq": 28,
+      "candidate_id": "g05-c2-vehw-depth-6",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 179307648,
+        "num_params_total": 28836044,
+        "peak_vram_bytes": 33443704832,
+        "total_tokens": 529530880,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0426491809737002
+      }
+    },
+    {
+      "launch_seq": 29,
+      "candidate_id": "g05-c4-mlp-expansion-1x",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 163580928,
+        "num_params_total": 29360656,
+        "peak_vram_bytes": 33533835776,
+        "total_tokens": 521666560,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0515311358037887
+      }
+    },
+    {
+      "launch_seq": 30,
+      "candidate_id": "g05-c6-gqa-tied-unembedding",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 226493952,
+        "num_params_total": 31457552,
+        "peak_vram_bytes": 42836896256,
+        "total_tokens": 416284672,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0154086758603098
+      }
+    },
+    {
+      "launch_seq": 31,
+      "candidate_id": "g05-c8-gqa-depth7-ve-from-wte",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 202900992,
+        "num_params_total": 28573966,
+        "peak_vram_bytes": 37968860672,
+        "total_tokens": 476053504,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.052720147617583
+      }
+    },
+    {
+      "launch_seq": 32,
+      "candidate_id": "g06-c1-gqa-mlp2x-depth-7",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 158860800,
+        "num_params_total": 25428238,
+        "peak_vram_bytes": 30566902272,
+        "total_tokens": 556007424,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0176925205979317
+      }
+    },
+    {
+      "launch_seq": 33,
+      "candidate_id": "g06-c3-vehw-depth6-finer-updates",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 179307648,
+        "num_params_total": 28836044,
+        "peak_vram_bytes": 16825345536,
+        "total_tokens": 515244032,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.018937647843953
+      }
+    },
+    {
+      "launch_seq": 34,
+      "candidate_id": "g06-c5-tied-mlp-1x-muon-factor",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 150996480,
+        "num_params_total": 18874640,
+        "peak_vram_bytes": 29825018368,
+        "total_tokens": 555745280,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0513062480947148
+      }
+    },
+    {
+      "launch_seq": 35,
+      "candidate_id": "g06-c7-vehw-ve-single-table",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 202900992,
+        "num_params_total": 29622542,
+        "peak_vram_bytes": 37937400320,
+        "total_tokens": 464519168,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0098737430405798
+      }
+    },
+    {
+      "launch_seq": 36,
+      "candidate_id": "g06-c2-gqa-mlp2x-mqa",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 169870080,
+        "num_params_total": 24117392,
+        "peak_vram_bytes": 32443344896,
+        "total_tokens": 523239424,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0193819259880577
+      }
+    },
+    {
+      "launch_seq": 37,
+      "candidate_id": "g06-c4-vehw-depth6-mlp-expansion-3x",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 160433280,
+        "num_params_total": 25690316,
+        "peak_vram_bytes": 30185623552,
+        "total_tokens": 584056832,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0277390583442407
+      }
+    },
+    {
+      "launch_seq": 38,
+      "candidate_id": "g06-c6-tied-ve-head-width",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 226493952,
+        "num_params_total": 29360400,
+        "peak_vram_bytes": 42692061696,
+        "total_tokens": 412614656,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.018288986546068
+      }
+    },
+    {
+      "launch_seq": 39,
+      "candidate_id": "g06-c8-vehw-depth-5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 155714688,
+        "num_params_total": 25952458,
+        "peak_vram_bytes": 28607120896,
+        "total_tokens": 605552640,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0179820667714632
+      }
+    },
+    {
+      "launch_seq": 40,
+      "candidate_id": "g07-c1-mqa-mlp2x-width-384",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 113246976,
+        "num_params_total": 16253072,
+        "peak_vram_bytes": 25838331904,
+        "total_tokens": 700710912,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.043063745936271
+      }
+    },
+    {
+      "launch_seq": 41,
+      "candidate_id": "g07-c3-gqa-mlp2x-d7-tied-unembedding",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 158860800,
+        "num_params_total": 21233934,
+        "peak_vram_bytes": 30508182016,
+        "total_tokens": 559153152,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.03126042871182
+      }
+    },
+    {
+      "launch_seq": 42,
+      "candidate_id": "g07-c5-vehw-d6-mlp3x-ve-single-table",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 160433280,
+        "num_params_total": 23593164,
+        "peak_vram_bytes": 30036594688,
+        "total_tokens": 576716800,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0318739296067974
+      }
+    },
+    {
+      "launch_seq": 43,
+      "candidate_id": "g07-c7-vehw-d5-tied-unembedding",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 155714688,
+        "num_params_total": 21758154,
+        "peak_vram_bytes": 28548269568,
+        "total_tokens": 602144768,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0272611820794875
+      }
+    },
+    {
+      "launch_seq": 44,
+      "candidate_id": "g07-c2-mqa-mlp2x-ve-single-table",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 169870080,
+        "num_params_total": 23068816,
+        "peak_vram_bytes": 32368896000,
+        "total_tokens": 519045120,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.02045260796637
+      }
+    },
+    {
+      "launch_seq": 45,
+      "candidate_id": "g07-c4-gqa-mlp2x-depth-5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 124257408,
+        "num_params_total": 21758154,
+        "peak_vram_bytes": 23255672320,
+        "total_tokens": 723517440,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0356981644178005
+      }
+    },
+    {
+      "launch_seq": 46,
+      "candidate_id": "g07-c6-vehw-d6-mlp3x-depth-5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 139986048,
+        "num_params_total": 23331018,
+        "peak_vram_bytes": 25978060800,
+        "total_tokens": 662700032,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0324948052834
+      }
+    },
+    {
+      "launch_seq": 47,
+      "candidate_id": "g07-c8-vehw-d5-mlp-edge-taper",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 143131776,
+        "num_params_total": 23855306,
+        "peak_vram_bytes": 26436421120,
+        "total_tokens": 641466368,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.026273804782452
+      }
+    },
+    {
+      "launch_seq": 48,
+      "candidate_id": "g08-c2-mqa384-ve-single-table",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 113246976,
+        "num_params_total": 15204496,
+        "peak_vram_bytes": 25765718016,
+        "total_tokens": 695730176,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0444456266599564
+      }
+    },
+    {
+      "launch_seq": 49,
+      "candidate_id": "g08-c4-tied-d7-attn-pair-share",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 158860800,
+        "num_params_total": 18874638,
+        "peak_vram_bytes": 30483515904,
+        "total_tokens": 547094528,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0398447075369077
+      }
+    },
+    {
+      "launch_seq": 50,
+      "candidate_id": "g08-c6-vehw-d5-tied-width-384",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 99091008,
+        "num_params_total": 14155882,
+        "peak_vram_bytes": 22016265216,
+        "total_tokens": 854851584,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0574369525149103
+      }
+    },
+    {
+      "launch_seq": 51,
+      "candidate_id": "g08-c8-gqa-d5-ve-head-width",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 124257408,
+        "num_params_total": 19661002,
+        "peak_vram_bytes": 23110444544,
+        "total_tokens": 727187456,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0434571876073568
+      }
+    },
+    {
+      "launch_seq": 52,
+      "candidate_id": "g08-c1-mqa384-head-dim-64",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 110887680,
+        "num_params_total": 14811280,
+        "peak_vram_bytes": 25000257536,
+        "total_tokens": 698613760,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0579662914435266
+      }
+    },
+    {
+      "launch_seq": 53,
+      "candidate_id": "g08-c3-tied-d7-ve-head-width",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 158860800,
+        "num_params_total": 19136782,
+        "peak_vram_bytes": 30361381376,
+        "total_tokens": 556269568,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.036090630594306
+      }
+    },
+    {
+      "launch_seq": 54,
+      "candidate_id": "g08-c5-vehw-d5-tied-depth-4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 125829888,
+        "num_params_total": 17825928,
+        "peak_vram_bytes": 23731740672,
+        "total_tokens": 731643904,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0407230690547928
+      }
+    },
+    {
+      "launch_seq": 55,
+      "candidate_id": "g08-c7-gqa-d5-mqa",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 120324672,
+        "num_params_total": 19005546,
+        "peak_vram_bytes": 22089393152,
+        "total_tokens": 748945408,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0457752161883556
+      }
+    },
+    {
+      "launch_seq": 56,
+      "candidate_id": "g09-c2-mqa384-ve1-depth-7",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 102630144,
+        "num_params_total": 14221454,
+        "peak_vram_bytes": 23127619584,
+        "total_tokens": 769916928,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0523325684985325
+      }
+    },
+    {
+      "launch_seq": 57,
+      "candidate_id": "g09-c4-mqa384-ve-row-half",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 113246976,
+        "num_params_total": 15204496,
+        "peak_vram_bytes": 25765718016,
+        "total_tokens": 692846592,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0479293329262023
+      }
+    },
+    {
+      "launch_seq": 58,
+      "candidate_id": "g09-c6-vehw-d4-ve-single-table",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 125829888,
+        "num_params_total": 16777352,
+        "peak_vram_bytes": 23657291776,
+        "total_tokens": 736362496,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0436716941797837
+      }
+    },
+    {
+      "launch_seq": 59,
+      "candidate_id": "g09-c8-tied-d7-depth-6",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 141558912,
+        "num_params_total": 17039564,
+        "peak_vram_bytes": 26829604352,
+        "total_tokens": 631242752,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0451997808810183
+      }
+    },
+    {
+      "launch_seq": 60,
+      "candidate_id": "g09-c1-mqa384-ve1-update-64k",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 113246976,
+        "num_params_total": 15204496,
+        "peak_vram_bytes": 6573762560,
+        "total_tokens": 633602048,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.056478788937664
+      }
+    },
+    {
+      "launch_seq": 61,
+      "candidate_id": "g09-c3-mqa384-ve-from-wte",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 113246976,
+        "num_params_total": 14155920,
+        "peak_vram_bytes": 25690220544,
+        "total_tokens": 711458816,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0500008009922277
+      }
+    },
+    {
+      "launch_seq": 62,
+      "candidate_id": "g09-c5-vehw-d4-mlp3x",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 113246976,
+        "num_params_total": 15728776,
+        "peak_vram_bytes": 21566152704,
+        "total_tokens": 785907712,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.052894912370416
+      }
+    },
+    {
+      "launch_seq": 63,
+      "candidate_id": "g09-c7-tied-d7-share-ve-head-width",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 158860800,
+        "num_params_total": 16777486,
+        "peak_vram_bytes": 30336715264,
+        "total_tokens": 560463872,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0454555468273803
+      }
+    },
+    {
+      "launch_seq": 64,
+      "candidate_id": "g10-c5-mqa384-verow-ve-single-table",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 113246976,
+        "num_params_total": 14680208,
+        "peak_vram_bytes": 25726920704,
+        "total_tokens": 692846592,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0486042814601353
+      }
+    },
+    {
+      "launch_seq": 65,
+      "candidate_id": "g10-c3-mqa384-ve1-mlp-hidden-512",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 103809792,
+        "num_params_total": 13631632,
+        "peak_vram_bytes": 23599605760,
+        "total_tokens": 757071872,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0573999167343215
+      }
+    },
+    {
+      "launch_seq": 66,
+      "candidate_id": "g10-c1-mqa384-mlp-1x",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 99091200,
+        "num_params_total": 13893776,
+        "peak_vram_bytes": 22591391744,
+        "total_tokens": 770965504,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.065013081120164
+      }
+    },
+    {
+      "launch_seq": 67,
+      "candidate_id": "g10-c7-vehw-d4-factored-tied-vocab-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 114819840,
+        "num_params_total": 14811272,
+        "peak_vram_bytes": 23911573504,
+        "total_tokens": 773062656,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0624927215448352
+      }
+    },
+    {
+      "launch_seq": 68,
+      "candidate_id": "g10-c6-mqa384-verow-gated-mlp",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 113246976,
+        "num_params_total": 15204496,
+        "peak_vram_bytes": 25761785856,
+        "total_tokens": 683933696,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0557338752913543
+      }
+    },
+    {
+      "launch_seq": 69,
+      "candidate_id": "g10-c4-mqa384-ve1-query-heads-2",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 92799744,
+        "num_params_total": 14418064,
+        "peak_vram_bytes": 24130463744,
+        "total_tokens": 817627136,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0474524374807814
+      }
+    },
+    {
+      "launch_seq": 70,
+      "candidate_id": "g10-c2-mqa384-attn-pair-share",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 113246976,
+        "num_params_total": 14680208,
+        "peak_vram_bytes": 25821923328,
+        "total_tokens": 700973056,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0547904176143912
+      }
+    },
+    {
+      "launch_seq": 71,
+      "candidate_id": "g10-c8-vehw-d4-mqa",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 122683776,
+        "num_params_total": 16253000,
+        "peak_vram_bytes": 22841499648,
+        "total_tokens": 757858304,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0503443305672548
+      }
+    },
+    {
+      "launch_seq": 72,
+      "candidate_id": "g11-c2-ve1qh2-update-131k",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 92799744,
+        "num_params_total": 14418064,
+        "peak_vram_bytes": 12150482944,
+        "total_tokens": 792068096,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.053319450593625
+      }
+    },
+    {
+      "launch_seq": 73,
+      "candidate_id": "g11-c4-verow1-ve-row-quarter",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 113246976,
+        "num_params_total": 14418064,
+        "peak_vram_bytes": 25708963840,
+        "total_tokens": 711720960,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0505804087752915
+      }
+    },
+    {
+      "launch_seq": 74,
+      "candidate_id": "g11-c6-verow-embed-rank-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 113836800,
+        "num_params_total": 14254224,
+        "peak_vram_bytes": 25895151616,
+        "total_tokens": 705953792,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0542601543088146
+      }
+    },
+    {
+      "launch_seq": 75,
+      "candidate_id": "g11-c8-ve1-mlp-out-tied-to-cfc",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 113246976,
+        "num_params_total": 12845208,
+        "peak_vram_bytes": 30445500416,
+        "total_tokens": 668205056,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0829198954116035
+      }
+    },
+    {
+      "launch_seq": 76,
+      "candidate_id": "g11-c9-ve1qh2-ve-row-half",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 92799744,
+        "num_params_total": 13893776,
+        "peak_vram_bytes": 24094943232,
+        "total_tokens": 817364992,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0521233600544213
+      }
+    },
+    {
+      "launch_seq": 77,
+      "candidate_id": "g11-c10-verow1-gate-per-copy",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 113246976,
+        "num_params_total": 14680208,
+        "peak_vram_bytes": 25729017856,
+        "total_tokens": 706215936,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0474987117062216
+      }
+    },
+    {
+      "launch_seq": 78,
+      "candidate_id": "g11-c11-verow-kv-one-read",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 110887680,
+        "num_params_total": 14811280,
+        "peak_vram_bytes": 25761773568,
+        "total_tokens": 728498176,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.056488330893384
+      }
+    },
+    {
+      "launch_seq": 79,
+      "candidate_id": "g11-c12-ve1-logit-map-over-wte",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 114131712,
+        "num_params_total": 12206224,
+        "peak_vram_bytes": 25922185216,
+        "total_tokens": 717750272,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 3.2003527580796005
+      }
+    },
+    {
+      "launch_seq": 80,
+      "candidate_id": "g12-c3-ve1qh2-tied-unembedding",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 92799744,
+        "num_params_total": 11272336,
+        "peak_vram_bytes": 24086423552,
+        "total_tokens": 816054272,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0659623523614437
+      }
+    },
+    {
+      "launch_seq": 81,
+      "candidate_id": "g12-c5-verow1-qk-rank-96",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 110887680,
+        "num_params_total": 14286992,
+        "peak_vram_bytes": 25187821568,
+        "total_tokens": 716701696,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.052121428234368
+      }
+    },
+    {
+      "launch_seq": 82,
+      "candidate_id": "g12-c7-verow-gate-per-copy",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 113246976,
+        "num_params_total": 15204496,
+        "peak_vram_bytes": 25767815168,
+        "total_tokens": 707526656,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0465166676808653
+      }
+    },
+    {
+      "launch_seq": 83,
+      "candidate_id": "g12-c1-ve1-logit-rank-320",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 110838528,
+        "num_params_total": 14803088,
+        "peak_vram_bytes": 25925283328,
+        "total_tokens": 711983104,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0529962999097426
+      }
+    },
+    {
+      "launch_seq": 84,
+      "candidate_id": "g12-c4-ve1qh2-gate-split-value",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 92799744,
+        "num_params_total": 14418064,
+        "peak_vram_bytes": 24132823040,
+        "total_tokens": 815267840,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0498273056602894
+      }
+    },
+    {
+      "launch_seq": 85,
+      "candidate_id": "g12-c6-verow1-key-map-per-pair",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 113246976,
+        "num_params_total": 14483600,
+        "peak_vram_bytes": 25727832064,
+        "total_tokens": 708050944,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0523659078362302
+      }
+    },
+    {
+      "launch_seq": 86,
+      "candidate_id": "g12-c8-verow-mlp-hidden-by-window",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 111477504,
+        "num_params_total": 14909584,
+        "peak_vram_bytes": 25362701312,
+        "total_tokens": 711196672,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.049571099889406
+      }
+    },
+    {
+      "launch_seq": 87,
+      "candidate_id": "g12-c2-ve1-mlp-edge-hidden-512",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 110887680,
+        "num_params_total": 14811280,
+        "peak_vram_bytes": 25225041920,
+        "total_tokens": 722206720,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.047063552732522
+      }
+    },
+    {
+      "launch_seq": 88,
+      "candidate_id": "g13-c1-ve1qh2-mlp-edge-hidden-640",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 91620096,
+        "num_params_total": 14221456,
+        "peak_vram_bytes": 23860453376,
+        "total_tokens": 823132160,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0496006128602617
+      }
+    },
+    {
+      "launch_seq": 89,
+      "candidate_id": "g13-c3-verow1-mlp-hidden-by-ve-site",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 112067328,
+        "num_params_total": 14483600,
+        "peak_vram_bytes": 25457696768,
+        "total_tokens": 710148096,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0487788172486292
+      }
+    },
+    {
+      "launch_seq": 90,
+      "candidate_id": "g13-c5-ve1-mlp-edge-hidden-384",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 109708032,
+        "num_params_total": 14614672,
+        "peak_vram_bytes": 24954769408,
+        "total_tokens": 723255296,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0491578309714902
+      }
+    },
+    {
+      "launch_seq": 91,
+      "candidate_id": "g13-c7-verow-ve-single-table-gate-per-copy",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 111477504,
+        "num_params_total": 14385296,
+        "peak_vram_bytes": 25324723200,
+        "total_tokens": 713818112,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0496241237705775
+      }
+    },
+    {
+      "launch_seq": 92,
+      "candidate_id": "g13-c2-ve1qh2-query-identity-block0",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 92209920,
+        "num_params_total": 14319760,
+        "peak_vram_bytes": 24128823808,
+        "total_tokens": 819724288,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0562715218981595
+      }
+    },
+    {
+      "launch_seq": 93,
+      "candidate_id": "g13-c4-verow1-query-heads-by-ve-site",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 104596224,
+        "num_params_total": 14286992,
+        "peak_vram_bytes": 24911652864,
+        "total_tokens": 755236864,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0507150217026213
+      }
+    },
+    {
+      "launch_seq": 94,
+      "candidate_id": "g13-c6-ve1-query-identity-no-ve",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 107348736,
+        "num_params_total": 14221456,
+        "peak_vram_bytes": 25218875392,
+        "total_tokens": 732954624,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0603629889766448
+      }
+    },
+    {
+      "launch_seq": 95,
+      "candidate_id": "g13-c8-verow-mlp-hidden-short-688",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 111035136,
+        "num_params_total": 14835856,
+        "peak_vram_bytes": 25258531840,
+        "total_tokens": 713293824,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0497065871410265
+      }
+    }
+  ]
+}

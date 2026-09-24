@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/a-antoniades/Heuresis",
+  "revision": "51c737575090271075d5751f26ef6183c8b282b0",
+  "files": {
+    "src/heuresis/_bwrap.py": {
+      "upstream_sha256": "c4f2b8afe12bf76d191e8a20c4bc95a165d2fdc567e544299ba623784a5ddd2c"
+    },
+    "src/heuresis/experiment.py": {
+      "upstream_sha256": "6f0bca8f0ef8fc544ea04b8e44796ecbd5c20fc677a5ce18be5f1ebb65b793a9"
+    },
+    "src/heuresis/harness.py": {
+      "upstream_sha256": "d67d0a5b45c6cfa36d57ef4a997a858817edf76212ddecd877bbfff56ca7d454"
+    },
+    "src/heuresis/loops/map_elites.py": {
+      "upstream_sha256": "54de1052ce380339c772878cb922b06528db326a59bd5dd36decd0c35bbd8669"
+    },
+    "src/heuresis/parsing.py": {
+      "upstream_sha256": "72a31f1d827a8c12d2f10878460f59163956accdbd9d5d197f2f92a31fa7ad95"
+    },
+    "src/heuresis/qd/map_elites/search.py": {
+      "upstream_sha256": "5fc17be9ddbaa76d5c2d59e75ce6725e9a34b573f66abb45eb95fe32e9be0c95"
+    }
+  }
+}

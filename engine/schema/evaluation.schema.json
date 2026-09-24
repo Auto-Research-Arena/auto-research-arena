@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://autoarena/engine/schema/evaluation.schema.json",
+  "title": "AutoArena raw candidate evaluation response",
+  "description": "Returned to a method after one launch. It intentionally contains no benchmark admissibility verdict.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "run_id", "task_id", "method_id", "launch_seq", "launch_uuid", "candidate_id", "status", "witness", "charged", "charge", "charge_classification", "metrics", "extraction_errors", "logs", "benchmark_verdict_deferred"],
+  "properties": {
+    "schema": {"const": "autoarena/evaluation/1"},
+    "run_id": {"type": "string"},
+    "task_id": {"type": "string"},
+    "method_id": {"type": "string"},
+    "launch_seq": {"type": "integer", "minimum": 1},
+    "launch_uuid": {"type": "string"},
+    "candidate_id": {"type": "string"},
+    "status": {"type": "string"},
+    "witness": {"type": "boolean"},
+    "charged": {"type": "boolean"},
+    "charge": {"type": "string"},
+    "charge_classification": {"type": "string"},
+    "metrics": {"type": "object"},
+    "extraction_errors": {"type": "array", "items": {"type": "string"}},
+    "logs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stdout", "stderr"],
+      "properties": {"stdout": {"type": "string"}, "stderr": {"type": "string"}},
+      "description": "Absolute paths on the runner filesystem; not downloadable URLs."
+    },
+    "benchmark_verdict_deferred": {"const": true}
+  }
+}

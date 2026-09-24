@@ -1,0 +1,48 @@
+## Task-Specific Context
+
+{{ problem }}
+
+## Approach From The Research Lead
+
+<!--IDEA-BEGIN-->
+{{ idea }}
+<!--IDEA-END-->
+
+## Files
+
+Edit `train.py` within the supplied task constraints. `prepare.py` contains the
+fixed data loading, evaluation and metric reporting and remains read-only.
+
+## Hardware And Timing
+
+The benchmark executes experiments on {{ gpu_info | default("1x A100-SXM4 80GB") }}.
+The executor sandbox has no training GPU or dataset. Your session has
+{{ timeout_minutes | default(35) }} minutes, including coding and API execution.
+The task defines the training time limit; dispatch also waits for startup and evaluation.
+
+## Workflow
+
+1. Read `train.py`, `prepare.py` and the supplied task, then implement the research lead's idea.
+2. Write `research_log.json` with a nonempty `ideas` list and a nonblank `status`.
+3. Submit the experiment with:
+
+       python /arena/dispatch.py
+
+   This foreground command waits for the benchmark and writes `run.log` and
+   `run.err` in the sandbox. It replaces the upstream `python train.py` command.
+4. Read the returned logs and the `METRICS_JSON:` result. If the experiment
+   crashed, inspect the error, fix it and retry once within the remaining session
+   time and launch allowance. Update the research log for changed code. If the
+   retry fails, write `notes.md` explaining the failure.
+5. Submit the result with `grade run.log`.
+6. Write `notes.md` with the changes, observed results and what you would try next.
+
+## API And Runtime Notes
+
+Use the installed `python`; the environment is prepared for this session.
+The benchmark owns experiment processes, so the upstream process-cleanup command
+is unnecessary here. Official measurements come from the returned benchmark logs.
+An interrupted submission retains its request identity and research payload;
+recovery retrieves that request. The API rejects repeat purchases of identical
+code and reports remaining allowance. A rejected request returns an error without
+a new measurement. An unresolved request must be recovered before another submission.

@@ -1,0 +1,1541 @@
+{
+  "schema": "autoarena/site-submission/1",
+  "run_id": "tpe--params",
+  "method_id": "tpe",
+  "task_id": "params",
+  "metric": "num_params_total",
+  "unit": "parameters",
+  "direction": "minimize",
+  "best_value": 26345772,
+  "reference_value": 50332176,
+  "relative_improvement": 0.4765620306183464,
+  "rank_key": [
+    26345772.0,
+    713555968.0,
+    -0.01559096338452437
+  ],
+  "best_launch_seq": 25,
+  "best_candidate_id": "tpe-trial-0024",
+  "best_is_reference": false,
+  "budget": {
+    "spent": 100,
+    "max_launches": 100
+  },
+  "compute": {
+    "backend": "pluto",
+    "gpu_instance_type": "p4de.24xlarge",
+    "gpu_model": [
+      "NVIDIA A100-SXM4-80GB"
+    ],
+    "workers": 1,
+    "gpus_per_evaluation": 1,
+    "evaluation_capacity_gpus": 1
+  },
+  "research_llm": {
+    "model": null,
+    "provider": null
+  },
+  "evaluation_gpu_hours": 16.03298555555556,
+  "measurements": [
+    {
+      "launch_seq": 1,
+      "candidate_id": "reference",
+      "is_reference": true,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47198976512,
+        "total_tokens": 396361728,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0472175136789947
+      }
+    },
+    {
+      "launch_seq": 2,
+      "candidate_id": "tpe-trial-0001",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 3,
+      "candidate_id": "tpe-trial-0002",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 4,
+      "candidate_id": "tpe-trial-0003",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 5,
+      "candidate_id": "tpe-trial-0004",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 778575744,
+        "num_params_total": 148637018,
+        "peak_vram_bytes": 55505569792,
+        "total_tokens": 141557760,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.1563979693070645
+      }
+    },
+    {
+      "launch_seq": 6,
+      "candidate_id": "tpe-trial-0005",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 120325824,
+        "num_params_total": 26345772,
+        "peak_vram_bytes": 14406509056,
+        "total_tokens": 703594496,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0720454534980806
+      }
+    },
+    {
+      "launch_seq": 7,
+      "candidate_id": "tpe-trial-0006",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 1233136128,
+        "num_params_total": 227542816,
+        "peak_vram_bytes": 40809269248,
+        "total_tokens": 113246208,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.9102114978219331
+      }
+    },
+    {
+      "launch_seq": 8,
+      "candidate_id": "tpe-trial-0007",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 9,
+      "candidate_id": "tpe-trial-0008",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 10,
+      "candidate_id": "tpe-trial-0009",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 905978880,
+        "num_params_total": 176162336,
+        "peak_vram_bytes": 34891072512,
+        "total_tokens": 120061952,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.1046126808456287
+      }
+    },
+    {
+      "launch_seq": 11,
+      "candidate_id": "tpe-trial-0010",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 25841344512,
+        "total_tokens": 680787968,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0547251894014615
+      }
+    },
+    {
+      "launch_seq": 12,
+      "candidate_id": "tpe-trial-0011",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 25841344512,
+        "total_tokens": 680525824,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0671633842705737
+      }
+    },
+    {
+      "launch_seq": 13,
+      "candidate_id": "tpe-trial-0012",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 14,
+      "candidate_id": "tpe-trial-0013",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 161614656,
+        "num_params_total": 37945842,
+        "peak_vram_bytes": 20374928384,
+        "total_tokens": 492568576,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.030669731600083
+      }
+    },
+    {
+      "launch_seq": 15,
+      "candidate_id": "tpe-trial-0014",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 176950080,
+        "num_params_total": 39715316,
+        "peak_vram_bytes": 22433042944,
+        "total_tokens": 460324864,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.03831876777571
+      }
+    },
+    {
+      "launch_seq": 16,
+      "candidate_id": "tpe-trial-0015",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 192289536,
+        "num_params_total": 44631190,
+        "peak_vram_bytes": 24562205184,
+        "total_tokens": 413138944,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0551333976750044
+      }
+    },
+    {
+      "launch_seq": 17,
+      "candidate_id": "tpe-trial-0016",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 176952960,
+        "num_params_total": 39715796,
+        "peak_vram_bytes": 22359905792,
+        "total_tokens": 444465152,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.034284650406983
+      }
+    },
+    {
+      "launch_seq": 18,
+      "candidate_id": "tpe-trial-0017",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 161614656,
+        "num_params_total": 37945842,
+        "peak_vram_bytes": 20489751040,
+        "total_tokens": 509607936,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.049372563313405
+      }
+    },
+    {
+      "launch_seq": 19,
+      "candidate_id": "tpe-trial-0018",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 98799360,
+        "num_params_total": 24330894,
+        "peak_vram_bytes": 14098001920,
+        "total_tokens": 728760320,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0999200673619325
+      }
+    },
+    {
+      "launch_seq": 20,
+      "candidate_id": "tpe-trial-0019",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 514332288,
+        "num_params_total": 107742162,
+        "peak_vram_bytes": 39252356608,
+        "total_tokens": 210763776,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.1435385269115261
+      }
+    },
+    {
+      "launch_seq": 21,
+      "candidate_id": "tpe-trial-0020",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 377489088,
+        "num_params_total": 73924908,
+        "peak_vram_bytes": 52603881472,
+        "total_tokens": 282853376,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.074693320651569
+      }
+    },
+    {
+      "launch_seq": 22,
+      "candidate_id": "tpe-trial-0021",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 176950080,
+        "num_params_total": 39715316,
+        "peak_vram_bytes": 22433042944,
+        "total_tokens": 460324864,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0393097946578185
+      }
+    },
+    {
+      "launch_seq": 23,
+      "candidate_id": "tpe-trial-0022",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 524950080,
+        "num_params_total": 111084666,
+        "peak_vram_bytes": 46426328064,
+        "total_tokens": 183500800,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0669648743183333
+      }
+    },
+    {
+      "launch_seq": 24,
+      "candidate_id": "tpe-trial-0023",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 247046016,
+        "num_params_total": 55854422,
+        "peak_vram_bytes": 28346812928,
+        "total_tokens": 337641472,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.101217920303009
+      }
+    },
+    {
+      "launch_seq": 25,
+      "candidate_id": "tpe-trial-0024",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 115607232,
+        "num_params_total": 26345772,
+        "peak_vram_bytes": 28477088256,
+        "total_tokens": 713555968,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0344090366154757
+      }
+    },
+    {
+      "launch_seq": 26,
+      "candidate_id": "tpe-trial-0025",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 115607232,
+        "num_params_total": 26345772,
+        "peak_vram_bytes": 28477088256,
+        "total_tokens": 723517440,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0586443783863333
+      }
+    },
+    {
+      "launch_seq": 27,
+      "candidate_id": "tpe-trial-0026",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 100271808,
+        "num_params_total": 24576298,
+        "peak_vram_bytes": 24613460480,
+        "total_tokens": 831520768,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0521149799596041
+      }
+    },
+    {
+      "launch_seq": 28,
+      "candidate_id": "tpe-trial-0027",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 146280960,
+        "num_params_total": 33030928,
+        "peak_vram_bytes": 36402526720,
+        "total_tokens": 550764544,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0286364473311937
+      }
+    },
+    {
+      "launch_seq": 29,
+      "candidate_id": "tpe-trial-0028",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 245372928,
+        "num_params_total": 47186958,
+        "peak_vram_bytes": 41986743808,
+        "total_tokens": 412876800,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0246221827681061
+      }
+    },
+    {
+      "launch_seq": 30,
+      "candidate_id": "tpe-trial-0029",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 203691264,
+        "num_params_total": 41288592,
+        "peak_vram_bytes": 41775193088,
+        "total_tokens": 431489024,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.017060116833085
+      }
+    },
+    {
+      "launch_seq": 31,
+      "candidate_id": "tpe-trial-0030",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 146278656,
+        "num_params_total": 33030544,
+        "peak_vram_bytes": 36328467456,
+        "total_tokens": 559415296,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.025862015080663
+      }
+    },
+    {
+      "launch_seq": 32,
+      "candidate_id": "tpe-trial-0031",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 146278656,
+        "num_params_total": 33030544,
+        "peak_vram_bytes": 36328467456,
+        "total_tokens": 559677440,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0260622172391132
+      }
+    },
+    {
+      "launch_seq": 33,
+      "candidate_id": "tpe-trial-0032",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 130943232,
+        "num_params_total": 31261070,
+        "peak_vram_bytes": 64640656384,
+        "total_tokens": 638582784,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0357207275222469
+      }
+    },
+    {
+      "launch_seq": 34,
+      "candidate_id": "tpe-trial-0033",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 35,
+      "candidate_id": "tpe-trial-0034",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 58197120,
+        "num_params_total": 14418122,
+        "peak_vram_bytes": 35415464448,
+        "total_tokens": 1030225920,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0970142212951193
+      }
+    },
+    {
+      "launch_seq": 36,
+      "candidate_id": "tpe-trial-0035",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 37,
+      "candidate_id": "tpe-trial-0036",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 276827136,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47039589888,
+        "total_tokens": 384565248,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0184914059312824
+      }
+    },
+    {
+      "launch_seq": 38,
+      "candidate_id": "tpe-trial-0037",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 61344000,
+        "num_params_total": 14418314,
+        "peak_vram_bytes": 17813542912,
+        "total_tokens": 934805504,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.1260538025222913
+      }
+    },
+    {
+      "launch_seq": 39,
+      "candidate_id": "tpe-trial-0038",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 40,
+      "candidate_id": "tpe-trial-0039",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 41,
+      "candidate_id": "tpe-trial-0040",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 102731520,
+        "num_params_total": 24330894,
+        "peak_vram_bytes": 55406321664,
+        "total_tokens": 729808896,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0618054664439043
+      }
+    },
+    {
+      "launch_seq": 42,
+      "candidate_id": "tpe-trial-0041",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 43,
+      "candidate_id": "tpe-trial-0042",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 62916864,
+        "num_params_total": 15204748,
+        "peak_vram_bytes": 20385187840,
+        "total_tokens": 938475520,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0828407120884334
+      }
+    },
+    {
+      "launch_seq": 44,
+      "candidate_id": "tpe-trial-0043",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 251661312,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47039589888,
+        "total_tokens": 389021696,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.008411985711004
+      }
+    },
+    {
+      "launch_seq": 45,
+      "candidate_id": "tpe-trial-0044",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 46,
+      "candidate_id": "tpe-trial-0045",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 50332416,
+        "num_params_total": 11534472,
+        "peak_vram_bytes": 15065210880,
+        "total_tokens": 955514880,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.1236822910664919
+      }
+    },
+    {
+      "launch_seq": 47,
+      "candidate_id": "tpe-trial-0046",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 48,
+      "candidate_id": "tpe-trial-0047",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 49,
+      "candidate_id": "tpe-trial-0048",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 1132287936,
+        "num_params_total": 224497348,
+        "peak_vram_bytes": 81387575808,
+        "total_tokens": 87031808,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0860001356285054
+      }
+    },
+    {
+      "launch_seq": 50,
+      "candidate_id": "tpe-trial-0049",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 1167860160,
+        "num_params_total": 225314228,
+        "peak_vram_bytes": 64413135872,
+        "total_tokens": 101187584,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.1846117145007289
+      }
+    },
+    {
+      "launch_seq": 51,
+      "candidate_id": "tpe-trial-0050",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 129763008,
+        "num_params_total": 26345772,
+        "peak_vram_bytes": 28390709248,
+        "total_tokens": 700973056,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0522383736343102
+      }
+    },
+    {
+      "launch_seq": 52,
+      "candidate_id": "tpe-trial-0051",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 161614656,
+        "num_params_total": 37945842,
+        "peak_vram_bytes": 20489751040,
+        "total_tokens": 511705088,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0550504007643973
+      }
+    },
+    {
+      "launch_seq": 53,
+      "candidate_id": "tpe-trial-0052",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 300817920,
+        "num_params_total": 65864974,
+        "peak_vram_bytes": 26257110528,
+        "total_tokens": 328204288,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0667419269489158
+      }
+    },
+    {
+      "launch_seq": 54,
+      "candidate_id": "tpe-trial-0053",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 146278656,
+        "num_params_total": 33030544,
+        "peak_vram_bytes": 18419447808,
+        "total_tokens": 578813952,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.106195186513079
+      }
+    },
+    {
+      "launch_seq": 55,
+      "candidate_id": "tpe-trial-0054",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 247046016,
+        "num_params_total": 55854422,
+        "peak_vram_bytes": 28346812928,
+        "total_tokens": 339738624,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0865620673645782
+      }
+    },
+    {
+      "launch_seq": 56,
+      "candidate_id": "tpe-trial-0055",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 171051840,
+        "num_params_total": 37945842,
+        "peak_vram_bytes": 40524106240,
+        "total_tokens": 509607936,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0385844931383548
+      }
+    },
+    {
+      "launch_seq": 57,
+      "candidate_id": "tpe-trial-0056",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 61342848,
+        "num_params_total": 14418122,
+        "peak_vram_bytes": 17781560832,
+        "total_tokens": 978059264,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.1033240982979162
+      }
+    },
+    {
+      "launch_seq": 58,
+      "candidate_id": "tpe-trial-0057",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 59,
+      "candidate_id": "tpe-trial-0058",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 283123200,
+        "num_params_total": 60818708,
+        "peak_vram_bytes": 57953755648,
+        "total_tokens": 322961408,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0967435023799776
+      }
+    },
+    {
+      "launch_seq": 60,
+      "candidate_id": "tpe-trial-0059",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 160434432,
+        "num_params_total": 33030544,
+        "peak_vram_bytes": 18316553216,
+        "total_tokens": 541065216,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0186283915681371
+      }
+    },
+    {
+      "launch_seq": 61,
+      "candidate_id": "tpe-trial-0060",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6682812416,
+        "total_tokens": 632946688,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0345059140897939
+      }
+    },
+    {
+      "launch_seq": 62,
+      "candidate_id": "tpe-trial-0061",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6682812416,
+        "total_tokens": 630325248,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0359108211713561
+      }
+    },
+    {
+      "launch_seq": 63,
+      "candidate_id": "tpe-trial-0062",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 325584576,
+        "num_params_total": 66847018,
+        "peak_vram_bytes": 11701254144,
+        "total_tokens": 310444032,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0097440352748623
+      }
+    },
+    {
+      "launch_seq": 64,
+      "candidate_id": "tpe-trial-0063",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6682812416,
+        "total_tokens": 638386176,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0348421668586343
+      }
+    },
+    {
+      "launch_seq": 65,
+      "candidate_id": "tpe-trial-0064",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6682812416,
+        "total_tokens": 627834880,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.033778544436624
+      }
+    },
+    {
+      "launch_seq": 66,
+      "candidate_id": "tpe-trial-0065",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6682812416,
+        "total_tokens": 639172608,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.035853642918615
+      }
+    },
+    {
+      "launch_seq": 67,
+      "candidate_id": "tpe-trial-0066",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6776137728,
+        "total_tokens": 655360000,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0373024525810428
+      }
+    },
+    {
+      "launch_seq": 68,
+      "candidate_id": "tpe-trial-0067",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6776137728,
+        "total_tokens": 649330688,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0389296829710795
+      }
+    },
+    {
+      "launch_seq": 69,
+      "candidate_id": "tpe-trial-0068",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6776137728,
+        "total_tokens": 658243584,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0449996564639485
+      }
+    },
+    {
+      "launch_seq": 70,
+      "candidate_id": "tpe-trial-0069",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6776137728,
+        "total_tokens": 666894336,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.048810045854604
+      }
+    },
+    {
+      "launch_seq": 71,
+      "candidate_id": "tpe-trial-0070",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6682812416,
+        "total_tokens": 642514944,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0384280934554313
+      }
+    },
+    {
+      "launch_seq": 72,
+      "candidate_id": "tpe-trial-0071",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6776137728,
+        "total_tokens": 657588224,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0385331082158722
+      }
+    },
+    {
+      "launch_seq": 73,
+      "candidate_id": "tpe-trial-0072",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 325584576,
+        "num_params_total": 66847018,
+        "peak_vram_bytes": 11923161600,
+        "total_tokens": 320077824,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0635797057841032
+      }
+    },
+    {
+      "launch_seq": 74,
+      "candidate_id": "tpe-trial-0073",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138413568,
+        "num_params_total": 29360392,
+        "peak_vram_bytes": 6778890752,
+        "total_tokens": 667156480,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0286718995305149
+      }
+    },
+    {
+      "launch_seq": 75,
+      "candidate_id": "tpe-trial-0074",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 377489088,
+        "num_params_total": 73924908,
+        "peak_vram_bytes": 13937381888,
+        "total_tokens": 274989056,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.066061099888691
+      }
+    },
+    {
+      "launch_seq": 76,
+      "candidate_id": "tpe-trial-0075",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 325584576,
+        "num_params_total": 66847018,
+        "peak_vram_bytes": 11701254144,
+        "total_tokens": 311558144,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.023812454109628
+      }
+    },
+    {
+      "launch_seq": 77,
+      "candidate_id": "tpe-trial-0076",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 377489088,
+        "num_params_total": 73924908,
+        "peak_vram_bytes": 13937381888,
+        "total_tokens": 275513344,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0699275535939534
+      }
+    },
+    {
+      "launch_seq": 78,
+      "candidate_id": "tpe-trial-0077",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6682812416,
+        "total_tokens": 642580480,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.034883470960487
+      }
+    },
+    {
+      "launch_seq": 79,
+      "candidate_id": "tpe-trial-0078",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 241830720,
+        "num_params_total": 50790890,
+        "peak_vram_bytes": 10051950592,
+        "total_tokens": 414187520,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0313629727872975
+      }
+    },
+    {
+      "launch_seq": 80,
+      "candidate_id": "tpe-trial-0079",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6776137728,
+        "total_tokens": 657326080,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0378747143361429
+      }
+    },
+    {
+      "launch_seq": 81,
+      "candidate_id": "tpe-trial-0080",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 377489088,
+        "num_params_total": 73924908,
+        "peak_vram_bytes": 13687293952,
+        "total_tokens": 267386880,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0057945473857286
+      }
+    },
+    {
+      "launch_seq": 82,
+      "candidate_id": "tpe-trial-0081",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6776137728,
+        "total_tokens": 653262848,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0427376879377552
+      }
+    },
+    {
+      "launch_seq": 83,
+      "candidate_id": "tpe-trial-0082",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 325584576,
+        "num_params_total": 66847018,
+        "peak_vram_bytes": 11701254144,
+        "total_tokens": 311492608,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.021733222555076
+      }
+    },
+    {
+      "launch_seq": 84,
+      "candidate_id": "tpe-trial-0083",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6776137728,
+        "total_tokens": 658505728,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0453755402975393
+      }
+    },
+    {
+      "launch_seq": 85,
+      "candidate_id": "tpe-trial-0084",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 325584576,
+        "num_params_total": 66847018,
+        "peak_vram_bytes": 11701254144,
+        "total_tokens": 312082432,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0107842777754579
+      }
+    },
+    {
+      "launch_seq": 86,
+      "candidate_id": "tpe-trial-0085",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6776137728,
+        "total_tokens": 658374656,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0477407003890626
+      }
+    },
+    {
+      "launch_seq": 87,
+      "candidate_id": "tpe-trial-0086",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 325584576,
+        "num_params_total": 66847018,
+        "peak_vram_bytes": 11701254144,
+        "total_tokens": 310837248,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0141826005772163
+      }
+    },
+    {
+      "launch_seq": 88,
+      "candidate_id": "tpe-trial-0087",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 377489088,
+        "num_params_total": 73924908,
+        "peak_vram_bytes": 13687293952,
+        "total_tokens": 267190272,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0091808799107627
+      }
+    },
+    {
+      "launch_seq": 89,
+      "candidate_id": "tpe-trial-0088",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 569775360,
+        "num_params_total": 111477646,
+        "peak_vram_bytes": 35700364288,
+        "total_tokens": 192937984,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0230260010074241
+      }
+    },
+    {
+      "launch_seq": 90,
+      "candidate_id": "tpe-trial-0089",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 150995712,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 13068640256,
+        "total_tokens": 651821056,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0357234868087726
+      }
+    },
+    {
+      "launch_seq": 91,
+      "candidate_id": "tpe-trial-0090",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 241830720,
+        "num_params_total": 50790890,
+        "peak_vram_bytes": 10051950592,
+        "total_tokens": 413138944,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0351660757872123
+      }
+    },
+    {
+      "launch_seq": 92,
+      "candidate_id": "tpe-trial-0091",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6776137728,
+        "total_tokens": 657326080,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.030328295717572
+      }
+    },
+    {
+      "launch_seq": 93,
+      "candidate_id": "tpe-trial-0092",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6776137728,
+        "total_tokens": 668205056,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0479165439366662
+      }
+    },
+    {
+      "launch_seq": 94,
+      "candidate_id": "tpe-trial-0093",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 377489088,
+        "num_params_total": 73924908,
+        "peak_vram_bytes": 13937381888,
+        "total_tokens": 280231936,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.085409345866082
+      }
+    },
+    {
+      "launch_seq": 95,
+      "candidate_id": "tpe-trial-0094",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 138412800,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6682812416,
+        "total_tokens": 640352256,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0306656954380093
+      }
+    },
+    {
+      "launch_seq": 96,
+      "candidate_id": "tpe-trial-0095",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 325584576,
+        "num_params_total": 66847018,
+        "peak_vram_bytes": 11923161600,
+        "total_tokens": 325582848,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0735010735184136
+      }
+    },
+    {
+      "launch_seq": 97,
+      "candidate_id": "tpe-trial-0096",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 132121344,
+        "num_params_total": 29360264,
+        "peak_vram_bytes": 6776137728,
+        "total_tokens": 663486464,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0342977162836267
+      }
+    },
+    {
+      "launch_seq": 98,
+      "candidate_id": "tpe-trial-0097",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 241830720,
+        "num_params_total": 50790890,
+        "peak_vram_bytes": 10051950592,
+        "total_tokens": 412876800,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0400910177885334
+      }
+    },
+    {
+      "launch_seq": 99,
+      "candidate_id": "tpe-trial-0098",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 429394176,
+        "num_params_total": 87294350,
+        "peak_vram_bytes": 16105089024,
+        "total_tokens": 239861760,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0709694861708576
+      }
+    },
+    {
+      "launch_seq": 100,
+      "candidate_id": "tpe-trial-0099",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 325584576,
+        "num_params_total": 66847018,
+        "peak_vram_bytes": 11701254144,
+        "total_tokens": 310902784,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0148144889060622
+      }
+    }
+  ]
+}

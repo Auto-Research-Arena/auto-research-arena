@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://autoarena/benchmark/schema/result.schema.json",
+  "title": "AutoArena collected run result",
+  "description": "The autoarena/collected/1 measurement summary produced by engine/records/collect.py. The submission exporter derives the public autoarena/submission record from these measurements and their audit.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "run", "task", "method", "budget", "launches", "best",
+    "best_launch_seq", "reference", "trajectory", "status_counts", "totals", "integrity"
+  ],
+  "properties": {
+    "schema": {"const": "autoarena/collected/1"},
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "path", "created_at", "created_by", "hostname", "lanes", "research_model", "compute", "harness_revision", "notes"],
+      "properties": {
+        "run_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string"},
+        "created_at": {"type": ["string", "null"]},
+        "created_by": {"type": ["string", "null"]},
+        "hostname": {"type": ["string", "null"]},
+        "lanes": {"type": ["integer", "null"]},
+        "research_model": {"type": ["string", "null"]},
+        "compute": {"type": "object"},
+        "harness_revision": {"type": ["string", "null"]},
+        "notes": {"type": "string"}
+      }
+    },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["task_id", "version", "title", "comparison_mode", "headline", "headline_direction", "columns", "ranking_metrics", "objective_metric", "gate", "admissibility"],
+      "properties": {
+        "task_id": {"type": "string", "minLength": 1},
+        "version": {"type": "integer", "minimum": 1},
+        "title": {"type": "string"},
+        "comparison_mode": {"type": "string"},
+        "headline": {"type": "string"},
+        "headline_direction": {"enum": ["minimize", "maximize"]},
+        "columns": {"type": "array", "items": {"type": "string"}},
+        "ranking_metrics": {"type": "array", "items": {"type": "string"}},
+        "objective_metric": {"type": "string"},
+        "gate": {"type": ["object", "null"]},
+        "admissibility": {"type": "array", "items": {"type": "object"}}
+      }
+    },
+    "method": {"$ref": "#/$defs/method"},
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_launches", "includes_failures", "includes_reference_launch", "charging_rule", "spent", "refunded", "unresolved", "remaining", "overspent", "refund_reasons"],
+      "properties": {
+        "max_launches": {"type": "integer", "minimum": 1},
+        "includes_failures": {"type": "boolean"},
+        "includes_reference_launch": {"type": "boolean"},
+        "charging_rule": {"type": ["string", "null"]},
+        "spent": {"type": "integer", "minimum": 0},
+        "refunded": {"type": "integer", "minimum": 0},
+        "unresolved": {"type": "integer", "minimum": 0},
+        "remaining": {"type": "integer"},
+        "overspent": {"type": "boolean"},
+        "refund_reasons": {"$ref": "#/$defs/counts"}
+      }
+    },
+    "launches": {"type": "array", "items": {"$ref": "#/$defs/launch"}},
+    "best": {"anyOf": [{"$ref": "#/$defs/best"}, {"type": "null"}]},
+    "best_launch_seq": {"type": ["integer", "null"]},
+    "reference": {"$ref": "#/$defs/reference"},
+    "trajectory": {"type": "array", "items": {"$ref": "#/$defs/trajectory"}},
+    "status_counts": {"$ref": "#/$defs/counts"},
+    "totals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["launches_recorded", "charged", "admissible", "measured", "distinct_candidates", "gpu_seconds"],
+      "properties": {
+        "launches_recorded": {"type": "integer", "minimum": 0},
+        "charged": {"type": "integer", "minimum": 0},
+        "admissible": {"type": "integer", "minimum": 0},
+        "measured": {"type": "integer", "minimum": 0},
+        "distinct_candidates": {"type": "integer", "minimum": 0},
+        "gpu_seconds": {"type": "number", "minimum": 0}
+      }
+    },
+    "integrity": {"type": "array", "items": {"$ref": "#/$defs/integrity"}}
+  },
+  "$defs": {
+    "counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+    "method": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method_id", "title"],
+      "properties": {
+        "method_id": {"type": "string", "minLength": 1},
+        "title": {"type": ["string", "null"]}
+      }
+    },
+    "launch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["index", "launch_seq", "launch_uuid", "candidate_id", "parent_id", "is_reference_launch", "lane", "compute_run_id", "started_at", "finished_at", "wall_time_seconds", "status", "resolved", "witness", "exit_code", "charged", "charge_reason", "charge_classification", "adjudicated", "admissible", "clause", "reason", "gate_margin", "rank_key", "metrics", "all_metrics", "extraction_errors", "idea"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 1},
+        "launch_seq": {"type": "integer", "minimum": 1},
+        "launch_uuid": {"type": "string", "minLength": 1},
+        "candidate_id": {"type": "string", "minLength": 1},
+        "parent_id": {"type": ["string", "null"]},
+        "is_reference_launch": {"type": "boolean"},
+        "lane": {"type": ["string", "null"]},
+        "compute_run_id": {"type": ["string", "null"]},
+        "started_at": {"type": ["string", "null"]},
+        "finished_at": {"type": ["string", "null"]},
+        "wall_time_seconds": {"type": ["number", "null"]},
+        "status": {"type": "string"},
+        "resolved": {"type": "boolean"},
+        "witness": {"type": "boolean"},
+        "exit_code": {"type": ["integer", "null"]},
+        "charged": {"type": "boolean"},
+        "charge_reason": {"type": "string"},
+        "charge_classification": {"type": "string"},
+        "adjudicated": {"type": "boolean"},
+        "admissible": {"type": "boolean"},
+        "clause": {"type": "string"},
+        "reason": {"type": "string"},
+        "gate_margin": {"type": ["number", "null"]},
+        "rank_key": {"type": ["array", "null"], "items": {"type": "number"}},
+        "metrics": {"type": "object"},
+        "all_metrics": {"type": "object"},
+        "extraction_errors": {"type": "array", "items": {"type": "string"}},
+        "idea": {"type": ["object", "null"]}
+      }
+    },
+    "best": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["launch_seq", "candidate_id", "metrics", "headline", "gate_margin", "rank_key"],
+      "properties": {
+        "launch_seq": {"type": "integer"},
+        "candidate_id": {"type": "string"},
+        "metrics": {"type": "object"},
+        "headline": {"type": ["number", "null"]},
+        "gate_margin": {"type": ["number", "null"]},
+        "rank_key": {"type": "array", "items": {"type": "number"}}
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["expected_position", "assert_exact", "present", "launch_seq", "count", "mismatches", "recorded", "reproduced"],
+      "properties": {
+        "expected_position": {"type": ["integer", "null"]},
+        "assert_exact": {"type": "object"},
+        "present": {"type": "boolean"},
+        "launch_seq": {"type": ["integer", "null"]},
+        "count": {"type": "integer", "minimum": 0},
+        "mismatches": {"type": "array", "items": {"type": "object"}},
+        "recorded": {"type": "object"},
+        "reproduced": {"type": "boolean"}
+      }
+    },
+    "trajectory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["spent", "launch_seq", "status", "admissible", "value", "best_so_far"],
+      "properties": {
+        "spent": {"type": "integer", "minimum": 1},
+        "launch_seq": {"type": "integer", "minimum": 1},
+        "status": {"type": "string"},
+        "admissible": {"type": "boolean"},
+        "value": {"type": ["number", "null"]},
+        "best_so_far": {"type": ["number", "null"]}
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "code", "detail"],
+      "properties": {
+        "level": {"enum": ["blocking", "warn"]},
+        "code": {"type": "string"},
+        "detail": {"type": "string"}
+      }
+    }
+  }
+}

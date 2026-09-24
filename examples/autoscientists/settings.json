@@ -1,0 +1,9 @@
+{
+  "analysts": 3,
+  "build_review_roles": 6,
+  "monitors": 1,
+  "stagnation_experiments": 10,
+  "meta_cycle_interval": 3,
+  "model": "us.anthropic.claude-opus-5[1m]",
+  "source_revision": "c71a92343b9a488ed10134be805845b9473ad18f"
+}

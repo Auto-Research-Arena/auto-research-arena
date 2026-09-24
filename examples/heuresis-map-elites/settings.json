@@ -1,0 +1,15 @@
+{
+  "rounds": 100,
+  "agent": "claude",
+  "model": "us.anthropic.claude-opus-5[1m]",
+  "num_ideators": 1,
+  "executor_timeout": 14400,
+  "ideator_timeout": 14400,
+  "reviewer_timeout": 300,
+  "enable_judge": true,
+  "count_valid": false,
+  "memory": false,
+  "cell_empty_weight": 3.0,
+  "cell_crossover_rate": 0.5,
+  "go_explore_alpha": 0.01
+}

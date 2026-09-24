@@ -1,0 +1,261 @@
+{
+  "task_id": "decode",
+  "version": 1,
+  "title": "Decode latency at validation BPB < 1.05",
+  "supersedes": "nanogpt-t105i-decode",
+  "substrate": {
+    "entrypoint": [
+      "uv",
+      "run",
+      "train.py"
+    ],
+    "frozen_regions": [
+      {
+        "file": "train.py",
+        "region": "GPU-work witness after model allocation",
+        "anchor": "print(\"Parameter counts:\")",
+        "reason": "Preserve the parameter-count print block after model allocation and before training. This witness makes launches chargeable, including failures after GPU work starts."
+      },
+      {
+        "file": "train.py",
+        "region": "Canonical reporting call and its arguments",
+        "anchor": "report_efficiency_metrics(",
+        "reason": "Preserve this single call to prepare.py's report_efficiency_metrics as the only path that produces official numbers. Pass the model that was actually trained -- the same object prepare.py counts and validates here -- together with the actual tokenizer, step count, tokens per step, summed tokens and durations, unscaled: the reporter records the counts and durations you pass exactly as passed. Pass flops_measured as this run's unmodified measure_flops_dispatch return value and nothing else. This task builds no harness, so pass harness=None. Do not skip or shorten a probe, call the reporter more than once, or print a METRICS_JSON line of your own."
+      },
+      {
+        "file": "train.py",
+        "region": "FLOPs probe invocation, inputs and returned value",
+        "anchor": "flops_per_token_measured = measure_flops_dispatch(",
+        "reason": "Probe the actual candidate model, in its training configuration, using the first actual training microbatch; prepare.py selects its first min(8, microbatch sequences) complete sequences. measure_flops_dispatch must remain prepare.py's function: do not shadow, wrap, reimplement or monkey-patch it, do not independently slice or replace probe inputs, do not substitute a cheaper or differently configured model or computation for the probe, and do not probe repeatedly and choose a result. The integer this one call returns is the only value that may reach report_efficiency_metrics(flops_measured=...): do not reassign, scale, round, recompute or hand-write it, and do not drop the argument. prepare.py records whatever number train.py passes, so this rule is the entire check. Changing the actual training microbatch size remains allowed."
+      }
+    ],
+    "gpu_work_witness": "Parameter counts:",
+    "id": "karpathy-autoresearch-v1-inference",
+    "immutable": [
+      "prepare.py",
+      "pyproject.toml",
+      "uv.lock"
+    ],
+    "known_constraints": [
+      "prepare.py must measure the run that actually happened. measure_flops_dispatch, harness.tick and report_efficiency_metrics must all be given the same model this launch trained. Use prepare.py unmodified, and leave the counters it reads alone. For example, torch.cuda.reset_peak_memory_stats() silently lowers peak_vram_bytes.",
+      "The METRICS_JSON line prepare.py prints is the only official output. Do not print one of your own: the engine takes the last such line in stdout, so anything printed after the reporter is what gets scored.",
+      "Every count and duration passed to report_efficiency_metrics must describe work this launch actually did: one step per completed optimizer update including its accumulation microbatches, the tokens actually consumed counting repetitions, and synchronized durations covering each whole update.",
+      "train.py must not read the validation split.",
+      "If your model computes arithmetic the FLOPs probe cannot see during training -- a third-party or hand-written kernel that never reaches aten dispatch -- you must make it countable. prepare.py already does this for flash_attn_func: it wraps the call and tallies the arithmetic from the shapes it was given. Do the same for your own, either by that route or by registering a flop formula for a custom op. An operation the probe cannot count is not free. The decode path is not FLOPs-counted, so a kernel used only there needs no formula.",
+      "Stop when the training clock reaches TIME_BUDGET. Count that clock the way the reference does: training work only, not compilation or evaluation, and skipping the first ten updates.",
+      "decode_step must compute from the same parameters the network's forward() uses; no separate decode weights. reset_decode_state starts a fresh request: nothing computed before it may be used after it, and the number of previous calls must not change what is computed. The eager and captured paths must do the same computation and keep the same data; graph chooses only which one runs.",
+      "The state object returned by init_decode_state must own all KV-cache data, including compressed representations or retained history used in its place, so that dropping the object frees the data. All such data must remain on the GPU throughout the request."
+    ],
+    "mutable": [
+      "train.py"
+    ],
+    "prepare": [
+      "uv",
+      "run",
+      "prepare.py"
+    ],
+    "revision": "716857590764cc458562d3483a7279fc6ae6edb6",
+    "source": "https://github.com/karpathy/autoresearch"
+  },
+  "launch": {
+    "accelerator": "NVIDIA_A100_80GB",
+    "gpus_per_launch": 1,
+    "seed": 42,
+    "timeout_seconds": 1800,
+    "train_seconds": 600
+  },
+  "budget": {
+    "charging_rule": "gpu-work-witness",
+    "includes_failures": true,
+    "includes_reference_launch": true,
+    "max_launches": 100
+  },
+  "metrics": {
+    "decode_tv_distance_max": {
+      "description": "Maximum total-variation distance between decode_step and forward distributions across all 513 scored positions in the 1536-token-prefill request.",
+      "deterministic": false,
+      "extract": {
+        "field": "decode_tv_distance_max",
+        "kind": "metrics_json"
+      },
+      "type": "number",
+      "unit": "probability"
+    },
+    "flops_per_token_measured": {
+      "description": "Forward-and-backward FLOPs per token from executed operations and registered shape-based counting formulas on the uncompiled model. Counts matrix, convolution and attention work; excludes optimizer updates and unregistered operations, including elementwise and normalization work.",
+      "deterministic": true,
+      "extract": {
+        "field": "flops_per_token_measured",
+        "kind": "metrics_json"
+      },
+      "type": "integer",
+      "unit": "FLOPs/token"
+    },
+    "nopref_decode_tv_distance_max": {
+      "description": "Maximum total-variation distance between decode_step and forward distributions across all 513 scored positions in the one-token-prefill request.",
+      "deterministic": false,
+      "extract": {
+        "field": "nopref_decode_tv_distance_max",
+        "kind": "metrics_json"
+      },
+      "type": "number",
+      "unit": "probability"
+    },
+    "nopref_kv_cache_bytes": {
+      "description": "The same allocation-growth measurement with one prefill token and max_len 513.",
+      "deterministic": false,
+      "extract": {
+        "field": "nopref_kv_cache_bytes",
+        "kind": "metrics_json"
+      },
+      "type": "integer",
+      "unit": "bytes"
+    },
+    "nopref_request_ms_median": {
+      "description": "The same timed-request protocol with one prefill token and 512 decode steps; no multi-token prefill.",
+      "deterministic": false,
+      "extract": {
+        "field": "nopref_request_ms_median",
+        "kind": "metrics_json"
+      },
+      "type": "number",
+      "unit": "ms"
+    },
+    "num_params_total": {
+      "description": "Exact total parameter count of the model, counted by the immutable instrument.",
+      "deterministic": true,
+      "extract": {
+        "field": "num_params_total",
+        "kind": "metrics_json"
+      },
+      "type": "integer",
+      "unit": "parameters"
+    },
+    "peak_vram_bytes": {
+      "description": "Peak PyTorch-allocated CUDA memory from process setup through the reporting read, including the FLOPs probe, training and validation. Validation runs at a frozen 128 x 2048, so on a candidate whose training peak is small the evaluation forward can become the maximum; making that forward cheap at the frozen shape is part of the axis. Not total device memory or reserved allocator memory.",
+      "deterministic": false,
+      "extract": {
+        "field": "peak_vram_bytes",
+        "kind": "metrics_json"
+      },
+      "type": "integer",
+      "unit": "bytes"
+    },
+    "request_ms_median": {
+      "description": "Median of 30 timed, teacher-forced requests after 3 warmup passes: 1536-token prefill plus 512 decode steps, including prefill and synchronized GPU completion.",
+      "deterministic": false,
+      "extract": {
+        "field": "request_ms_median",
+        "kind": "metrics_json"
+      },
+      "type": "number",
+      "unit": "ms"
+    },
+    "training_data_tokens_available": {
+      "description": "Configured token-position budget of the fixed shuffled training-data pool. Available data, not a measurement of unique positions actually consumed.",
+      "deterministic": true,
+      "extract": {
+        "field": "training_data_tokens_available",
+        "kind": "metrics_json"
+      },
+      "type": "integer",
+      "unit": "tokens"
+    },
+    "val_bpb": {
+      "description": "Validation bits per byte on fixed held-out data, computed by evaluate_bpb in prepare.py. Quality is an eligibility threshold, not a ranking target.",
+      "deterministic": false,
+      "extract": {
+        "field": "val_bpb",
+        "kind": "metrics_json"
+      },
+      "type": "number",
+      "unit": "bits/byte"
+    }
+  },
+  "objective": {
+    "comparison_mode": "gated",
+    "target": {
+      "metric": "nopref_request_ms_median",
+      "direction": "minimize"
+    },
+    "quality_gate": {
+      "metric": "val_bpb",
+      "operator": "<",
+      "value": 1.05
+    },
+    "tiebreaks": [
+      {
+        "metric": "request_ms_median",
+        "direction": "minimize"
+      }
+    ],
+    "constraints": [
+      {
+        "basis": "the memory bound on the shape this axis actually serves. It reads the no-prompt state -- 513 slots, not 2048 -- because a ceiling on the 1536-prefill reading would bound state this lane never allocates. 10 MiB is 1.25x the reference's 8,405,504 bytes, directly rounded up. Stated rather than discovered later: this clause does little work at any value, because short-context decode is weight-bandwidth-bound and deleting the cache costs close to nothing at 513 positions. What binds this lane is the quality gate and the parameter ceiling; the clause is here so that a candidate cannot pay unbounded memory for a latency it barely buys.",
+        "metric": "nopref_kv_cache_bytes",
+        "operator": "<=",
+        "value": 10485760
+      },
+      {
+        "basis": "Maximum total-variation limit allows numerical differences while bounding divergence from forward predictions.",
+        "metric": "decode_tv_distance_max",
+        "operator": "<=",
+        "value": 0.05
+      },
+      {
+        "basis": "The same fidelity limit applies independently to the one-token-prefill shape.",
+        "metric": "nopref_decode_tv_distance_max",
+        "operator": "<=",
+        "value": 0.05
+      },
+      {
+        "basis": "Reference counted forward-and-backward FLOPs per token; prevents gains bought with more counted arithmetic.",
+        "metric": "flops_per_token_measured",
+        "operator": "<=",
+        "value": 239078400
+      },
+      {
+        "basis": "Reference parameter count.",
+        "metric": "num_params_total",
+        "operator": "<=",
+        "value": 50332176
+      },
+      {
+        "basis": "Reference peak allocation: 45,012.5 MiB. Includes setup, FLOPs probing, training and validation; not a serving-memory ceiling.",
+        "metric": "peak_vram_bytes",
+        "operator": "<=",
+        "value": 47198976512
+      },
+      {
+        "basis": "Pin the prescribed complete shuffled training-data pool; repeated use remains allowed.",
+        "metric": "training_data_tokens_available",
+        "operator": "==",
+        "value": 631241817
+      }
+    ]
+  },
+  "reference_launch": {
+    "assert_exact": {
+      "flops_per_token_measured": 239078400,
+      "num_params_total": 50332176,
+      "training_data_tokens_available": 631241817
+    },
+    "position": 1
+  },
+  "report": {
+    "columns": [
+      "val_bpb",
+      "nopref_kv_cache_bytes",
+      "request_ms_median",
+      "nopref_request_ms_median",
+      "decode_tv_distance_max",
+      "nopref_decode_tv_distance_max",
+      "flops_per_token_measured",
+      "num_params_total",
+      "peak_vram_bytes",
+      "training_data_tokens_available"
+    ],
+    "headline": "nopref_request_ms_median",
+    "headline_direction": "minimize"
+  }
+}

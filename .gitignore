@@ -1,0 +1,26 @@
+__pycache__/
+*.pyc
+.venv/
+runs/
+reports/
+/out/
+*.tmp
+.DS_Store
+
+# Publish README guides and method prompt assets; keep internal notes local.
+*.md
+*.MD
+!README.md
+!engine/API.md
+!examples/*/prompt.md
+!examples/arbor/measurement.md
+!examples/heuresis-map-elites/support/nanogpt/idea_schema.md
+!examples/sequential-search/policy/*.md
+/docs/
+
+# Local runtime data and retained, unpublished tooling.
+.local/
+data/
+
+# Submission folders may use task names such as data.
+!/site/submissions/**/

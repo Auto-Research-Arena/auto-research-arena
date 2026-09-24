@@ -1,0 +1,1925 @@
+{
+  "schema": "autoarena/site-submission/1",
+  "run_id": "beam-search--kvcache",
+  "method_id": "beam-search",
+  "task_id": "kvcache",
+  "metric": "kv_cache_bytes",
+  "unit": "bytes",
+  "direction": "minimize",
+  "best_value": 69632,
+  "reference_value": 34603520,
+  "relative_improvement": 0.9979877191684545,
+  "rank_key": [
+    69632.0,
+    69632.0,
+    -0.0004540638239545203
+  ],
+  "best_launch_seq": 93,
+  "best_candidate_id": "g14-c03-sixty-four-positions-off-each-pair-of-the-injected-member",
+  "best_is_reference": false,
+  "budget": {
+    "spent": 99,
+    "max_launches": 100
+  },
+  "compute": {
+    "backend": "pluto",
+    "gpu_instance_type": "p4de.24xlarge",
+    "gpu_model": [
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB"
+    ],
+    "workers": 4,
+    "gpus_per_evaluation": 1,
+    "evaluation_capacity_gpus": 4
+  },
+  "research_llm": {
+    "model": "us.anthropic.claude-opus-5[1m]",
+    "provider": null
+  },
+  "evaluation_gpu_hours": 19.686913611111105,
+  "measurements": [
+    {
+      "launch_seq": 1,
+      "candidate_id": "reference",
+      "is_reference": true,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.017027713358402252,
+        "flops_per_token_measured": 239078400,
+        "kv_cache_bytes": 34603520,
+        "nopref_decode_tv_distance_max": 0.024818822741508484,
+        "nopref_kv_cache_bytes": 8405504,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47198976512,
+        "request_ms_median": 643.2280540466309,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.045288240987255
+      }
+    },
+    {
+      "launch_seq": 2,
+      "candidate_id": "g01-c01-window-extent-ring-cache",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": null,
+        "flops_per_token_measured": null,
+        "kv_cache_bytes": null,
+        "nopref_decode_tv_distance_max": null,
+        "nopref_kv_cache_bytes": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "request_ms_median": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 3,
+      "candidate_id": "g01-c02-int8-scaled-kv-store",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.030210722237825394,
+        "flops_per_token_measured": 239078400,
+        "kv_cache_bytes": 17039872,
+        "nopref_decode_tv_distance_max": 0.026875123381614685,
+        "nopref_kv_cache_bytes": 4276736,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47198976512,
+        "request_ms_median": 939.9622678756714,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0453368889871708
+      }
+    },
+    {
+      "launch_seq": 4,
+      "candidate_id": "g02-c01-window-extent-ring-retention",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.015575043857097626,
+        "flops_per_token_measured": 239078400,
+        "kv_cache_bytes": 26215424,
+        "nopref_decode_tv_distance_max": 0.029955200850963593,
+        "nopref_kv_cache_bytes": 8405504,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47198976512,
+        "request_ms_median": 656.4041376113892,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0470787037820788
+      }
+    },
+    {
+      "launch_seq": 5,
+      "candidate_id": "g02-c02-grouped-query-kv-heads",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.014796897768974304,
+        "flops_per_token_measured": 226493952,
+        "kv_cache_bytes": 16777728,
+        "nopref_decode_tv_distance_max": 0.020932512357831,
+        "nopref_kv_cache_bytes": 4203008,
+        "num_params_total": 39846160,
+        "peak_vram_bytes": 43323438592,
+        "request_ms_median": 619.9411153793335,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0410098729810051
+      }
+    },
+    {
+      "launch_seq": 6,
+      "candidate_id": "g03-c01-ring-retention-on-grouped-kv",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.023016534745693207,
+        "flops_per_token_measured": 226493952,
+        "kv_cache_bytes": 10492928,
+        "nopref_decode_tv_distance_max": 0.022531278431415558,
+        "nopref_kv_cache_bytes": 4203008,
+        "num_params_total": 39846160,
+        "peak_vram_bytes": 43323438592,
+        "request_ms_median": 634.6122026443481,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0418986113757356
+      }
+    },
+    {
+      "launch_seq": 7,
+      "candidate_id": "g03-c03-quarter-span-short-layers",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.017810657620429993,
+        "flops_per_token_measured": 220204032,
+        "kv_cache_bytes": 15741952,
+        "nopref_decode_tv_distance_max": 0.016538195312023163,
+        "nopref_kv_cache_bytes": 8405504,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47198976512,
+        "request_ms_median": 599.4428396224976,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0385593826725155
+      }
+    },
+    {
+      "launch_seq": 8,
+      "candidate_id": "g03-c05-cross-layer-kv-sharing",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.015657614916563034,
+        "flops_per_token_measured": 229641216,
+        "kv_cache_bytes": 22021120,
+        "nopref_decode_tv_distance_max": 0.018281519412994385,
+        "nopref_kv_cache_bytes": 5254144,
+        "num_params_total": 48759312,
+        "peak_vram_bytes": 44748442112,
+        "request_ms_median": 594.1303968429565,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0448576442611341
+      }
+    },
+    {
+      "launch_seq": 9,
+      "candidate_id": "g03-c02-single-key-value-head",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.031203072518110275,
+        "flops_per_token_measured": 220201728,
+        "kv_cache_bytes": 8389120,
+        "nopref_decode_tv_distance_max": 0.01973375305533409,
+        "nopref_kv_cache_bytes": 2105856,
+        "num_params_total": 34603152,
+        "peak_vram_bytes": 41384621056,
+        "request_ms_median": 605.2501201629639,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0424931242048103
+      }
+    },
+    {
+      "launch_seq": 10,
+      "candidate_id": "g03-c04-six-layer-depth-at-fixed-width",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.018186088651418686,
+        "flops_per_token_measured": 188745984,
+        "kv_cache_bytes": 19923968,
+        "nopref_decode_tv_distance_max": 0.02110096625983715,
+        "nopref_kv_cache_bytes": 6304256,
+        "num_params_total": 39846284,
+        "peak_vram_bytes": 36576850432,
+        "request_ms_median": 499.3560314178467,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0218138126777445
+      }
+    },
+    {
+      "launch_seq": 11,
+      "candidate_id": "g03-c06-low-rank-kv-latent-cache",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.016191137954592705,
+        "flops_per_token_measured": 232786944,
+        "kv_cache_bytes": 8463360,
+        "nopref_decode_tv_distance_max": 0.028174879029393196,
+        "nopref_kv_cache_bytes": 2123264,
+        "num_params_total": 49283600,
+        "peak_vram_bytes": 48258054656,
+        "request_ms_median": 822.1282958984375,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0435651522804477
+      }
+    },
+    {
+      "launch_seq": 12,
+      "candidate_id": "g04-c01-narrow-cached-head-dim",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.01770412176847458,
+        "flops_per_token_measured": 217056000,
+        "kv_cache_bytes": 4194816,
+        "nopref_decode_tv_distance_max": 0.01949309930205345,
+        "nopref_kv_cache_bytes": 1057280,
+        "num_params_total": 31981712,
+        "peak_vram_bytes": 40487040000,
+        "request_ms_median": 548.112154006958,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0596225662262362
+      }
+    },
+    {
+      "launch_seq": 13,
+      "candidate_id": "g04-c03-cross-layer-cache-sharing-on-ring",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.4168887436389923,
+        "flops_per_token_measured": 221775360,
+        "kv_cache_bytes": 7344640,
+        "nopref_decode_tv_distance_max": 0.022411948069930077,
+        "nopref_kv_cache_bytes": 2627584,
+        "num_params_total": 39059728,
+        "peak_vram_bytes": 42099082752,
+        "request_ms_median": 595.0180292129517,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0420501122867494
+      }
+    },
+    {
+      "launch_seq": 14,
+      "candidate_id": "g04-c05-single-kv-head-on-quarter-span",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.022007297724485397,
+        "flops_per_token_measured": 201327360,
+        "kv_cache_bytes": 3677184,
+        "nopref_decode_tv_distance_max": 0.02864588052034378,
+        "nopref_kv_cache_bytes": 2105856,
+        "num_params_total": 34603152,
+        "peak_vram_bytes": 41384621056,
+        "request_ms_median": 575.3797292709351,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0307955757256941
+      }
+    },
+    {
+      "launch_seq": 15,
+      "candidate_id": "g04-c07-six-layer-depth-on-grouped-kv",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.019529804587364197,
+        "flops_per_token_measured": 179307648,
+        "kv_cache_bytes": 12583424,
+        "nopref_decode_tv_distance_max": 0.020573649555444717,
+        "nopref_kv_cache_bytes": 3152384,
+        "num_params_total": 31981772,
+        "peak_vram_bytes": 33670197248,
+        "request_ms_median": 476.17316246032715,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0210735060069311
+      }
+    },
+    {
+      "launch_seq": 16,
+      "candidate_id": "g04-c02-window-extent-ring-on-single-kv",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.07109376043081284,
+        "flops_per_token_measured": 220201728,
+        "kv_cache_bytes": 5250048,
+        "nopref_decode_tv_distance_max": 0.02330317720770836,
+        "nopref_kv_cache_bytes": 2105856,
+        "num_params_total": 34603152,
+        "peak_vram_bytes": 41384621056,
+        "request_ms_median": 632.7214241027832,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0432584305866202
+      }
+    },
+    {
+      "launch_seq": 17,
+      "candidate_id": "g04-c04-no-full-context-layer",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.02641451358795166,
+        "flops_per_token_measured": 188745216,
+        "kv_cache_bytes": 4203520,
+        "nopref_decode_tv_distance_max": 0.017970994114875793,
+        "nopref_kv_cache_bytes": 4203008,
+        "num_params_total": 39846160,
+        "peak_vram_bytes": 43323438592,
+        "request_ms_median": 536.514163017273,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0288924816450604
+      }
+    },
+    {
+      "launch_seq": 18,
+      "candidate_id": "g04-c06-int8-store-on-single-kv-quarter-span",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.025903940200805664,
+        "flops_per_token_measured": 201327360,
+        "kv_cache_bytes": 1876992,
+        "nopref_decode_tv_distance_max": 0.020872194319963455,
+        "nopref_kv_cache_bytes": 1081856,
+        "num_params_total": 34603152,
+        "peak_vram_bytes": 41384621056,
+        "request_ms_median": 761.1758708953857,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0289057860705972
+      }
+    },
+    {
+      "launch_seq": 19,
+      "candidate_id": "g04-c08-token-shift-mixer-layers",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.024249114096164703,
+        "flops_per_token_measured": 195036672,
+        "kv_cache_bytes": 8393216,
+        "nopref_decode_tv_distance_max": 0.021840739995241165,
+        "nopref_kv_cache_bytes": 2105856,
+        "num_params_total": 38797584,
+        "peak_vram_bytes": 39508702720,
+        "request_ms_median": 437.5849962234497,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0189253636409137
+      }
+    },
+    {
+      "launch_seq": 20,
+      "candidate_id": "g05-c01-half-width-cached-row-on-rank1",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.01906988024711609,
+        "flops_per_token_measured": 198181632,
+        "kv_cache_bytes": 1842176,
+        "nopref_decode_tv_distance_max": 0.018504954874515533,
+        "nopref_kv_cache_bytes": 1057280,
+        "num_params_total": 31981712,
+        "peak_vram_bytes": 40487040000,
+        "request_ms_median": 521.9578742980957,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0520775469525108
+      }
+    },
+    {
+      "launch_seq": 21,
+      "candidate_id": "g05-c03-single-cached-kv-head-on-uniform-quarter-span",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.020879942923784256,
+        "flops_per_token_measured": 182452992,
+        "kv_cache_bytes": 2106368,
+        "nopref_decode_tv_distance_max": 0.023655373603105545,
+        "nopref_kv_cache_bytes": 2105856,
+        "num_params_total": 34603152,
+        "peak_vram_bytes": 41384621056,
+        "request_ms_median": 537.7171039581299,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.035629878732229
+      }
+    },
+    {
+      "launch_seq": 22,
+      "candidate_id": "g05-c05-per-query-head-attention-temperature",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.01771090365946293,
+        "flops_per_token_measured": 220201728,
+        "kv_cache_bytes": 8389120,
+        "nopref_decode_tv_distance_max": 0.022824428975582123,
+        "nopref_kv_cache_bytes": 2105856,
+        "num_params_total": 34603184,
+        "peak_vram_bytes": 41384623104,
+        "request_ms_median": 620.1174259185791,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0469694995067047
+      }
+    },
+    {
+      "launch_seq": 23,
+      "candidate_id": "g05-c07-one-attention-layer-seven-mixers",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.02245168760418892,
+        "flops_per_token_measured": 165151104,
+        "kv_cache_bytes": 2104832,
+        "nopref_decode_tv_distance_max": 0.020940206944942474,
+        "nopref_kv_cache_bytes": 532992,
+        "num_params_total": 31719504,
+        "peak_vram_bytes": 36191515136,
+        "request_ms_median": 273.6393213272095,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0727506711176644
+      }
+    },
+    {
+      "launch_seq": 24,
+      "candidate_id": "g05-c02-mixer-for-the-full-context-layers",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.028170742094516754,
+        "flops_per_token_measured": 174588288,
+        "kv_cache_bytes": 1582080,
+        "nopref_decode_tv_distance_max": 0.03214587643742561,
+        "nopref_kv_cache_bytes": 1581568,
+        "num_params_total": 32243792,
+        "peak_vram_bytes": 39735724032,
+        "request_ms_median": 450.3591060638428,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.028048739535272
+      }
+    },
+    {
+      "launch_seq": 25,
+      "candidate_id": "g05-c04-paired-cache-sharing-with-a-causal-follower-read",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.02220446802675724,
+        "flops_per_token_measured": 184026624,
+        "kv_cache_bytes": 2627584,
+        "nopref_decode_tv_distance_max": 0.024767324328422546,
+        "nopref_kv_cache_bytes": 2627072,
+        "num_params_total": 39059728,
+        "peak_vram_bytes": 42099213824,
+        "request_ms_median": 497.4980354309082,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0366889421015117
+      }
+    },
+    {
+      "launch_seq": 26,
+      "candidate_id": "g05-c06-value-residual-on-every-layer",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.0299926046282053,
+        "flops_per_token_measured": 220202496,
+        "kv_cache_bytes": 8389120,
+        "nopref_decode_tv_distance_max": 0.033704258501529694,
+        "nopref_kv_cache_bytes": 2105856,
+        "num_params_total": 38797584,
+        "peak_vram_bytes": 41691860992,
+        "request_ms_median": 635.0394487380981,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0410387288774547
+      }
+    },
+    {
+      "launch_seq": 27,
+      "candidate_id": "g05-c08-quarter-width-cached-row-on-the-mixer-parent",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.027138521894812584,
+        "flops_per_token_measured": 190317312,
+        "kv_cache_bytes": 2101760,
+        "nopref_decode_tv_distance_max": 0.02351054921746254,
+        "nopref_kv_cache_bytes": 532992,
+        "num_params_total": 31719568,
+        "peak_vram_bytes": 37861913600,
+        "request_ms_median": 394.56284046173096,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0354656069358366
+      }
+    },
+    {
+      "launch_seq": 28,
+      "candidate_id": "g06-c01-quarter-width-cached-row-on-the-mixer-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.021496692672371864,
+        "flops_per_token_measured": 172228992,
+        "kv_cache_bytes": 795648,
+        "nopref_decode_tv_distance_max": 0.03062119334936142,
+        "nopref_kv_cache_bytes": 795136,
+        "num_params_total": 30802000,
+        "peak_vram_bytes": 39096879104,
+        "request_ms_median": 419.036865234375,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0426479243322102
+      }
+    },
+    {
+      "launch_seq": 29,
+      "candidate_id": "g06-c03-window-bounded-ring-on-a-uniform-quarter-span",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.019470060244202614,
+        "flops_per_token_measured": 165151488,
+        "kv_cache_bytes": 533504,
+        "nopref_decode_tv_distance_max": 0.02739783562719822,
+        "nopref_kv_cache_bytes": 532992,
+        "num_params_total": 31719568,
+        "peak_vram_bytes": 37861913600,
+        "request_ms_median": 368.0610656738281,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0348355684258619
+      }
+    },
+    {
+      "launch_seq": 30,
+      "candidate_id": "g06-c05-int8-cached-store-with-per-position-scales",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.024771632626652718,
+        "flops_per_token_measured": 182452992,
+        "kv_cache_bytes": 1082368,
+        "nopref_decode_tv_distance_max": 0.022477729246020317,
+        "nopref_kv_cache_bytes": 1082368,
+        "num_params_total": 34603152,
+        "peak_vram_bytes": 41384621056,
+        "request_ms_median": 716.4125442504883,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0283827910516041
+      }
+    },
+    {
+      "launch_seq": 31,
+      "candidate_id": "g06-c07-single-cached-kv-head-under-follower-sharing",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.024553533643484116,
+        "flops_per_token_measured": 180093696,
+        "kv_cache_bytes": 1316864,
+        "nopref_decode_tv_distance_max": 0.021181054413318634,
+        "nopref_kv_cache_bytes": 1316352,
+        "num_params_total": 34209936,
+        "peak_vram_bytes": 40771978240,
+        "request_ms_median": 482.53071308135986,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.034357844449018
+      }
+    },
+    {
+      "launch_seq": 32,
+      "candidate_id": "g06-c02-four-cache-free-mixer-layers",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.02254541963338852,
+        "flops_per_token_measured": 166723968,
+        "kv_cache_bytes": 1057792,
+        "nopref_decode_tv_distance_max": 0.019477246329188347,
+        "nopref_kv_cache_bytes": 1057280,
+        "num_params_total": 31981648,
+        "peak_vram_bytes": 38235727872,
+        "request_ms_median": 374.2436170578003,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0287569507304728
+      }
+    },
+    {
+      "launch_seq": 33,
+      "candidate_id": "g06-c04-leader-follower-cache-sharing-across-the-attention-layers",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": null,
+        "flops_per_token_measured": null,
+        "kv_cache_bytes": null,
+        "nopref_decode_tv_distance_max": null,
+        "nopref_kv_cache_bytes": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "request_ms_median": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 34,
+      "candidate_id": "g06-c06-eighth-context-retention-span",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.018741894513368607,
+        "flops_per_token_measured": 169870080,
+        "kv_cache_bytes": 1057792,
+        "nopref_decode_tv_distance_max": 0.021307874470949173,
+        "nopref_kv_cache_bytes": 1057792,
+        "num_params_total": 34603152,
+        "peak_vram_bytes": 41384621056,
+        "request_ms_median": 500.44429302215576,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0409716700147615
+      }
+    },
+    {
+      "launch_seq": 35,
+      "candidate_id": "g06-c08-one-leader-serves-six-followers",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.030736194923520088,
+        "flops_per_token_measured": 179306880,
+        "kv_cache_bytes": 1051648,
+        "nopref_decode_tv_distance_max": 0.019447438418865204,
+        "nopref_kv_cache_bytes": 1051136,
+        "num_params_total": 31981648,
+        "peak_vram_bytes": 40416756224,
+        "request_ms_median": 422.4727153778076,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0551752044334528
+      }
+    },
+    {
+      "launch_seq": 36,
+      "candidate_id": "g07-c01-paired-leader-follower-sharing-across-the-mixers",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.027878157794475555,
+        "flops_per_token_measured": 164364672,
+        "kv_cache_bytes": 269312,
+        "nopref_decode_tv_distance_max": 0.02368766814470291,
+        "nopref_kv_cache_bytes": 268800,
+        "num_params_total": 30539856,
+        "peak_vram_bytes": 37578524672,
+        "request_ms_median": 319.3012475967407,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.049024606739502
+      }
+    },
+    {
+      "launch_seq": 37,
+      "candidate_id": "g07-c03-value-tied-to-key-single-cached-tensor",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.031140048056840897,
+        "flops_per_token_measured": 171048960,
+        "kv_cache_bytes": 399360,
+        "nopref_decode_tv_distance_max": 0.025112124159932137,
+        "nopref_kv_cache_bytes": 399360,
+        "num_params_total": 29556752,
+        "peak_vram_bytes": 38815713280,
+        "request_ms_median": 389.73236083984375,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.114078275361053
+      }
+    },
+    {
+      "launch_seq": 38,
+      "candidate_id": "g07-c05-eighth-window-retention-on-the-wide-row",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.01735874079167843,
+        "flops_per_token_measured": 157286784,
+        "kv_cache_bytes": 271360,
+        "nopref_decode_tv_distance_max": 0.020284205675125122,
+        "nopref_kv_cache_bytes": 271360,
+        "num_params_total": 31981648,
+        "peak_vram_bytes": 38235727872,
+        "request_ms_median": 345.10338306427,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0621345041736818
+      }
+    },
+    {
+      "launch_seq": 39,
+      "candidate_id": "g07-c07-value-tied-to-key-on-the-wide-eighth-span-rows",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.03258730471134186,
+        "flops_per_token_measured": 166723584,
+        "kv_cache_bytes": 529408,
+        "nopref_decode_tv_distance_max": 0.03010914847254753,
+        "nopref_kv_cache_bytes": 529408,
+        "num_params_total": 29884432,
+        "peak_vram_bytes": 40537348096,
+        "request_ms_median": 458.87064933776855,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0877611653237544
+      }
+    },
+    {
+      "launch_seq": 40,
+      "candidate_id": "g07-c02-tapered-retention-extent-by-depth",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.021492846310138702,
+        "flops_per_token_measured": 158466816,
+        "kv_cache_bytes": 254976,
+        "nopref_decode_tv_distance_max": 0.023587606847286224,
+        "nopref_kv_cache_bytes": 254976,
+        "num_params_total": 31719568,
+        "peak_vram_bytes": 37861913600,
+        "request_ms_median": 360.00335216522217,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.055487781224663
+      }
+    },
+    {
+      "launch_seq": 41,
+      "candidate_id": "g07-c04-int8-cached-store-with-one-fused-scale-allocation",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.05115922912955284,
+        "flops_per_token_measured": 172228992,
+        "kv_cache_bytes": 415232,
+        "nopref_decode_tv_distance_max": 0.026556504890322685,
+        "nopref_kv_cache_bytes": 415232,
+        "num_params_total": 30802000,
+        "peak_vram_bytes": 39096879104,
+        "request_ms_median": 548.7899780273438,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0411030284536225
+      }
+    },
+    {
+      "launch_seq": 42,
+      "candidate_id": "g07-c06-one-leader-serves-three-followers-across-mixers",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.018939150497317314,
+        "flops_per_token_measured": 164364480,
+        "kv_cache_bytes": 268288,
+        "nopref_decode_tv_distance_max": 0.023094234988093376,
+        "nopref_kv_cache_bytes": 267776,
+        "num_params_total": 30539824,
+        "peak_vram_bytes": 37547061760,
+        "request_ms_median": 317.9255723953247,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0658947940370056
+      }
+    },
+    {
+      "launch_seq": 43,
+      "candidate_id": "g07-c08-sixty-four-key-retention-on-every-layer",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.02082698978483677,
+        "flops_per_token_measured": 160432896,
+        "kv_cache_bytes": 271360,
+        "nopref_decode_tv_distance_max": 0.01809726469218731,
+        "nopref_kv_cache_bytes": 271360,
+        "num_params_total": 34603152,
+        "peak_vram_bytes": 41384621056,
+        "request_ms_median": 462.7394676208496,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.08358533606823
+      }
+    },
+    {
+      "launch_seq": 44,
+      "candidate_id": "g08-c01-block-exact-retention-extent",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.01950022578239441,
+        "flops_per_token_measured": 164340096,
+        "kv_cache_bytes": 267264,
+        "nopref_decode_tv_distance_max": 0.02111181989312172,
+        "nopref_kv_cache_bytes": 267264,
+        "num_params_total": 30539856,
+        "peak_vram_bytes": 37578524672,
+        "request_ms_median": 318.42195987701416,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0492263424265498
+      }
+    },
+    {
+      "launch_seq": 45,
+      "candidate_id": "g08-c03-single-pair-leader-follower-on-the-ring",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.026129547506570816,
+        "flops_per_token_measured": 164758080,
+        "kv_cache_bytes": 401408,
+        "nopref_decode_tv_distance_max": 0.020428474992513657,
+        "nopref_kv_cache_bytes": 400896,
+        "num_params_total": 31129712,
+        "peak_vram_bytes": 37719432704,
+        "request_ms_median": 344.3644046783447,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0380667557795615
+      }
+    },
+    {
+      "launch_seq": 46,
+      "candidate_id": "g08-c05-half-row-int8-store-at-thirty-two-channel-scales",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.030111199244856834,
+        "flops_per_token_measured": 172228992,
+        "kv_cache_bytes": 427520,
+        "nopref_decode_tv_distance_max": 0.041508279740810394,
+        "nopref_kv_cache_bytes": 427520,
+        "num_params_total": 30802000,
+        "peak_vram_bytes": 39096879104,
+        "request_ms_median": 549.895167350769,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0452676011832585
+      }
+    },
+    {
+      "launch_seq": 47,
+      "candidate_id": "g08-c07-lower-pair-eighth-extent-on-the-wide-row",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.028448743745684624,
+        "flops_per_token_measured": 162005376,
+        "kv_cache_bytes": 664576,
+        "nopref_decode_tv_distance_max": 0.023801537230610847,
+        "nopref_kv_cache_bytes": 664576,
+        "num_params_total": 31981648,
+        "peak_vram_bytes": 38235727872,
+        "request_ms_median": 360.00919342041016,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0288271181834279
+      }
+    },
+    {
+      "launch_seq": 48,
+      "candidate_id": "g08-c02-token-value-injection-on-the-cache-free-layers",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.023152858018875122,
+        "flops_per_token_measured": 164364672,
+        "kv_cache_bytes": 269312,
+        "nopref_decode_tv_distance_max": 0.019479654729366302,
+        "nopref_kv_cache_bytes": 268800,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 324.40185546875,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0423890295615283
+      }
+    },
+    {
+      "launch_seq": 49,
+      "candidate_id": "g08-c04-lower-half-retention-halving",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.02169676125049591,
+        "flops_per_token_measured": 162005760,
+        "kv_cache_bytes": 402432,
+        "nopref_decode_tv_distance_max": 0.02165960520505905,
+        "nopref_kv_cache_bytes": 402432,
+        "num_params_total": 31719568,
+        "peak_vram_bytes": 37861913600,
+        "request_ms_median": 364.6571636199951,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0315268867603504
+      }
+    },
+    {
+      "launch_seq": 50,
+      "candidate_id": "g08-c06-seven-layer-stack-at-fixed-width",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.02232217602431774,
+        "flops_per_token_measured": 152961600,
+        "kv_cache_bytes": 663552,
+        "nopref_decode_tv_distance_max": 0.019072551280260086,
+        "nopref_kv_cache_bytes": 663040,
+        "num_params_total": 28639342,
+        "peak_vram_bytes": 34681695744,
+        "request_ms_median": 372.2693920135498,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0402540904507585
+      }
+    },
+    {
+      "launch_seq": 51,
+      "candidate_id": "g08-c08-paired-sharing-on-the-wide-row",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.025610143318772316,
+        "flops_per_token_measured": 165151104,
+        "kv_cache_bytes": 531456,
+        "nopref_decode_tv_distance_max": 0.02790367603302002,
+        "nopref_kv_cache_bytes": 530944,
+        "num_params_total": 31719504,
+        "peak_vram_bytes": 37827299328,
+        "request_ms_median": 342.271089553833,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0352316469141756
+      }
+    },
+    {
+      "launch_seq": 52,
+      "candidate_id": "g09-c01-one-allocation-decode-state",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.020526938140392303,
+        "flops_per_token_measured": 164340096,
+        "kv_cache_bytes": 266752,
+        "nopref_decode_tv_distance_max": 0.03210784122347832,
+        "nopref_kv_cache_bytes": 266752,
+        "num_params_total": 30539856,
+        "peak_vram_bytes": 37578524672,
+        "request_ms_median": 319.2768096923828,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0488495927882715
+      }
+    },
+    {
+      "launch_seq": 53,
+      "candidate_id": "g09-c03-low-rank-previous-position-state",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.0309857539832592,
+        "flops_per_token_measured": 161218944,
+        "kv_cache_bytes": 267264,
+        "nopref_decode_tv_distance_max": 0.025983847677707672,
+        "nopref_kv_cache_bytes": 266752,
+        "num_params_total": 38404176,
+        "peak_vram_bytes": 36832995328,
+        "request_ms_median": 331.82573318481445,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0461867343277886
+      }
+    },
+    {
+      "launch_seq": 54,
+      "candidate_id": "g09-c05-cached-layer-becomes-a-cache-free-mixer",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.024926871061325073,
+        "flops_per_token_measured": 161218944,
+        "kv_cache_bytes": 270336,
+        "nopref_decode_tv_distance_max": 0.019547851756215096,
+        "nopref_kv_cache_bytes": 269824,
+        "num_params_total": 30539856,
+        "peak_vram_bytes": 37024876544,
+        "request_ms_median": 306.5149784088135,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.049674094438909
+      }
+    },
+    {
+      "launch_seq": 55,
+      "candidate_id": "g09-c07-two-leader-follower-pairs-on-the-halved-stack",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.02900833636522293,
+        "flops_per_token_measured": 161218944,
+        "kv_cache_bytes": 203776,
+        "nopref_decode_tv_distance_max": 0.02187102846801281,
+        "nopref_kv_cache_bytes": 203776,
+        "num_params_total": 30539856,
+        "peak_vram_bytes": 37578524672,
+        "request_ms_median": 314.36920166015625,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0474449657886684
+      }
+    },
+    {
+      "launch_seq": 56,
+      "candidate_id": "g09-c02-int8-ring-payload-at-sixteen-channel-scales",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.02951289340853691,
+        "flops_per_token_measured": 164340096,
+        "kv_cache_bytes": 152576,
+        "nopref_decode_tv_distance_max": 0.02277544140815735,
+        "nopref_kv_cache_bytes": 152576,
+        "num_params_total": 30539856,
+        "peak_vram_bytes": 37578524672,
+        "request_ms_median": 377.47013568878174,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0486478528414218
+      }
+    },
+    {
+      "launch_seq": 57,
+      "candidate_id": "g09-c04-half-extent-on-the-shared-lower-pair",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.01726176217198372,
+        "flops_per_token_measured": 161206656,
+        "kv_cache_bytes": 202752,
+        "nopref_decode_tv_distance_max": 0.0178629532456398,
+        "nopref_kv_cache_bytes": 202752,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 319.42248344421387,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0417400115052544
+      }
+    },
+    {
+      "launch_seq": 58,
+      "candidate_id": "g09-c06-eighth-extent-on-the-unpaired-caches-funded-by-injection",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.04607526957988739,
+        "flops_per_token_measured": 160027200,
+        "kv_cache_bytes": 202752,
+        "nopref_decode_tv_distance_max": 0.019489392638206482,
+        "nopref_kv_cache_bytes": 202752,
+        "num_params_total": 39518320,
+        "peak_vram_bytes": 37786541568,
+        "request_ms_median": 339.2287492752075,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0307977279904832
+      }
+    },
+    {
+      "launch_seq": 59,
+      "candidate_id": "g09-c08-half-width-cached-row-by-head-geometry",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.023547150194644928,
+        "flops_per_token_measured": 161219328,
+        "kv_cache_bytes": 205824,
+        "nopref_decode_tv_distance_max": 0.023092184215784073,
+        "nopref_kv_cache_bytes": 205824,
+        "num_params_total": 30539920,
+        "peak_vram_bytes": 37647479808,
+        "request_ms_median": 360.1977825164795,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0661621317345789
+      }
+    },
+    {
+      "launch_seq": 60,
+      "candidate_id": "g10-c01-one-allocation-for-the-int8-ring-state",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.023040153086185455,
+        "flops_per_token_measured": 164340096,
+        "kv_cache_bytes": 152064,
+        "nopref_decode_tv_distance_max": 0.021794307976961136,
+        "nopref_kv_cache_bytes": 152064,
+        "num_params_total": 30539856,
+        "peak_vram_bytes": 37578524672,
+        "request_ms_median": 377.9565095901489,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.048928451301565
+      }
+    },
+    {
+      "launch_seq": 61,
+      "candidate_id": "g10-c03-eighth-extent-across-the-whole-attention-stack",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.01616717502474785,
+        "flops_per_token_measured": 155296320,
+        "kv_cache_bytes": 103424,
+        "nopref_decode_tv_distance_max": 0.01602860540151596,
+        "nopref_kv_cache_bytes": 103424,
+        "num_params_total": 39518320,
+        "peak_vram_bytes": 37786541568,
+        "request_ms_median": 333.33122730255127,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0609147983590215
+      }
+    },
+    {
+      "launch_seq": 62,
+      "candidate_id": "g10-c05-int8-ring-payload-on-the-shared-pair-lineage",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.024755282327532768,
+        "flops_per_token_measured": 161194368,
+        "kv_cache_bytes": 115712,
+        "nopref_decode_tv_distance_max": 0.01929374784231186,
+        "nopref_kv_cache_bytes": 115712,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 376.1945962905884,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0416113921188614
+      }
+    },
+    {
+      "launch_seq": 63,
+      "candidate_id": "g10-c07-block-exact-extents-on-both-pairs",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.01878342591226101,
+        "flops_per_token_measured": 161194368,
+        "kv_cache_bytes": 201728,
+        "nopref_decode_tv_distance_max": 0.01948283612728119,
+        "nopref_kv_cache_bytes": 201728,
+        "num_params_total": 30539856,
+        "peak_vram_bytes": 37578524672,
+        "request_ms_median": 313.69340419769287,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.047509831918457
+      }
+    },
+    {
+      "launch_seq": 64,
+      "candidate_id": "g10-c02-token-indexed-injection-on-the-int8-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.027839526534080505,
+        "flops_per_token_measured": 164340096,
+        "kv_cache_bytes": 152576,
+        "nopref_decode_tv_distance_max": 0.02155635505914688,
+        "nopref_kv_cache_bytes": 152576,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 381.4429044723511,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0425608752852735
+      }
+    },
+    {
+      "launch_seq": 65,
+      "candidate_id": "g10-c04-half-width-cached-row-on-the-pair-only",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.021047625690698624,
+        "flops_per_token_measured": 159818304,
+        "kv_cache_bytes": 136192,
+        "nopref_decode_tv_distance_max": 0.021071935072541237,
+        "nopref_kv_cache_bytes": 136192,
+        "num_params_total": 39223408,
+        "peak_vram_bytes": 37751741952,
+        "request_ms_median": 341.3403034210205,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0558432872320593
+      }
+    },
+    {
+      "launch_seq": 66,
+      "candidate_id": "g10-c06-uniform-pair-extent-funded-by-injection-at-the-remaining-mixers",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.020236413925886154,
+        "flops_per_token_measured": 158048640,
+        "kv_cache_bytes": 136192,
+        "nopref_decode_tv_distance_max": 0.01857716217637062,
+        "nopref_kv_cache_bytes": 136192,
+        "num_params_total": 47317072,
+        "peak_vram_bytes": 37712742400,
+        "request_ms_median": 320.8272457122803,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0545937734552782
+      }
+    },
+    {
+      "launch_seq": 67,
+      "candidate_id": "g10-c08-int8-ring-payload-on-the-two-pair-stack",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.022442486137151718,
+        "flops_per_token_measured": 161206656,
+        "kv_cache_bytes": 117760,
+        "nopref_decode_tv_distance_max": 0.019529972225427628,
+        "nopref_kv_cache_bytes": 117760,
+        "num_params_total": 30539856,
+        "peak_vram_bytes": 37578524672,
+        "request_ms_median": 372.3609447479248,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0470876312614092
+      }
+    },
+    {
+      "launch_seq": 68,
+      "candidate_id": "g11-c01-four-bit-ring-payload-on-the-shared-pair-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.10211488604545593,
+        "flops_per_token_measured": 161194368,
+        "kv_cache_bytes": 66560,
+        "nopref_decode_tv_distance_max": 0.11243455857038498,
+        "nopref_kv_cache_bytes": 66560,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 462.2824192047119,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0424224285364492
+      }
+    },
+    {
+      "launch_seq": 69,
+      "candidate_id": "g11-c03-one-allocation-for-the-two-pair-state",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.02838265523314476,
+        "flops_per_token_measured": 161206656,
+        "kv_cache_bytes": 115200,
+        "nopref_decode_tv_distance_max": 0.025520682334899902,
+        "nopref_kv_cache_bytes": 115200,
+        "num_params_total": 30539856,
+        "peak_vram_bytes": 37578524672,
+        "request_ms_median": 372.5237846374512,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0472787430031154
+      }
+    },
+    {
+      "launch_seq": 70,
+      "candidate_id": "g11-c05-scale-free-fp8-ring-on-the-fused-state",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.08870869874954224,
+        "flops_per_token_measured": 164340096,
+        "kv_cache_bytes": 135680,
+        "nopref_decode_tv_distance_max": 0.058416254818439484,
+        "nopref_kv_cache_bytes": 135680,
+        "num_params_total": 30539856,
+        "peak_vram_bytes": 37578524672,
+        "request_ms_median": 343.16956996917725,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0480217344139255
+      }
+    },
+    {
+      "launch_seq": 71,
+      "candidate_id": "g11-c07-four-bit-ring-payload-on-the-injection-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.12878307700157166,
+        "flops_per_token_measured": 164340096,
+        "kv_cache_bytes": 87040,
+        "nopref_decode_tv_distance_max": 0.15058687329292297,
+        "nopref_kv_cache_bytes": 87040,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 466.1374092102051,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0424309705037293
+      }
+    },
+    {
+      "launch_seq": 72,
+      "candidate_id": "g11-c02-intermediate-extent-rung-on-the-upper-pair",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.01722879149019718,
+        "flops_per_token_measured": 159621504,
+        "kv_cache_bytes": 97280,
+        "nopref_decode_tv_distance_max": 0.02737359330058098,
+        "nopref_kv_cache_bytes": 97280,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 373.8669157028198,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0460011933417042
+      }
+    },
+    {
+      "launch_seq": 73,
+      "candidate_id": "g11-c04-token-indexed-injection-on-the-two-pair-stack",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.03443533927202225,
+        "flops_per_token_measured": 161206656,
+        "kv_cache_bytes": 117760,
+        "nopref_decode_tv_distance_max": 0.02315821871161461,
+        "nopref_kv_cache_bytes": 117760,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 376.2521743774414,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0417585022393132
+      }
+    },
+    {
+      "launch_seq": 74,
+      "candidate_id": "g11-c06-one-absmax-per-cached-row",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.04081374406814575,
+        "flops_per_token_measured": 164340096,
+        "kv_cache_bytes": 139776,
+        "nopref_decode_tv_distance_max": 0.025050664320588112,
+        "nopref_kv_cache_bytes": 139776,
+        "num_params_total": 30539856,
+        "peak_vram_bytes": 37578524672,
+        "request_ms_median": 376.2528896331787,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0492705431935319
+      }
+    },
+    {
+      "launch_seq": 75,
+      "candidate_id": "g11-c08-scale-free-fp8-ring-on-the-unfused-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.06504416465759277,
+        "flops_per_token_measured": 164340096,
+        "kv_cache_bytes": 136192,
+        "nopref_decode_tv_distance_max": 0.06970673054456711,
+        "nopref_kv_cache_bytes": 136192,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 346.5769290924072,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0438447241283906
+      }
+    },
+    {
+      "launch_seq": 76,
+      "candidate_id": "g12-c01-four-bit-values-int8-keys-on-the-extent-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.06411207467317581,
+        "flops_per_token_measured": 159621504,
+        "kv_cache_bytes": 76800,
+        "nopref_decode_tv_distance_max": 0.13647231459617615,
+        "nopref_kv_cache_bytes": 76800,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 417.77169704437256,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0465730376362414
+      }
+    },
+    {
+      "launch_seq": 77,
+      "candidate_id": "g12-c05-four-bit-payload-on-the-upper-pair-only",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.17586885392665863,
+        "flops_per_token_measured": 161206656,
+        "kv_cache_bytes": 82432,
+        "nopref_decode_tv_distance_max": 0.1371195912361145,
+        "nopref_kv_cache_bytes": 82432,
+        "num_params_total": 30539856,
+        "peak_vram_bytes": 37578524672,
+        "request_ms_median": 414.78443145751953,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0468169070215156
+      }
+    },
+    {
+      "launch_seq": 78,
+      "candidate_id": "g12-c03-quarter-rung-on-the-lower-pair",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.03378808870911598,
+        "flops_per_token_measured": 160407936,
+        "kv_cache_bytes": 106496,
+        "nopref_decode_tv_distance_max": 0.022586308419704437,
+        "nopref_kv_cache_bytes": 106496,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 373.9628791809082,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0419071480182638
+      }
+    },
+    {
+      "launch_seq": 79,
+      "candidate_id": "g12-c07-three-eighths-off-the-upper-pair",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.024573570117354393,
+        "flops_per_token_measured": 158847360,
+        "kv_cache_bytes": 90112,
+        "nopref_decode_tv_distance_max": 0.02210894040763378,
+        "nopref_kv_cache_bytes": 90112,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 371.7987537384033,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0496209864266544
+      }
+    },
+    {
+      "launch_seq": 80,
+      "candidate_id": "g12-c02-token-indexed-injection-at-the-remaining-mixers",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.027497412636876106,
+        "flops_per_token_measured": 159621504,
+        "kv_cache_bytes": 97280,
+        "nopref_decode_tv_distance_max": 0.018429407849907875,
+        "nopref_kv_cache_bytes": 97280,
+        "num_params_total": 47317072,
+        "peak_vram_bytes": 37712742400,
+        "request_ms_median": 378.8642883300781,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.045408746516435
+      }
+    },
+    {
+      "launch_seq": 81,
+      "candidate_id": "g12-c06-token-indexed-injection-on-the-fused-two-pair-state",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.022839117795228958,
+        "flops_per_token_measured": 161206656,
+        "kv_cache_bytes": 115200,
+        "nopref_decode_tv_distance_max": 0.018179427832365036,
+        "nopref_kv_cache_bytes": 115200,
+        "num_params_total": 47317072,
+        "peak_vram_bytes": 37712742400,
+        "request_ms_median": 382.9958438873291,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0442721792507867
+      }
+    },
+    {
+      "launch_seq": 82,
+      "candidate_id": "g12-c04-four-bit-payload-at-eight-channel-scales",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.1666308492422104,
+        "flops_per_token_measured": 161194368,
+        "kv_cache_bytes": 78848,
+        "nopref_decode_tv_distance_max": 0.12029652297496796,
+        "nopref_kv_cache_bytes": 78848,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 460.35540103912354,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0419104355201954
+      }
+    },
+    {
+      "launch_seq": 83,
+      "candidate_id": "g12-c08-one-allocation-for-the-injection-funded-state",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.031024662777781487,
+        "flops_per_token_measured": 161206656,
+        "kv_cache_bytes": 115200,
+        "nopref_decode_tv_distance_max": 0.02310028299689293,
+        "nopref_kv_cache_bytes": 115200,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 375.83601474761963,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0417187508351657
+      }
+    },
+    {
+      "launch_seq": 84,
+      "candidate_id": "g13-c01-one-allocation-for-the-three-eighths-state",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.02120824158191681,
+        "flops_per_token_measured": 158847360,
+        "kv_cache_bytes": 87552,
+        "nopref_decode_tv_distance_max": 0.023592408746480942,
+        "nopref_kv_cache_bytes": 87552,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 371.3306188583374,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0504695378525177
+      }
+    },
+    {
+      "launch_seq": 85,
+      "candidate_id": "g13-c03-quarter-rung-on-the-lower-pair-of-the-injected-member",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.021603548899292946,
+        "flops_per_token_measured": 158835072,
+        "kv_cache_bytes": 88064,
+        "nopref_decode_tv_distance_max": 0.0232736524194479,
+        "nopref_kv_cache_bytes": 88064,
+        "num_params_total": 47317072,
+        "peak_vram_bytes": 37712742400,
+        "request_ms_median": 376.758337020874,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0466000181550101
+      }
+    },
+    {
+      "launch_seq": 86,
+      "candidate_id": "g13-c05-three-eighths-off-the-widest-slot",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.02165873348712921,
+        "flops_per_token_measured": 158048640,
+        "kv_cache_bytes": 78848,
+        "nopref_decode_tv_distance_max": 0.02125435322523117,
+        "nopref_kv_cache_bytes": 78848,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 369.06445026397705,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0494774225910852
+      }
+    },
+    {
+      "launch_seq": 87,
+      "candidate_id": "g13-c07-quarter-rung-on-the-widest-slot-of-the-fused-state",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.021930892020463943,
+        "flops_per_token_measured": 159633792,
+        "kv_cache_bytes": 96768,
+        "nopref_decode_tv_distance_max": 0.02006411924958229,
+        "nopref_kv_cache_bytes": 96768,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 373.42309951782227,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0460589200439094
+      }
+    },
+    {
+      "launch_seq": 88,
+      "candidate_id": "g13-c02-token-indexed-injection-at-the-last-two-mixers",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.02392238937318325,
+        "flops_per_token_measured": 158847360,
+        "kv_cache_bytes": 90112,
+        "nopref_decode_tv_distance_max": 0.01761506125330925,
+        "nopref_kv_cache_bytes": 90112,
+        "num_params_total": 47317072,
+        "peak_vram_bytes": 37712742400,
+        "request_ms_median": 377.71010398864746,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0498188776427035
+      }
+    },
+    {
+      "launch_seq": 89,
+      "candidate_id": "g13-c04-one-shared-token-anchored-previous-position",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.028773335739970207,
+        "flops_per_token_measured": 159621504,
+        "kv_cache_bytes": 94208,
+        "nopref_decode_tv_distance_max": 0.024239499121904373,
+        "nopref_kv_cache_bytes": 94208,
+        "num_params_total": 47317072,
+        "peak_vram_bytes": 36907436032,
+        "request_ms_median": 376.9717216491699,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.053378682070767
+      }
+    },
+    {
+      "launch_seq": 90,
+      "candidate_id": "g13-c06-one-shared-token-anchored-previous-position-unfunded",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.02246110327541828,
+        "flops_per_token_measured": 160407936,
+        "kv_cache_bytes": 103424,
+        "nopref_decode_tv_distance_max": 0.024433527141809464,
+        "nopref_kv_cache_bytes": 103424,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 36840327168,
+        "request_ms_median": 374.5235204696655,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0504052137824906
+      }
+    },
+    {
+      "launch_seq": 91,
+      "candidate_id": "g13-c08-one-absmax-per-cached-row-on-the-fused-state",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.03128225356340408,
+        "flops_per_token_measured": 161206656,
+        "kv_cache_bytes": 105984,
+        "nopref_decode_tv_distance_max": 0.022936375811696053,
+        "nopref_kv_cache_bytes": 105984,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 376.19829177856445,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.041399528753365
+      }
+    },
+    {
+      "launch_seq": 92,
+      "candidate_id": "g14-c01-one-absmax-per-cached-row-on-the-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.05605171620845795,
+        "flops_per_token_measured": 158048640,
+        "kv_cache_bytes": 73728,
+        "nopref_decode_tv_distance_max": 0.022750044241547585,
+        "nopref_kv_cache_bytes": 73728,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 369.0069913864136,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0500428899625363
+      }
+    },
+    {
+      "launch_seq": 93,
+      "candidate_id": "g14-c03-sixty-four-positions-off-each-pair-of-the-injected-member",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.019968897104263306,
+        "flops_per_token_measured": 157262208,
+        "kv_cache_bytes": 69632,
+        "nopref_decode_tv_distance_max": 0.01960822567343712,
+        "nopref_kv_cache_bytes": 69632,
+        "num_params_total": 47317072,
+        "peak_vram_bytes": 37712742400,
+        "request_ms_median": 374.6962547302246,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0495459361760455
+      }
+    },
+    {
+      "launch_seq": 94,
+      "candidate_id": "g14-c07-power-of-two-cached-scale-exponents-on-the-retained-member",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.029949819669127464,
+        "flops_per_token_measured": 158847360,
+        "kv_cache_bytes": 86016,
+        "nopref_decode_tv_distance_max": 0.022699452936649323,
+        "nopref_kv_cache_bytes": 86016,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 431.1068058013916,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0494725632223407
+      }
+    },
+    {
+      "launch_seq": 95,
+      "candidate_id": "g14-c05-one-absmax-per-cached-row-on-the-fused-state",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.024287858977913857,
+        "flops_per_token_measured": 159633792,
+        "kv_cache_bytes": 89088,
+        "nopref_decode_tv_distance_max": 0.02106272242963314,
+        "nopref_kv_cache_bytes": 89088,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 372.6165294647217,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0459630361683285
+      }
+    },
+    {
+      "launch_seq": 96,
+      "candidate_id": "g14-c02-one-allocation-for-the-leader-state",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "decode_tv_distance_max": 0.019056012853980064,
+        "flops_per_token_measured": 158048640,
+        "kv_cache_bytes": 78336,
+        "nopref_decode_tv_distance_max": 0.02028103917837143,
+        "nopref_kv_cache_bytes": 78336,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 370.24712562561035,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0501923419089512
+      }
+    },
+    {
+      "launch_seq": 97,
+      "candidate_id": "g14-c04-power-of-two-cached-scale-exponents-on-the-injected-member",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.029215674847364426,
+        "flops_per_token_measured": 158835072,
+        "kv_cache_bytes": 83968,
+        "nopref_decode_tv_distance_max": 0.023730803281068802,
+        "nopref_kv_cache_bytes": 83968,
+        "num_params_total": 47317072,
+        "peak_vram_bytes": 37712742400,
+        "request_ms_median": 437.7342462539673,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0483887855487728
+      }
+    },
+    {
+      "launch_seq": 98,
+      "candidate_id": "g14-c08-int8-packed-retained-previous-position",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.028904244303703308,
+        "flops_per_token_measured": 158847360,
+        "kv_cache_bytes": 88576,
+        "nopref_decode_tv_distance_max": 0.020612414926290512,
+        "nopref_kv_cache_bytes": 88576,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 420.1253652572632,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0495319842606563
+      }
+    },
+    {
+      "launch_seq": 99,
+      "candidate_id": "g14-c06-sixty-four-positions-off-each-slot-of-the-fused-state",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "decode_tv_distance_max": 0.019262466579675674,
+        "flops_per_token_measured": 158060928,
+        "kv_cache_bytes": 78336,
+        "nopref_decode_tv_distance_max": 0.02802063152194023,
+        "nopref_kv_cache_bytes": 78336,
+        "num_params_total": 38928464,
+        "peak_vram_bytes": 37645633536,
+        "request_ms_median": 370.0699806213379,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0491840138423978
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://autoarena/benchmark/schema/launch.schema.json",
+  "title": "AutoArena launch ledger row",
+  "description": "One line of runs/<run>/launches.jsonl, written by the engine. Append-only, single writer, flush after each append. Three row types: intent (before the launch), result (after it exits), adjudication (a correction, which supersedes an earlier row for the same launch_uuid without deleting it). Methods submit candidates through the experiment API; the engine records their research logs and measured results here.",
+  "oneOf": [
+    {"$ref": "#/$defs/intent"},
+    {"$ref": "#/$defs/result"},
+    {"$ref": "#/$defs/adjudication"}
+  ],
+  "$defs": {
+    "intent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "launch_seq", "launch_uuid", "candidate_id", "started_at"],
+      "if": {
+        "properties": {"is_reference_launch": {"const": true}},
+        "required": ["is_reference_launch"]
+      },
+      "else": {"required": ["research_log"]},
+      "properties": {
+        "record_type": {"const": "intent"},
+        "launch_seq": {"type": "integer", "minimum": 1, "description": "attempt ordinal, never reused, so a refunded attempt keeps a stable identity"},
+        "launch_uuid": {"type": "string", "minLength": 8},
+        "candidate_id": {"type": "string"},
+        "parent_id": {"type": ["string", "null"]},
+        "is_reference_launch": {"type": "boolean"},
+        "started_at": {"type": "string", "description": "ISO 8601 UTC"},
+        "compute_backend": {"type": ["string", "null"]},
+        "compute_handle": {"type": ["string", "null"], "description": "backend-scoped id for this launch, e.g. a queue task id"},
+        "compute_run_id": {"type": ["string", "null"], "description": "the platform's own record of the worker incarnation; the set of distinct values is the restart witness"},
+        "lane": {"type": ["string", "null"]},
+        "idea": {
+          "type": "object",
+          "description": "Optional. Free-form for a method that has cards; the harness records it and never interprets it.",
+          "additionalProperties": true
+        },
+        "research_log": {
+          "type": "object",
+          "description": "Method-authored account recorded before execution. Required for every candidate; engine reference initialization is exempt. Ideas must be nonempty. Status is optional and must be nonblank when supplied. The engine does not judge the content.",
+          "required": ["ideas"],
+          "properties": {
+            "ideas": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"oneOf": [
+                {"type": "string", "pattern": "\\S"},
+                {"type": "object", "minProperties": 1}
+              ]}
+            },
+            "status": {"type": "string", "pattern": "\\S"}
+          },
+          "additionalProperties": true
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "launch_uuid", "status", "finished_at", "metrics", "witness"],
+      "properties": {
+        "record_type": {"const": "result"},
+        "launch_uuid": {"type": "string", "minLength": 8},
+        "status": {"enum": ["ok", "oom", "crash", "fail_loss", "timeout", "preempted", "never_executed", "substrate_failure"]},
+        "exit_code": {"type": ["integer", "null"]},
+        "witness": {"type": "boolean", "description": "the substrate's gpu_work_witness string was present in this launch's own stdout; decides charging, and is tested before exit_code"},
+        "finished_at": {"type": "string"},
+        "wall_time_seconds": {"type": ["number", "null"]},
+        "metrics": {
+          "type": "object",
+          "description": "Every metric declared by the task, at declared precision. null where the launch produced no value.",
+          "additionalProperties": {"type": ["number", "integer", "boolean", "null"]}
+        },
+        "extraction_errors": {"type": "array", "items": {"type": "string"}},
+        "stdout_path": {"type": ["string", "null"]},
+        "stderr_path": {"type": ["string", "null"]},
+        "notes": {"type": "string"}
+      }
+    },
+    "adjudication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "launch_uuid", "decision", "ground", "decided_at"],
+      "properties": {
+        "record_type": {"const": "adjudication"},
+        "launch_uuid": {"type": "string", "minLength": 8},
+        "decision": {"enum": ["CHARGED", "NOT_CHARGED"]},
+        "ground": {"type": "array", "items": {"type": "string"}, "minItems": 1, "description": "why, stated so a reader who was not there can check it"},
+        "abandoned": {"type": "boolean", "description": "true settles a launch whose result cannot arrive; the decision still determines charging"},
+        "supersedes": {"type": ["string", "null"], "description": "what this row withdraws"},
+        "decided_by": {"type": "string"},
+        "decided_at": {"type": "string"}
+      }
+    }
+  }
+}

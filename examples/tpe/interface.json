@@ -1,0 +1,45 @@
+{
+  "id": "tpe",
+  "entry_type": "cli",
+  "environment": {
+    "setup": [
+      [
+        "{uv}",
+        "venv",
+        "--no-project",
+        "--seed",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      [
+        "{uv}",
+        "pip",
+        "install",
+        "--python",
+        ".venv/bin/python",
+        "-r",
+        "requirements.txt"
+      ],
+      [
+        ".venv/bin/python",
+        "install.py"
+      ]
+    ],
+    "check": [
+      ".venv/bin/python",
+      "adapter.py",
+      "--check"
+    ]
+  },
+  "start": [
+    ".venv/bin/python",
+    "adapter.py"
+  ],
+  "resume": [
+    ".venv/bin/python",
+    "adapter.py",
+    "--resume"
+  ],
+  "workers": 1
+}

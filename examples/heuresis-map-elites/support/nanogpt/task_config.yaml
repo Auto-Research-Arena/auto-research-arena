@@ -1,0 +1,3 @@
+# run.py supplies the task description, verification rules and novelty context.
+name: autoarena
+editable: train.py

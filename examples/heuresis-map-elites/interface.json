@@ -1,0 +1,14 @@
+{
+  "id": "heuresis-map-elites",
+  "entry_type": "cli",
+  "environment": {
+    "setup": [
+      ["{uv}", "venv", "--no-project", "--seed", "--python", "3.12", ".venv"],
+      [".venv/bin/python", "install.py"]
+    ],
+    "check": [".venv/bin/python", "run.py", "--check"]
+  },
+  "start": [".venv/bin/python", "run.py"],
+  "resume": [".venv/bin/python", "run.py", "--resume"],
+  "workers": 1
+}

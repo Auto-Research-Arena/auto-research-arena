@@ -1,0 +1,4 @@
+optuna==4.8.0
+ConfigSpace==1.2.2
+numpy==2.4.3
+pandas==3.0.1

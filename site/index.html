@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="AutoArena benchmarks automated research across nine efficiency targets. Compare methods, overall Elo ratings and experiment progress.">
+  <title>AutoArena · Automated Research Benchmark</title>
+  <link rel="stylesheet" href="site.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#leaderboard">Skip to leaderboard</a>
+  <header class="topbar">
+    <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true"><path d="M3 22 11 6h6l8 16h-6l-5-10-5 10Z" fill="currentColor"/><path d="M11 20h6v3h-6z" fill="currentColor" opacity=".4"/></svg>AutoArena</a>
+    <nav aria-label="Main navigation"><a href="#leaderboard">Leaderboard</a><a href="#target-details">By target</a><a href="submit.html">Submit a result <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">The automated research benchmark</p>
+      <h1 id="page-title">Auto<span>Arena</span></h1>
+      <p class="hero-title">Evaluating automated research for efficient AI</p>
+      <p class="hero-description">A benchmark for automated methods that improve the efficiency of language models.<br class="wide-only"> Nine targets, fixed experiment budgets, and reproducible results.</p>
+      <div class="resource-links">
+        <a href="https://github.com/Auto-Research-Arena/auto-research-arena"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 5-5 5 5 5m8-10 5 5-5 5M12 3 8 17"/></svg>Code</a>
+        <a href="https://github.com/Auto-Research-Arena/auto-research-arena/tree/master/tasks"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 2h9l4 4v12H4ZM13 2v5h4M7 10h7M7 14h7"/></svg>Tasks</a>
+        <a href="submit.html" class="primary"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 14V2m-4 4 4-4 4 4M3 12v6h14v-6"/></svg>Submit a result</a>
+      </div>
+      <p class="collection-meta"><span id="method-count">—</span> methods <span class="meta-separator">/</span> <span id="task-count">9</span> targets <span class="meta-separator">/</span> <span id="run-count">—</span> accepted runs</p>
+    </section>
+
+    <section id="leaderboard" aria-labelledby="board-title">
+      <div class="section-heading"><div><h2 id="board-title">Overall leaderboard</h2><p>Compare the best accepted results across all nine efficiency targets.</p></div><a class="quiet-link" href="leaderboard.json">Data <span aria-hidden="true">↓</span></a></div>
+      <div class="matrix-scroll" tabindex="0" role="region" aria-label="Overall leaderboard; scroll horizontally for all targets">
+        <table class="matrix">
+          <caption class="sr-only">Methods ranked by overall Elo, with open-source availability, best value and rank for every target</caption>
+          <thead><tr id="matrix-head"><th scope="col" class="overall-rank">#</th><th scope="col" class="method-column">Method</th><th scope="col" class="elo-column">Overall Elo <a class="info-link" href="#elo-method" aria-label="How overall Elo is calculated">?</a></th><th scope="col" class="source-column">Open source</th></tr></thead>
+          <tbody id="matrix-body"></tbody>
+        </table>
+      </div>
+      <div class="matrix-notes"><p>Values ↓ lower is better <span class="note-separator">·</span> <span class="rank-key">#1</span> best on target <span class="note-separator">·</span> Click a value to inspect its run</p><p id="coverage-note">Missing targets are excluded from Elo; coverage appears below each method.</p></div>
+      <details id="elo-method" class="rating-method">
+        <summary>How overall Elo is calculated</summary>
+        <p>Each pair of methods is compared on the final target values of its best run. A lower value wins; equal values tie. Every included target receives the same nominal weight: 1/9 across all nine targets. Missing targets are excluded.</p>
+        <p>Training time is rounded to the nearest 30-second checkpoint with 30 × floor(seconds / 30 + 0.5) for ranking, tables and curves. Matching checkpoints tie; other targets retain their task’s tiebreaks. Downloaded submission JSON preserves raw measurements. Only selected endpoints enter Elo, without adjustments for search budget or reference scores.</p>
+        <p>A comparison’s update reflects its proportional improvement: the absolute log ratio is divided by the target’s median nonzero pairwise log gap, transformed with log₂(1 + gap), and capped at 3. Exact ties make no update.</p>
+        <p>Ratings start at 1500 and use standard Elo updates with K = 32 and a 400-point scale. We average 4,000 shuffled comparison orders with seed 20260902. Equal and opposite updates keep the cohort mean at 1500; there is no fixed maximum. <a href="ranking.json">Download full-precision ratings and calculation settings</a>. The exported match-order standard deviation describes sensitivity to comparison order, not experimental uncertainty.</p>
+        <p id="elo-status"></p>
+      </details>
+    </section>
+
+    <section id="target-details" aria-labelledby="details-title">
+      <div class="section-heading"><div><h2 id="details-title">Performance by target</h2><p>Best qualifying result as the experiment budget is spent.</p></div><button id="reset-comparison" class="quiet-button" type="button">Show all methods</button></div>
+      <div id="target-tabs" class="target-tabs" role="group" aria-label="Efficiency target"></div>
+      <p id="target-description" class="target-description"></p>
+      <div class="figure-card">
+        <div class="figure-heading"><div><h3 id="chart-title-text"></h3><span id="chart-unit"></span></div><label class="point-toggle"><input type="checkbox" id="show-points"> Individual experiments</label></div>
+        <div class="figure-layout"><div class="plot-wrap"><div id="chart" class="chart"></div><div id="chart-tooltip" class="chart-tooltip" hidden></div></div><aside id="legend" class="legend" aria-label="Toggle runs in the chart"></aside></div>
+        <p class="figure-note">Steps count charged launches, including the reference and failures. Each line ends when that run ends.</p>
+      </div>
+      <details class="run-records"><summary>Run records <span id="report-count"></span></summary><div class="records-scroll"><table><caption class="sr-only">All accepted runs for the selected target</caption><thead><tr><th scope="col">Method / run</th><th scope="col">Best value</th><th scope="col">Budget used</th><th scope="col">Research model</th><th scope="col">Evidence</th></tr></thead><tbody id="run-records"></tbody></table></div></details>
+    </section>
+    <noscript><p class="notice">Enable JavaScript to explore the leaderboard, or download <a href="leaderboard.json">the data</a>.</p></noscript>
+  </main>
+  <footer><a class="brand" href="index.html">AutoArena</a><p>Methods own research. The benchmark owns measurement.</p><a href="submit.html">Submission guide ↗</a></footer>
+  <script id="leaderboard-data" type="application/json">LEADERBOARD_DATA</script>
+</body>
+</html>

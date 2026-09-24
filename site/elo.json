@@ -1,0 +1,25 @@
+{
+  "method_order": [
+    "sequential-search",
+    "beam-search",
+    "autoscientists",
+    "arbor",
+    "gear",
+    "heuresis-map-elites",
+    "tpe"
+  ],
+  "target_order": [
+    "params",
+    "flops",
+    "memory",
+    "traintime",
+    "steps",
+    "data",
+    "kvcache",
+    "decode",
+    "request"
+  ],
+  "rounding_steps": {
+    "traintime": 30
+  }
+}

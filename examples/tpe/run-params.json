@@ -1,0 +1,22 @@
+{
+  "task": "params",
+  "method": "examples/tpe/interface.json",
+  "source": "examples/tpe",
+  "run_dir": "runs/tpe-params-local-demo",
+  "compute": {
+    "backend": "local",
+    "visible_devices": [
+      3
+    ],
+    "mounts": {
+      "~/.cache/autoresearch": "data/autoresearch"
+    },
+    "env": {
+      "UV_PROJECT_ENVIRONMENT": ".local/measurement",
+      "UV_NO_SYNC": "1"
+    }
+  },
+  "research_llm": {
+    "used": false
+  }
+}

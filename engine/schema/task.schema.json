@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://autoarena/tasks/schema/task.schema.json",
+  "title": "AutoArena task definition",
+  "description": "Structural contract for tasks/<task_id>/task.json. engine/evaluation/task.py validates metric references, objective rules and deterministic reference assertions. Declared candidate restrictions communicate the experimental boundary; schema validation does not establish candidate compliance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["task_id", "version", "title", "substrate", "launch", "budget", "metrics", "objective", "reference_launch", "report"],
+  "properties": {
+    "task_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "version": {"type": "integer", "minimum": 1},
+    "title": {"type": "string", "minLength": 1},
+    "summary": {"type": "string"},
+    "supersedes": {"type": ["string", "null"]},
+    "substrate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "source", "revision", "prepare", "entrypoint", "mutable", "immutable", "gpu_work_witness"],
+      "properties": {
+        "id": {"type": "string"},
+        "source": {"type": "string"},
+        "revision": {"type": "string", "description": "Recorded upstream revision; execution uses the packaged code/ directory."},
+        "prepare": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "entrypoint": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "mutable": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "immutable": {"type": "array", "items": {"type": "string"}},
+        "gpu_work_witness": {"type": "string", "minLength": 1},
+        "frozen_regions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["file", "region", "reason"],
+            "properties": {
+              "file": {"type": "string", "minLength": 1},
+              "region": {"type": "string", "minLength": 1},
+              "reason": {"type": "string", "minLength": 1},
+              "anchor": {"type": "string", "minLength": 1, "description": "Source locator for reading and auditing a declared protected region; not an enforced syntax-tree match."}
+            }
+          }
+        },
+        "known_constraints": {
+          "type": "array",
+          "description": "Semantic candidate restrictions and measurement scope for cooperative participants and source audits. These declarations are not an automated proof of compliance.",
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "launch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["train_seconds", "gpus_per_launch", "accelerator", "seed", "timeout_seconds"],
+      "properties": {
+        "train_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "gpus_per_launch": {"type": "integer", "minimum": 1},
+        "accelerator": {"type": "string"},
+        "seed": {"type": "integer"},
+        "timeout_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "env": {
+          "type": "object",
+          "additionalProperties": {"type": "string"},
+          "description": "Environment set for every task launch, including the reference. These values are part of the fixed measurement conditions."
+        }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_launches", "includes_failures", "includes_reference_launch", "charging_rule"],
+      "properties": {
+        "max_launches": {"type": "integer", "minimum": 1},
+        "includes_failures": {"type": "boolean"},
+        "includes_reference_launch": {"type": "boolean"},
+        "charging_rule": {"const": "gpu-work-witness"}
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "extract"],
+        "properties": {
+          "type": {"enum": ["integer", "number", "boolean"]},
+          "unit": {"type": "string"},
+          "description": {"type": "string"},
+          "deterministic": {"type": "boolean", "description": "Whether candidate source fixes the value. Only deterministic metrics may appear in reference_launch.assert_exact."},
+          "never_use": {"type": "string", "description": "A rounded or otherwise unsuitable alternative measurement that must not substitute for this metric."},
+          "cross_check": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["against", "scale", "tolerance"],
+            "properties": {
+              "against": {"type": "string"},
+              "scale": {"type": "number"},
+              "tolerance": {"type": "number"}
+            }
+          },
+          "extract": {
+            "type": "object",
+            "required": ["kind"],
+            "oneOf": [
+              {
+                "additionalProperties": false,
+                "required": ["kind", "field"],
+                "properties": {"kind": {"const": "metrics_json"}, "field": {"type": "string"}},
+                "description": "One field of the canonical METRICS_JSON record, at full precision. A JSON null is unmeasured, not zero. Parsing stdout does not authenticate which code produced the record; truthful instrument use is a candidate restriction."
+              },
+              {
+                "additionalProperties": false,
+                "required": ["kind", "field"],
+                "properties": {"kind": {"const": "summary_field"}, "field": {"type": "string"}, "strip": {"type": "array", "items": {"type": "string"}}}
+              },
+              {
+                "additionalProperties": false,
+                "required": ["kind", "block", "field"],
+                "properties": {"kind": {"const": "block_field"}, "block": {"type": "string"}, "field": {"type": "string"}, "strip": {"type": "array", "items": {"type": "string"}}}
+              },
+              {
+                "additionalProperties": false,
+                "required": ["kind", "file", "name"],
+                "properties": {"kind": {"const": "source_constant"}, "file": {"type": "string"}, "name": {"type": "string"}}
+              },
+              {
+                "additionalProperties": false,
+                "required": ["kind", "file", "pattern"],
+                "properties": {"kind": {"const": "source_regex"}, "file": {"type": "string"}, "pattern": {"type": "string"}},
+                "description": "A boolean pattern match over the candidate's source. A heuristic, so it may record a fact but never decide one: it cannot be an objective metric or a ceiling."
+              },
+              {
+                "additionalProperties": false,
+                "required": ["kind", "factors"],
+                "properties": {"kind": {"const": "product"}, "factors": {"type": "array", "items": {"type": "string"}, "minItems": 2}}
+              }
+            ]
+          }
+        }
+      }
+    },
+    "objective": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["comparison_mode", "target", "quality_gate", "tiebreaks", "constraints"],
+      "properties": {
+        "comparison_mode": {"const": "gated"},
+        "target": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["metric", "direction"],
+          "properties": {
+            "metric": {"type": "string"},
+            "direction": {"enum": ["minimize", "maximize"]}
+          }
+        },
+        "quality_gate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["metric", "operator", "value"],
+          "properties": {
+            "metric": {"type": "string"},
+            "operator": {"enum": ["<", "<=", ">", ">=", "=="]},
+            "value": {"type": "number"}
+          }
+        },
+        "tiebreaks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["metric", "direction"],
+            "properties": {
+              "metric": {"type": "string"},
+              "direction": {"enum": ["minimize", "maximize"]}
+            }
+          }
+        },
+        "constraints": {"type": "array", "items": {"$ref": "#/$defs/ceiling"}}
+      }
+    },
+    "reference_launch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["position", "assert_exact"],
+      "properties": {
+        "position": {"const": 1},
+        "assert_exact": {"type": "object", "minProperties": 1, "additionalProperties": {"type": ["integer", "number", "boolean"]}}
+      }
+    },
+    "report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["headline", "columns"],
+      "properties": {
+        "headline": {"type": "string"},
+        "headline_direction": {"enum": ["minimize", "maximize"]},
+        "columns": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      }
+    }
+  },
+  "$defs": {
+    "ceiling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["metric", "operator", "value", "basis"],
+      "properties": {
+        "metric": {"type": "string"},
+        "operator": {"enum": ["<", "<=", ">", ">=", "=="]},
+        "value": {"type": "number"},
+        "basis": {"type": "string", "description": "How the constraint bound was chosen."}
+      }
+    }
+  }
+}

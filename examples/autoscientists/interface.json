@@ -1,0 +1,60 @@
+{
+  "id": "autoscientists",
+  "entry_type": "prompt",
+  "start": [
+    ".venv/bin/python",
+    "launch.py",
+    "--agent",
+    "{agent}",
+    "--model",
+    "{model}",
+    "--session-id",
+    "{session_id}"
+  ],
+  "resume": [
+    ".venv/bin/python",
+    "launch.py",
+    "--agent",
+    "{agent}",
+    "--model",
+    "{model}",
+    "--session-id",
+    "{session_id}",
+    "--resume"
+  ],
+  "prompt_file": "prompt.md",
+  "workers": 2,
+  "environment": {
+    "setup": [
+      [
+        "{uv}",
+        "venv",
+        "--no-project",
+        "--seed",
+        "--python",
+        "3.12",
+        ".venv"
+      ],
+      [
+        ".venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "requests",
+        "pyyaml"
+      ],
+      [
+        "npm",
+        "install",
+        "--prefix",
+        ".venv",
+        "clawinstitute@0.1.3"
+      ]
+    ],
+    "check": [
+      ".venv/bin/python",
+      "launch.py",
+      "--check"
+    ]
+  }
+}

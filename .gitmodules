@@ -1,0 +1,15 @@
+[submodule "examples/heuresis-map-elites/upstream"]
+	path = examples/heuresis-map-elites/upstream
+	url = https://github.com/a-antoniades/Heuresis
+[submodule "examples/gear/upstream"]
+	path = examples/gear/upstream
+	url = https://github.com/nm-le/genetic-autoresearch
+[submodule "examples/tpe/upstream"]
+	path = examples/tpe/upstream
+	url = https://github.com/ferreirafabio/autoresearch-automl
+[submodule "examples/autoscientists/upstream"]
+	path = examples/autoscientists/upstream
+	url = https://github.com/mims-harvard/AutoScientists
+[submodule "examples/arbor/upstream"]
+	path = examples/arbor/upstream
+	url = https://github.com/RUC-NLPIR/Arbor

@@ -1,0 +1,1499 @@
+{
+  "schema": "autoarena/site-submission/1",
+  "run_id": "beam-search--memory",
+  "method_id": "beam-search",
+  "task_id": "memory",
+  "metric": "peak_vram_bytes",
+  "unit": "bytes",
+  "direction": "minimize",
+  "best_value": 1020860928,
+  "reference_value": 47198976512,
+  "relative_improvement": 0.9783711215064069,
+  "rank_key": [
+    1020860928.0,
+    238813184.0,
+    -0.014643390739156992
+  ],
+  "best_launch_seq": 90,
+  "best_candidate_id": "g13-normstore-on-qkfold-recomp",
+  "best_is_reference": false,
+  "budget": {
+    "spent": 97,
+    "max_launches": 100
+  },
+  "compute": {
+    "backend": "pluto",
+    "gpu_instance_type": "p4de.24xlarge",
+    "gpu_model": [
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB"
+    ],
+    "workers": 4,
+    "gpus_per_evaluation": 1,
+    "evaluation_capacity_gpus": 4
+  },
+  "research_llm": {
+    "model": "us.anthropic.claude-opus-5[1m]",
+    "provider": null
+  },
+  "evaluation_gpu_hours": 18.645728055555555,
+  "measurements": [
+    {
+      "launch_seq": 1,
+      "candidate_id": "reference",
+      "is_reference": true,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47198976512,
+        "total_tokens": 393216000,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0479148261716467
+      }
+    },
+    {
+      "launch_seq": 2,
+      "candidate_id": "g1-chunked-head",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47337650688,
+        "total_tokens": 372768768,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.017229497196619
+      }
+    },
+    {
+      "launch_seq": 3,
+      "candidate_id": "g1-mlp-recompute",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 39668103680,
+        "total_tokens": 394788864,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0461142346334242
+      }
+    },
+    {
+      "launch_seq": 4,
+      "candidate_id": "g2-microbatch-64",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 20140472832,
+        "total_tokens": 380108800,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0327008923578442
+      }
+    },
+    {
+      "launch_seq": 5,
+      "candidate_id": "g2-norm-folded-proj",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 42876744192,
+        "total_tokens": 396886016,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0449321162436676
+      }
+    },
+    {
+      "launch_seq": 6,
+      "candidate_id": "g2-mlp-recompute-on-head",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 39806777856,
+        "total_tokens": 380633088,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0155289737241588
+      }
+    },
+    {
+      "launch_seq": 7,
+      "candidate_id": "g2-qk-rotary-norm-fold",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 35373136384,
+        "total_tokens": 404226048,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0428410850385152
+      }
+    },
+    {
+      "launch_seq": 8,
+      "candidate_id": "g2-ve-gather-recompute",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 46125234688,
+        "total_tokens": 175112192,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.1297153810666818
+      }
+    },
+    {
+      "launch_seq": 9,
+      "candidate_id": "g2-microbatch-32-on-head",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 11955918336,
+        "total_tokens": 373293056,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0273008067545353
+      }
+    },
+    {
+      "launch_seq": 10,
+      "candidate_id": "g3-mlp-recompute-on-mb32-head",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 10062190080,
+        "total_tokens": 361758720,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.030525429753876
+      }
+    },
+    {
+      "launch_seq": 11,
+      "candidate_id": "g3-microbatch-16-chunked-head",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 5238965760,
+        "total_tokens": 359137280,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.027390762051155
+      }
+    },
+    {
+      "launch_seq": 12,
+      "candidate_id": "g3-qk-fold-32-chunked-head",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 8988448256,
+        "total_tokens": 383778816,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.026305582902841
+      }
+    },
+    {
+      "launch_seq": 13,
+      "candidate_id": "g3-resid-mix-norm-recompute",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 33466823168,
+        "total_tokens": 385875968,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0490433892699744
+      }
+    },
+    {
+      "launch_seq": 14,
+      "candidate_id": "g3-microbatch-16-on-head",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 6193169920,
+        "total_tokens": 362807296,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0270630831981074
+      }
+    },
+    {
+      "launch_seq": 15,
+      "candidate_id": "g3-train-seqlen-1024-reshape",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 226495488,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 20140472832,
+        "total_tokens": 408944640,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0364837570400691
+      }
+    },
+    {
+      "launch_seq": 16,
+      "candidate_id": "g3-norm-fold-on-qk-fold",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 31050904064,
+        "total_tokens": 401604608,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0423602652508144
+      }
+    },
+    {
+      "launch_seq": 17,
+      "candidate_id": "g3-half-step-token-granularity",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 39508717056,
+        "total_tokens": 392953856,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 0.9991847079293891
+      }
+    },
+    {
+      "launch_seq": 18,
+      "candidate_id": "g4-microbatch-4-chunked-head",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 4978483712,
+        "total_tokens": 261619712,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.049426382712537
+      }
+    },
+    {
+      "launch_seq": 19,
+      "candidate_id": "g4-norm-fold-16-on-head",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 5629033984,
+        "total_tokens": 360710144,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.029896783134094
+      }
+    },
+    {
+      "launch_seq": 20,
+      "candidate_id": "g4-qk-fold-16-chunked-head",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 4978876928,
+        "total_tokens": 364380160,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0264315441729976
+      }
+    },
+    {
+      "launch_seq": 21,
+      "candidate_id": "g4-mix-norm-fold-mb32-head",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 8491421184,
+        "total_tokens": 358088704,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.034046778822447
+      }
+    },
+    {
+      "launch_seq": 22,
+      "candidate_id": "g4-half-batch-tokens-mb16",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 5238965760,
+        "total_tokens": 346816512,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.01959475419863
+      }
+    },
+    {
+      "launch_seq": 23,
+      "candidate_id": "g4-microbatch-8-on-head",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 4978614784,
+        "total_tokens": 331350016,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.033299535064629
+      }
+    },
+    {
+      "launch_seq": 24,
+      "candidate_id": "g4-head-chunk-1024-on-qk-fold",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 9337584128,
+        "total_tokens": 368574464,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0178100495907012
+      }
+    },
+    {
+      "launch_seq": 25,
+      "candidate_id": "g4-fp8-mlp-retention-mb32",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 26,
+      "candidate_id": "g5-eval-rowblock-mb4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1913043456,
+        "total_tokens": 266338304,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.047215652145669
+      }
+    },
+    {
+      "launch_seq": 27,
+      "candidate_id": "g5-eval-rowblock-mb8",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 4459141120,
+        "total_tokens": 335020032,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.032835692716447
+      }
+    },
+    {
+      "launch_seq": 28,
+      "candidate_id": "g5-mix-norm-fold-evalblock-16",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 3903077888,
+        "total_tokens": 363855872,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0345700368841926
+      }
+    },
+    {
+      "launch_seq": 29,
+      "candidate_id": "g5-qk-fold-evalblock-halfbatch",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 4702094848,
+        "total_tokens": 359399424,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0188743674253324
+      }
+    },
+    {
+      "launch_seq": 30,
+      "candidate_id": "g5-half-update-tokens-mb4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 4978483712,
+        "total_tokens": 261619712,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.029787212515777
+      }
+    },
+    {
+      "launch_seq": 31,
+      "candidate_id": "g5-mlp-fold-evalblock-mb8",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 3016097280,
+        "total_tokens": 325582848,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0343569882288841
+      }
+    },
+    {
+      "launch_seq": 32,
+      "candidate_id": "g5-rows-8-evalblock-qk16",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 2747661824,
+        "total_tokens": 339214336,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0322348849654683
+      }
+    },
+    {
+      "launch_seq": 33,
+      "candidate_id": "g5-rows-8-evalblock-halfbatch",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 3016097280,
+        "total_tokens": 328728576,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0212812938071887
+      }
+    },
+    {
+      "launch_seq": 34,
+      "candidate_id": "g6-qk-fold-evalblock-mb4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1778825728,
+        "total_tokens": 254279680,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0505991774614087
+      }
+    },
+    {
+      "launch_seq": 35,
+      "candidate_id": "g6-normfold-qk16-mb8",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 2451961344,
+        "total_tokens": 334495744,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0393151481635554
+      }
+    },
+    {
+      "launch_seq": 36,
+      "candidate_id": "g6-mixnorm-fold-mlpfold-mb8",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 2602956288,
+        "total_tokens": 324009984,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0394269839314054
+      }
+    },
+    {
+      "launch_seq": 37,
+      "candidate_id": "g6-fc-recompute-span-refund",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 2600861184,
+        "total_tokens": 319029248,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0224857729608128
+      }
+    },
+    {
+      "launch_seq": 38,
+      "candidate_id": "g6-halfupdate-evalblock-mb4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1913043456,
+        "total_tokens": 256638976,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0306155362734546
+      }
+    },
+    {
+      "launch_seq": 39,
+      "candidate_id": "g6-int8-relu-retention-qk16",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 2412379648,
+        "total_tokens": 328728576,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0350906187255449
+      }
+    },
+    {
+      "launch_seq": 40,
+      "candidate_id": "g6-head-inplace-grad-mb8",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 3318087168,
+        "total_tokens": 276299776,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0554938823255915
+      }
+    },
+    {
+      "launch_seq": 41,
+      "candidate_id": "g6-muon-ramp-token-basis-mb8",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 3016097280,
+        "total_tokens": 324009984,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.023580745393145
+      }
+    },
+    {
+      "launch_seq": 42,
+      "candidate_id": "g7-headchunk1024-mb4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1807115776,
+        "total_tokens": 242745344,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0350688479442074
+      }
+    },
+    {
+      "launch_seq": 43,
+      "candidate_id": "g7-normfold-int8-qk16",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 2115630592,
+        "total_tokens": 332922880,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0399872639293843
+      }
+    },
+    {
+      "launch_seq": 44,
+      "candidate_id": "g7-halfupdate-normfold-qk16",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 2451961344,
+        "total_tokens": 329252864,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0243782196671956
+      }
+    },
+    {
+      "launch_seq": 45,
+      "candidate_id": "g7-qkfold-fcrecompute",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 2332425728,
+        "total_tokens": 326369280,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.023257765101329
+      }
+    },
+    {
+      "launch_seq": 46,
+      "candidate_id": "g7-int8-relu-mb4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1745402368,
+        "total_tokens": 251133952,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0316154416471741
+      }
+    },
+    {
+      "launch_seq": 47,
+      "candidate_id": "g7-fcrecompute-int8-qk16",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 2198273536,
+        "total_tokens": 330301440,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0342717346883477
+      }
+    },
+    {
+      "launch_seq": 48,
+      "candidate_id": "g7-mixfold-normfold-qk16",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 2334520832,
+        "total_tokens": 329252864,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0402671339634435
+      }
+    },
+    {
+      "launch_seq": 49,
+      "candidate_id": "g7-bf16-matrix-params",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 2426696192,
+        "total_tokens": 330301440,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0213782628672425
+      }
+    },
+    {
+      "launch_seq": 50,
+      "candidate_id": "g8-bf16-matrix-params-mb4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1558654464,
+        "total_tokens": 276824064,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0334018555005193
+      }
+    },
+    {
+      "launch_seq": 51,
+      "candidate_id": "g8-int8-headchunk1024-mb4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1639474688,
+        "total_tokens": 249298944,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.031001630851626
+      }
+    },
+    {
+      "launch_seq": 52,
+      "candidate_id": "g8-fcrecompute-span-mb4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1699133952,
+        "total_tokens": 257425408,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0323350137334042
+      }
+    },
+    {
+      "launch_seq": 53,
+      "candidate_id": "g8-int4-relu-qk16",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1981412864,
+        "total_tokens": 327155712,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.042374371584014
+      }
+    },
+    {
+      "launch_seq": 54,
+      "candidate_id": "g8-qkfold-int8-mb4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1611184640,
+        "total_tokens": 265551872,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0263727322863194
+      }
+    },
+    {
+      "launch_seq": 55,
+      "candidate_id": "g8-head-inplace-grads-1024",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1807115776,
+        "total_tokens": 257687552,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.032751517970681
+      }
+    },
+    {
+      "launch_seq": 56,
+      "candidate_id": "g8-normfold-mb4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1751560704,
+        "total_tokens": 261619712,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0293129144844189
+      }
+    },
+    {
+      "launch_seq": 57,
+      "candidate_id": "g8-mixfold-normfold-int8",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1998190080,
+        "total_tokens": 329252864,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0398876580521021
+      }
+    },
+    {
+      "launch_seq": 58,
+      "candidate_id": "g9-qkfold-bf16-mb4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1424436736,
+        "total_tokens": 285736960,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0322372480904396
+      }
+    },
+    {
+      "launch_seq": 59,
+      "candidate_id": "g9-normfold-qkfold-int8",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1449701888,
+        "total_tokens": 264765440,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.026629564248047
+      }
+    },
+    {
+      "launch_seq": 60,
+      "candidate_id": "g9-bf16-params-hc1024",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1452726784,
+        "total_tokens": 278921216,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0314269731123986
+      }
+    },
+    {
+      "launch_seq": 61,
+      "candidate_id": "g9-bf16-params-fcrecomp",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1524968960,
+        "total_tokens": 282853376,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0365175447218913
+      }
+    },
+    {
+      "launch_seq": 62,
+      "candidate_id": "g9-spanclamp-only-bf16",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 226495488,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1558654464,
+        "total_tokens": 287309824,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0329047835045326
+      }
+    },
+    {
+      "launch_seq": 63,
+      "candidate_id": "g9-headchunk1024-qkfold",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1505256960,
+        "total_tokens": 257425408,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0278358303884678
+      }
+    },
+    {
+      "launch_seq": 64,
+      "candidate_id": "g9-headchunk256-int8",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1808039424,
+        "total_tokens": 228327424,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0396207399449924
+      }
+    },
+    {
+      "launch_seq": 65,
+      "candidate_id": "g9-qkfold-fcrecomp-mb4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1564916224,
+        "total_tokens": 264241152,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0292186386839648
+      }
+    },
+    {
+      "launch_seq": 66,
+      "candidate_id": "g10-normfold-qkfold-bf16",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1290219008,
+        "total_tokens": 279969792,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0304297780374854
+      }
+    },
+    {
+      "launch_seq": 67,
+      "candidate_id": "g10-hc1024-normfold-qkfold",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1343774208,
+        "total_tokens": 241172480,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.032001218870122
+      }
+    },
+    {
+      "launch_seq": 68,
+      "candidate_id": "g10-normfold-bf16-hc1024",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1318509056,
+        "total_tokens": 270794752,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0320586697501697
+      }
+    },
+    {
+      "launch_seq": 69,
+      "candidate_id": "g10-bf16-qkfold-hc1024",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1318509056,
+        "total_tokens": 271843328,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0302937146476903
+      }
+    },
+    {
+      "launch_seq": 70,
+      "candidate_id": "g10-halfupdate-qkfold-bf16",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1424436736,
+        "total_tokens": 273809408,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0259975002023827
+      }
+    },
+    {
+      "launch_seq": 71,
+      "candidate_id": "g10-mixfold-normfold-mb4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1390981632,
+        "total_tokens": 249823232,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0304307865455287
+      }
+    },
+    {
+      "launch_seq": 72,
+      "candidate_id": "g10-fcrecomp-bf16-hc1024",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1351965184,
+        "total_tokens": 267649024,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.030462425157413
+      }
+    },
+    {
+      "launch_seq": 73,
+      "candidate_id": "g10-int4-relu-qkfold-hc1024",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1438148096,
+        "total_tokens": 241958912,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0336506492165134
+      }
+    },
+    {
+      "launch_seq": 74,
+      "candidate_id": "g11-hc1024-on-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1184291328,
+        "total_tokens": 272629760,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0300726373312017
+      }
+    },
+    {
+      "launch_seq": 75,
+      "candidate_id": "g11-normfc-recompute-clamp",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1217747456,
+        "total_tokens": 273678336,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0315754634085885
+      }
+    },
+    {
+      "launch_seq": 76,
+      "candidate_id": "g11-bf16-unembedding",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1248949760,
+        "total_tokens": 272891904,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0297854468279888
+      }
+    },
+    {
+      "launch_seq": 77,
+      "candidate_id": "g11-int8-normstore-fp32",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1281105408,
+        "total_tokens": 245366784,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0313051896427203
+      }
+    },
+    {
+      "launch_seq": 78,
+      "candidate_id": "g11-int8-normstore-bf16",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1227550208,
+        "total_tokens": 281018368,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0271614505380564
+      }
+    },
+    {
+      "launch_seq": 79,
+      "candidate_id": "g11-mixfold-bf16-hc1024",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1259788800,
+        "total_tokens": 272367616,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.032199204866758
+      }
+    },
+    {
+      "launch_seq": 80,
+      "candidate_id": "g11-rows-2-qkfold-bf16",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 888558080,
+        "total_tokens": 167772160,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.062847900612454
+      }
+    },
+    {
+      "launch_seq": 81,
+      "candidate_id": "g11-muon-state-bf16",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1293441536,
+        "total_tokens": 241958912,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0319832009740475
+      }
+    },
+    {
+      "launch_seq": 82,
+      "candidate_id": "g12-mixfold-on-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1125571072,
+        "total_tokens": 272105472,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.031273700123894
+      }
+    },
+    {
+      "launch_seq": 83,
+      "candidate_id": "g12-qkfold-on-normfc-recompute",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1083529728,
+        "total_tokens": 271843328,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0288913847461327
+      }
+    },
+    {
+      "launch_seq": 84,
+      "candidate_id": "g12-hc1024-on-normstore",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1121622528,
+        "total_tokens": 270270464,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0297236434955943
+      }
+    },
+    {
+      "launch_seq": 85,
+      "candidate_id": "g12-normfold-on-bf16-unembed",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1123120640,
+        "total_tokens": 266076160,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.029524320986187
+      }
+    },
+    {
+      "launch_seq": 86,
+      "candidate_id": "g12-int4-relu-on-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1117182464,
+        "total_tokens": 271581184,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.028386974176835
+      }
+    },
+    {
+      "launch_seq": 87,
+      "candidate_id": "g12-normstore-on-normfc",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1155078656,
+        "total_tokens": 265289728,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0315050190685253
+      }
+    },
+    {
+      "launch_seq": 88,
+      "candidate_id": "g12-bf16-unembed-on-normstore",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1185607168,
+        "total_tokens": 278659072,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0294702076607407
+      }
+    },
+    {
+      "launch_seq": 89,
+      "candidate_id": "g12-head-bwd-inplace-scale",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1248949760,
+        "total_tokens": 271843328,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.029010800831038
+      }
+    },
+    {
+      "launch_seq": 90,
+      "candidate_id": "g13-normstore-on-qkfold-recomp",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1020860928,
+        "total_tokens": 238813184,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.035356609260843
+      }
+    },
+    {
+      "launch_seq": 91,
+      "candidate_id": "g13-mixfold-on-int4-relu",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1058462208,
+        "total_tokens": 243793920,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0333683798491686
+      }
+    },
+    {
+      "launch_seq": 92,
+      "candidate_id": "g13-int4-relu-on-normstore",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1054513664,
+        "total_tokens": 238288896,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0347671805050505
+      }
+    },
+    {
+      "launch_seq": 93,
+      "candidate_id": "g13-int4-relu-on-bf16-unembed",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1064400384,
+        "total_tokens": 241434624,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0348270445627388
+      }
+    },
+    {
+      "launch_seq": 94,
+      "candidate_id": "g13-bf16-unembed-on-recompute",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1022359040,
+        "total_tokens": 245366784,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0340922735041833
+      }
+    },
+    {
+      "launch_seq": 95,
+      "candidate_id": "g13-fcrecompute-on-int4-relu",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1066752512,
+        "total_tokens": 248250368,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0324898947970356
+      }
+    },
+    {
+      "launch_seq": 96,
+      "candidate_id": "g13-bf16-unembed-normstore-hc1024",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1038740992,
+        "total_tokens": 242483200,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0354314017934514
+      }
+    },
+    {
+      "launch_seq": 97,
+      "candidate_id": "g13-mixfold-on-bf16-unembed",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 1064400384,
+        "total_tokens": 246153216,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0333350671352315
+      }
+    }
+  ]
+}

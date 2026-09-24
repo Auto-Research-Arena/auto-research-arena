@@ -1,0 +1,34 @@
+{
+  "arbor": {
+    "name": "Arbor",
+    "source_url": "https://github.com/RUC-NLPIR/Arbor",
+    "license": "Apache-2.0",
+    "license_url": "https://github.com/RUC-NLPIR/Arbor/blob/main/LICENSE"
+  },
+  "autoscientists": {
+    "name": "AutoScientists",
+    "source_url": "https://github.com/mims-harvard/AutoScientists"
+  },
+  "heuresis-map-elites": {
+    "name": "Heuresis",
+    "source_url": "https://github.com/a-antoniades/Heuresis",
+    "license": "Apache-2.0",
+    "license_url": "https://github.com/a-antoniades/Heuresis/blob/main/LICENSE"
+  },
+  "tpe": {
+    "name": "TPE",
+    "source_url": "https://github.com/ferreirafabio/autoresearch-automl",
+    "license": "MIT",
+    "license_url": "https://github.com/ferreirafabio/autoresearch-automl/blob/main/LICENSE"
+  },
+  "beam-search": {
+    "name": "Beam Search"
+  },
+  "sequential-search": {
+    "name": "Sequential Search"
+  },
+  "gear": {
+    "name": "GEAR",
+    "source_url": "https://github.com/nm-le/genetic-autoresearch"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "beam-search",
+  "entry_type": "prompt",
+  "environment": {
+    "setup": [
+      ["{uv}", "venv", "--no-project", "--seed", "--python", "3.12", ".venv"]
+    ],
+    "check": [
+      ".venv/bin/python",
+      "-c",
+      "from autoarena import Benchmark; import selection, subprocess; subprocess.run(['claude', '--version'], check=True)"
+    ]
+  },
+  "start": [
+    "{python}",
+    "-m",
+    "examples.claude_transport",
+    "--",
+    "{agent}",
+    "--permission-mode",
+    "bypassPermissions",
+    "--model",
+    "{model}",
+    "--session-id",
+    "{session_id}"
+  ],
+  "resume": [
+    "{python}",
+    "-m",
+    "examples.claude_transport",
+    "--",
+    "{agent}",
+    "--permission-mode",
+    "bypassPermissions",
+    "--model",
+    "{model}",
+    "--resume",
+    "{session_id}"
+  ],
+  "prompt_file": "prompt.md",
+  "workers": 4
+}

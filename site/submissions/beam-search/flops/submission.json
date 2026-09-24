@@ -1,0 +1,1499 @@
+{
+  "schema": "autoarena/site-submission/1",
+  "run_id": "beam-search--flops",
+  "method_id": "beam-search",
+  "task_id": "flops",
+  "metric": "flops_per_token_measured",
+  "unit": "FLOPs/token",
+  "direction": "minimize",
+  "best_value": 69847872,
+  "reference_value": 239078400,
+  "relative_improvement": 0.7078453260520399,
+  "rank_key": [
+    69847872.0,
+    798490624.0,
+    -0.001963588439452657
+  ],
+  "best_launch_seq": 97,
+  "best_candidate_id": "g13-08-graded-mlp-blocks123-896-double-dose-on-depth5-256",
+  "best_is_reference": false,
+  "budget": {
+    "spent": 97,
+    "max_launches": 100
+  },
+  "compute": {
+    "backend": "pluto",
+    "gpu_instance_type": "p4de.24xlarge",
+    "gpu_model": [
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB"
+    ],
+    "workers": 4,
+    "gpus_per_evaluation": 1,
+    "evaluation_capacity_gpus": 4
+  },
+  "research_llm": {
+    "model": "us.anthropic.claude-opus-5[1m]",
+    "provider": null
+  },
+  "evaluation_gpu_hours": 18.02574361111111,
+  "measurements": [
+    {
+      "launch_seq": 1,
+      "candidate_id": "reference",
+      "is_reference": true,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47198976512,
+        "total_tokens": 397410304,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0443928445225288
+      }
+    },
+    {
+      "launch_seq": 2,
+      "candidate_id": "g01-01-gqa2-ve-all-layers",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 226495488,
+        "num_params_total": 48235024,
+        "peak_vram_bytes": 43930571776,
+        "total_tokens": 416284672,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0433102553336244
+      }
+    },
+    {
+      "launch_seq": 3,
+      "candidate_id": "g01-02-mlp3x-x0-token-table",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 213912576,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 43161664000,
+        "total_tokens": 433061888,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0369104453981663
+      }
+    },
+    {
+      "launch_seq": 4,
+      "candidate_id": "g02-01-gqa2-ve-all-on-mlp3x",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 201329664,
+        "num_params_total": 48235024,
+        "peak_vram_bytes": 39891162112,
+        "total_tokens": 452460544,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0283964969634474
+      }
+    },
+    {
+      "launch_seq": 5,
+      "candidate_id": "g02-02-mlp2p5x-two-token-tables",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 188746752,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 37475226624,
+        "total_tokens": 465043456,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0789957469526483
+      }
+    },
+    {
+      "launch_seq": 6,
+      "candidate_id": "g02-03-dmodel384-ve-all-layers",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 150999552,
+        "num_params_total": 45613840,
+        "peak_vram_bytes": 37347301376,
+        "total_tokens": 556793856,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0181022698547253
+      }
+    },
+    {
+      "launch_seq": 7,
+      "candidate_id": "g02-04-short-window-512",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 195038208,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 43161664000,
+        "total_tokens": 449314816,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0241071812669293
+      }
+    },
+    {
+      "launch_seq": 8,
+      "candidate_id": "g02-05-two-query-heads",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 182455296,
+        "num_params_total": 46137872,
+        "peak_vram_bytes": 40646431744,
+        "total_tokens": 503316480,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.014432145083253
+      }
+    },
+    {
+      "launch_seq": 9,
+      "candidate_id": "g02-06-depth6-fixed-width",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 188745984,
+        "num_params_total": 39846284,
+        "peak_vram_bytes": 36576850432,
+        "total_tokens": 505937920,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0195003644484815
+      }
+    },
+    {
+      "launch_seq": 10,
+      "candidate_id": "g03-01-dmodel384-two-query-heads",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 125832192,
+        "num_params_total": 35652112,
+        "peak_vram_bytes": 33460491264,
+        "total_tokens": 652738560,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0188446350746911
+      }
+    },
+    {
+      "launch_seq": 11,
+      "candidate_id": "g03-02-mlp3x-x0-table-on-two-query-heads",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 157289472,
+        "num_params_total": 46137872,
+        "peak_vram_bytes": 36608070656,
+        "total_tokens": 558366720,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0167756036152156
+      }
+    },
+    {
+      "launch_seq": 12,
+      "candidate_id": "g03-03-mlp3x-ve-all-six-layers",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 169873920,
+        "num_params_total": 49283852,
+        "peak_vram_bytes": 34229332992,
+        "total_tokens": 543162368,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0152680843013493
+      }
+    },
+    {
+      "launch_seq": 13,
+      "candidate_id": "g03-04-short-window-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 185601024,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 43161664000,
+        "total_tokens": 464519168,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0182965956167844
+      }
+    },
+    {
+      "launch_seq": 14,
+      "candidate_id": "g03-05-dmodel384-depth6",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 120327552,
+        "num_params_total": 35783244,
+        "peak_vram_bytes": 29163518464,
+        "total_tokens": 697827328,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0270301570611708
+      }
+    },
+    {
+      "launch_seq": 15,
+      "candidate_id": "g03-06-one-query-head",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 154142208,
+        "num_params_total": 35651856,
+        "peak_vram_bytes": 36765650944,
+        "total_tokens": 582483968,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0300386675428583
+      }
+    },
+    {
+      "launch_seq": 16,
+      "candidate_id": "g03-07-depth5-fixed-width",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 163580160,
+        "num_params_total": 36700554,
+        "peak_vram_bytes": 31417831936,
+        "total_tokens": 583008256,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.017702111541371
+      }
+    },
+    {
+      "launch_seq": 17,
+      "candidate_id": "g03-08-two-query-heads-short-window",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 147850752,
+        "num_params_total": 37749008,
+        "peak_vram_bytes": 35994646016,
+        "total_tokens": 587202560,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0131143264517926
+      }
+    },
+    {
+      "launch_seq": 18,
+      "candidate_id": "g04-01-mlp3x-x0-table-on-depth6",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 109710720,
+        "num_params_total": 37159500,
+        "peak_vram_bytes": 26949235200,
+        "total_tokens": 742391808,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0309836108256507
+      }
+    },
+    {
+      "launch_seq": 19,
+      "candidate_id": "g04-02-two-query-heads-depth6",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 100665600,
+        "num_params_total": 28311948,
+        "peak_vram_bytes": 26250966528,
+        "total_tokens": 803733504,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.032740149624999
+      }
+    },
+    {
+      "launch_seq": 20,
+      "candidate_id": "g04-03-low-rank-lm-head",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 136054272,
+        "num_params_total": 35782928,
+        "peak_vram_bytes": 36086134272,
+        "total_tokens": 612892672,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0266413596388455
+      }
+    },
+    {
+      "launch_seq": 21,
+      "candidate_id": "g04-04-dmodel384-depth7",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 135663552,
+        "num_params_total": 40698542,
+        "peak_vram_bytes": 33254033920,
+        "total_tokens": 617611264,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0215905128097398
+      }
+    },
+    {
+      "launch_seq": 22,
+      "candidate_id": "g04-05-x0-token-table-on-depth6",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 120327552,
+        "num_params_total": 38928972,
+        "peak_vram_bytes": 29388962304,
+        "total_tokens": 694681600,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0256157495569547
+      }
+    },
+    {
+      "launch_seq": 23,
+      "candidate_id": "g04-06-mlp3x-on-two-query-heads-384",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 111676416,
+        "num_params_total": 33292816,
+        "peak_vram_bytes": 30203982848,
+        "total_tokens": 705691648,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0242464554822264
+      }
+    },
+    {
+      "launch_seq": 24,
+      "candidate_id": "g04-07-one-query-head-short-window",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 124257024,
+        "num_params_total": 31457424,
+        "peak_vram_bytes": 32411137024,
+        "total_tokens": 674758656,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0248179451482755
+      }
+    },
+    {
+      "launch_seq": 25,
+      "candidate_id": "g04-08-dmodel384-short-window-512",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 136843776,
+        "num_params_total": 45613840,
+        "peak_vram_bytes": 37347301376,
+        "total_tokens": 578813952,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0158783562666678
+      }
+    },
+    {
+      "launch_seq": 26,
+      "candidate_id": "g05-01-short-window-512-on-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 94374144,
+        "num_params_total": 28311948,
+        "peak_vram_bytes": 26250966528,
+        "total_tokens": 812646400,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.032173707823918
+      }
+    },
+    {
+      "launch_seq": 27,
+      "candidate_id": "g05-02-short-window-512-on-mlp3x-depth6",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 100273536,
+        "num_params_total": 37159500,
+        "peak_vram_bytes": 26949235200,
+        "total_tokens": 767557632,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0312261554126083
+      }
+    },
+    {
+      "launch_seq": 28,
+      "candidate_id": "g05-03-one-query-head-on-mlp3x-depth8",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 86509056,
+        "num_params_total": 23331088,
+        "peak_vram_bytes": 26329624576,
+        "total_tokens": 807927808,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.043702316828972
+      }
+    },
+    {
+      "launch_seq": 29,
+      "candidate_id": "g05-04-span-floor-on-x0-table-depth6",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 103812480,
+        "num_params_total": 38928972,
+        "peak_vram_bytes": 29388962304,
+        "total_tokens": 727711744,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0256384617544592
+      }
+    },
+    {
+      "launch_seq": 30,
+      "candidate_id": "g05-05-x0-token-table-on-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 100665600,
+        "num_params_total": 31457676,
+        "peak_vram_bytes": 26477327872,
+        "total_tokens": 796393472,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0327567575267238
+      }
+    },
+    {
+      "launch_seq": 31,
+      "candidate_id": "g05-06-depth5-on-mlp3x-x0-table",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 96144192,
+        "num_params_total": 32539114,
+        "peak_vram_bytes": 23264259584,
+        "total_tokens": 832045056,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0441173173562628
+      }
+    },
+    {
+      "launch_seq": 32,
+      "candidate_id": "g05-07-mlp2x-on-two-query-heads-384",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 97520640,
+        "num_params_total": 30933520,
+        "peak_vram_bytes": 26953765888,
+        "total_tokens": 767033344,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0350050020369166
+      }
+    },
+    {
+      "launch_seq": 33,
+      "candidate_id": "g05-08-depth5-on-x0-table",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 104991552,
+        "num_params_total": 34013674,
+        "peak_vram_bytes": 25300019712,
+        "total_tokens": 795344896,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0371431988310067
+      }
+    },
+    {
+      "launch_seq": 34,
+      "candidate_id": "g06-01-span-floor-on-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 79431168,
+        "num_params_total": 23331088,
+        "peak_vram_bytes": 26329624576,
+        "total_tokens": 833617920,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0412925417047554
+      }
+    },
+    {
+      "launch_seq": 35,
+      "candidate_id": "g06-02-mlp3x-on-short-window-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 83757312,
+        "num_params_total": 26542476,
+        "peak_vram_bytes": 23805734400,
+        "total_tokens": 853016576,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0399333923476821
+      }
+    },
+    {
+      "launch_seq": 36,
+      "candidate_id": "g06-03-span-floor-on-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 81988416,
+        "num_params_total": 32539114,
+        "peak_vram_bytes": 23264259584,
+        "total_tokens": 855638016,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0422295021192356
+      }
+    },
+    {
+      "launch_seq": 37,
+      "candidate_id": "g06-04-span-floor-on-mlp2x",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 83364864,
+        "num_params_total": 30933520,
+        "peak_vram_bytes": 26953765888,
+        "total_tokens": 801636352,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0329028793731903
+      }
+    },
+    {
+      "launch_seq": 38,
+      "candidate_id": "g06-05-span-floor-256-on-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 76678656,
+        "num_params_total": 23331088,
+        "peak_vram_bytes": 26329624576,
+        "total_tokens": 814219264,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0480641971818299
+      }
+    },
+    {
+      "launch_seq": 39,
+      "candidate_id": "g06-06-one-query-head-on-short-window-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 77857920,
+        "num_params_total": 20840652,
+        "peak_vram_bytes": 23343264768,
+        "total_tokens": 834142208,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0545528367613188
+      }
+    },
+    {
+      "launch_seq": 40,
+      "candidate_id": "g06-07-span-floor-256-on-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 77269824,
+        "num_params_total": 32539114,
+        "peak_vram_bytes": 23264259584,
+        "total_tokens": 847773696,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0425543780227906
+      }
+    },
+    {
+      "launch_seq": 41,
+      "candidate_id": "g06-08-one-kv-head-on-mlp2x",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 92800512,
+        "num_params_total": 21758224,
+        "peak_vram_bytes": 24720822272,
+        "total_tokens": 790102016,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0451571477210475
+      }
+    },
+    {
+      "launch_seq": 42,
+      "candidate_id": "g07-01-qk-channel-scales-on-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 43,
+      "candidate_id": "g07-02-drop-forced-long-layer-on-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 69012288,
+        "num_params_total": 32539114,
+        "peak_vram_bytes": 23264259584,
+        "total_tokens": 856162304,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0682550266029578
+      }
+    },
+    {
+      "launch_seq": 44,
+      "candidate_id": "g07-03-depth7-on-window512-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 72156480,
+        "num_params_total": 21201134,
+        "peak_vram_bytes": 23614516736,
+        "total_tokens": 833093632,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0533131684511259
+      }
+    },
+    {
+      "launch_seq": 45,
+      "candidate_id": "g07-04-mlp2x-on-depth5-512",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 73141056,
+        "num_params_total": 31064554,
+        "peak_vram_bytes": 21230334464,
+        "total_tokens": 854065152,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0556038693395207
+      }
+    },
+    {
+      "launch_seq": 46,
+      "candidate_id": "g07-05-cosine-anneal-on-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 76678656,
+        "num_params_total": 23331088,
+        "peak_vram_bytes": 26329624576,
+        "total_tokens": 822607872,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0523259860400163
+      }
+    },
+    {
+      "launch_seq": 47,
+      "candidate_id": "g07-06-mlp2x-on-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 68422464,
+        "num_params_total": 31064554,
+        "peak_vram_bytes": 21230334464,
+        "total_tokens": 843579392,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0552023297854778
+      }
+    },
+    {
+      "launch_seq": 48,
+      "candidate_id": "g07-07-drop-forced-long-layer-on-leader-512",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 77071872,
+        "num_params_total": 23331088,
+        "peak_vram_bytes": 26329624576,
+        "total_tokens": 823656448,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0489533658165282
+      }
+    },
+    {
+      "launch_seq": 49,
+      "candidate_id": "g07-08-lm-head-rank320-on-depth5-512",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 79579968,
+        "num_params_total": 32137706,
+        "peak_vram_bytes": 23422971392,
+        "total_tokens": 842530816,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.046626812307456
+      }
+    },
+    {
+      "launch_seq": 50,
+      "candidate_id": "g08-01-lm-head-rank360-on-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 76328448,
+        "num_params_total": 23272720,
+        "peak_vram_bytes": 26517514240,
+        "total_tokens": 826277888,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0460869367594319
+      }
+    },
+    {
+      "launch_seq": 51,
+      "candidate_id": "g08-02-qk-channel-scales-on-no-hop-member",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 77071872,
+        "num_params_total": 23333136,
+        "peak_vram_bytes": 26329985024,
+        "total_tokens": 806879232,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.048510243143624
+      }
+    },
+    {
+      "launch_seq": 52,
+      "candidate_id": "g08-03-lm-head-rank320-on-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 74861376,
+        "num_params_total": 32137706,
+        "peak_vram_bytes": 23422971392,
+        "total_tokens": 861929472,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0442998637017797
+      }
+    },
+    {
+      "launch_seq": 53,
+      "candidate_id": "g08-04-mlp-hidden-1024-on-window512-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 74712576,
+        "num_params_total": 22544656,
+        "peak_vram_bytes": 25242505216,
+        "total_tokens": 836239360,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0453956561459317
+      }
+    },
+    {
+      "launch_seq": 54,
+      "candidate_id": "g08-05-interior-hop-on-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 76678656,
+        "num_params_total": 23331088,
+        "peak_vram_bytes": 26329624576,
+        "total_tokens": 838336512,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0459441407531118
+      }
+    },
+    {
+      "launch_seq": 55,
+      "candidate_id": "g08-06-ve-gate-uncounted-contraction",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 77070336,
+        "num_params_total": 23331088,
+        "peak_vram_bytes": 26326802432,
+        "total_tokens": 831520768,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0484447114198259
+      }
+    },
+    {
+      "launch_seq": 56,
+      "candidate_id": "g08-07-window128-on-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 74910528,
+        "num_params_total": 32539114,
+        "peak_vram_bytes": 23264259584,
+        "total_tokens": 862978048,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0438391789315786
+      }
+    },
+    {
+      "launch_seq": 57,
+      "candidate_id": "g08-08-lm-head-rank288-on-window512-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 75376128,
+        "num_params_total": 22655248,
+        "peak_vram_bytes": 26464915456,
+        "total_tokens": 828899328,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0507400459074772
+      }
+    },
+    {
+      "launch_seq": 58,
+      "candidate_id": "g09-01-mlp-hidden-896-on-window512-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 69993984,
+        "num_params_total": 21758224,
+        "peak_vram_bytes": 24158990336,
+        "total_tokens": 815792128,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0528735558547901
+      }
+    },
+    {
+      "launch_seq": 59,
+      "candidate_id": "g09-02-mlp-hidden-1024-on-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 71912256,
+        "num_params_total": 31646186,
+        "peak_vram_bytes": 22749190656,
+        "total_tokens": 838860800,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.049049377486159
+      }
+    },
+    {
+      "launch_seq": 60,
+      "candidate_id": "g09-03-lm-head-rank320-on-window128-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 72502080,
+        "num_params_total": 32137706,
+        "peak_vram_bytes": 23422971392,
+        "total_tokens": 836763648,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0479425777145157
+      }
+    },
+    {
+      "launch_seq": 61,
+      "candidate_id": "g09-04-interior-hop-on-rank360-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 76328448,
+        "num_params_total": 23272720,
+        "peak_vram_bytes": 26517514240,
+        "total_tokens": 813170688,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0503296374463766
+      }
+    },
+    {
+      "launch_seq": 62,
+      "candidate_id": "g09-05-mlp-hidden-896-with-interior-hop-on-window512-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 69993984,
+        "num_params_total": 21758224,
+        "peak_vram_bytes": 24158990336,
+        "total_tokens": 823656448,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0579949524540502
+      }
+    },
+    {
+      "launch_seq": 63,
+      "candidate_id": "g09-06-lm-head-rank256-on-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 71568192,
+        "num_params_total": 31588842,
+        "peak_vram_bytes": 23376850432,
+        "total_tokens": 844103680,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0522225836145043
+      }
+    },
+    {
+      "launch_seq": 64,
+      "candidate_id": "g09-07-window64-on-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 73730880,
+        "num_params_total": 32539114,
+        "peak_vram_bytes": 23264259584,
+        "total_tokens": 845152256,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0481331761501218
+      }
+    },
+    {
+      "launch_seq": 65,
+      "candidate_id": "g09-08-lm-head-rank320-with-interior-hop-on-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 74270208,
+        "num_params_total": 22929680,
+        "peak_vram_bytes": 26489122816,
+        "total_tokens": 812646400,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0521316049005356
+      }
+    },
+    {
+      "launch_seq": 66,
+      "candidate_id": "g10-01-window128-on-depth5-mlp1024",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 69552960,
+        "num_params_total": 31646186,
+        "peak_vram_bytes": 22749190656,
+        "total_tokens": 784334848,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0535288187802987
+      }
+    },
+    {
+      "launch_seq": 67,
+      "candidate_id": "g10-02-ve-gate-as-per-head-scale-on-window128-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 72499200,
+        "num_params_total": 32137241,
+        "peak_vram_bytes": 23410846720,
+        "total_tokens": 780664832,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0536523732625172
+      }
+    },
+    {
+      "launch_seq": 68,
+      "candidate_id": "g10-03-lm-head-rank320-on-window64-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 71322432,
+        "num_params_total": 32137706,
+        "peak_vram_bytes": 23422971392,
+        "total_tokens": 781189120,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0533578239519352
+      }
+    },
+    {
+      "launch_seq": 69,
+      "candidate_id": "g10-04-lm-head-rank320-on-window512-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 72304128,
+        "num_params_total": 22143248,
+        "peak_vram_bytes": 25403838464,
+        "total_tokens": 757596160,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.056788049473281
+      }
+    },
+    {
+      "launch_seq": 70,
+      "candidate_id": "g10-05-single-microbatch-updates-on-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 71912256,
+        "num_params_total": 31646186,
+        "peak_vram_bytes": 22659828736,
+        "total_tokens": 746061824,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0477508664057258
+      }
+    },
+    {
+      "launch_seq": 71,
+      "candidate_id": "g10-06-renormalise-residual-stream-on-window128-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 72502080,
+        "num_params_total": 32137706,
+        "peak_vram_bytes": 23430049280,
+        "total_tokens": 768081920,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0652769971320533
+      }
+    },
+    {
+      "launch_seq": 72,
+      "candidate_id": "g10-07-drop-attention-in-block0-on-window64-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 69896448,
+        "num_params_total": 28803466,
+        "peak_vram_bytes": 21404273664,
+        "total_tokens": 770703360,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0671236594901867
+      }
+    },
+    {
+      "launch_seq": 73,
+      "candidate_id": "g10-08-shared-kv-projection-on-window512-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 72353280,
+        "num_params_total": 22151440,
+        "peak_vram_bytes": 25238560768,
+        "total_tokens": 745537536,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0555159576827478
+      }
+    },
+    {
+      "launch_seq": 74,
+      "candidate_id": "g11-01-graded-mlp-block0-960-on-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 71617344,
+        "num_params_total": 31597034,
+        "peak_vram_bytes": 22593997824,
+        "total_tokens": 812122112,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0450413418180498
+      }
+    },
+    {
+      "launch_seq": 75,
+      "candidate_id": "g11-02-graded-mlp-block0-1088-single-microbatch-on-window128-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 72207168,
+        "num_params_total": 32088554,
+        "peak_vram_bytes": 23269384192,
+        "total_tokens": 805830656,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0454803974453186
+      }
+    },
+    {
+      "launch_seq": 76,
+      "candidate_id": "g11-03-single-microbatch-updates-on-window64-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 73730880,
+        "num_params_total": 32539114,
+        "peak_vram_bytes": 23174012928,
+        "total_tokens": 824180736,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0427601690410195
+      }
+    },
+    {
+      "launch_seq": 77,
+      "candidate_id": "g11-04-single-microbatch-updates-on-window512-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 74712576,
+        "num_params_total": 22544656,
+        "peak_vram_bytes": 25171983360,
+        "total_tokens": 800587776,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0435684078338667
+      }
+    },
+    {
+      "launch_seq": 78,
+      "candidate_id": "g11-05-graded-window-block0-128-half-batch-on-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 71322432,
+        "num_params_total": 31646186,
+        "peak_vram_bytes": 11466804224,
+        "total_tokens": 732037120,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0506787388419763
+      }
+    },
+    {
+      "launch_seq": 79,
+      "candidate_id": "g11-06-graded-window-block0-32-with-x0-lambda-on-window128-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 72059712,
+        "num_params_total": 32137706,
+        "peak_vram_bytes": 23422971392,
+        "total_tokens": 834142208,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0470597732234985
+      }
+    },
+    {
+      "launch_seq": 80,
+      "candidate_id": "g11-07-graded-window-block0-32-single-microbatch-on-window64-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 73583424,
+        "num_params_total": 32539114,
+        "peak_vram_bytes": 23174012928,
+        "total_tokens": 815267840,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0422966578924167
+      }
+    },
+    {
+      "launch_seq": 81,
+      "candidate_id": "g11-08-graded-mlp-blocks01-896-single-microbatch-on-window512-leader",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 73532928,
+        "num_params_total": 22348048,
+        "peak_vram_bytes": 24902169600,
+        "total_tokens": 774635520,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.045563129183272
+      }
+    },
+    {
+      "launch_seq": 82,
+      "candidate_id": "g12-01-graded-mlp-block0-832-second-rung-on-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 71027520,
+        "num_params_total": 31498730,
+        "peak_vram_bytes": 22461351936,
+        "total_tokens": 796131328,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0467097314766824
+      }
+    },
+    {
+      "launch_seq": 83,
+      "candidate_id": "g12-02-graded-mlp-block0-960-unmatched-lr-on-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 71617344,
+        "num_params_total": 31597034,
+        "peak_vram_bytes": 22593997824,
+        "total_tokens": 794296320,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0458435061337288
+      }
+    },
+    {
+      "launch_seq": 84,
+      "candidate_id": "g12-03-single-microbatch-updates-on-graded-window128-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 72059712,
+        "num_params_total": 32137706,
+        "peak_vram_bytes": 23336099840,
+        "total_tokens": 802684928,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0427170854070231
+      }
+    },
+    {
+      "launch_seq": 85,
+      "candidate_id": "g12-04-graded-mlp-blocks01-1088-on-window128-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 71912256,
+        "num_params_total": 32039402,
+        "peak_vram_bytes": 23203847168,
+        "total_tokens": 800325632,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0455642047831915
+      }
+    },
+    {
+      "launch_seq": 86,
+      "candidate_id": "g12-05-graded-window-block0-128-stacked-on-graded-mlp-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 71027520,
+        "num_params_total": 31597034,
+        "peak_vram_bytes": 22593997824,
+        "total_tokens": 801374208,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0460869569934899
+      }
+    },
+    {
+      "launch_seq": 87,
+      "candidate_id": "g12-06-graded-window-block0-128-on-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 71322432,
+        "num_params_total": 31646186,
+        "peak_vram_bytes": 22659828736,
+        "total_tokens": 810024960,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.046248732546109
+      }
+    },
+    {
+      "launch_seq": 88,
+      "candidate_id": "g12-07-graded-window-blocks01-32-single-microbatch-on-window128-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 71617344,
+        "num_params_total": 32137706,
+        "peak_vram_bytes": 23336099840,
+        "total_tokens": 809500672,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.046061714473799
+      }
+    },
+    {
+      "launch_seq": 89,
+      "candidate_id": "g12-08-graded-mlp-last-short-block-1088-on-window128-depth5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 72207168,
+        "num_params_total": 32088554,
+        "peak_vram_bytes": 23268761600,
+        "total_tokens": 794034176,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0460976011728895
+      }
+    },
+    {
+      "launch_seq": 90,
+      "candidate_id": "g13-01-graded-mlp-blocks12-960-on-832-block0-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 70437696,
+        "num_params_total": 31400426,
+        "peak_vram_bytes": 22324970496,
+        "total_tokens": 794296320,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0478573550575412
+      }
+    },
+    {
+      "launch_seq": 91,
+      "candidate_id": "g13-02-graded-mlp-blocks12-960-on-window128-graded-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 70437696,
+        "num_params_total": 31498730,
+        "peak_vram_bytes": 22457124864,
+        "total_tokens": 805306368,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.045957571907748
+      }
+    },
+    {
+      "launch_seq": 92,
+      "candidate_id": "g13-03-graded-mlp-blocks01-960-on-window128-uniform-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 70732608,
+        "num_params_total": 31547882,
+        "peak_vram_bytes": 22527051776,
+        "total_tokens": 800063488,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0458810243368555
+      }
+    },
+    {
+      "launch_seq": 93,
+      "candidate_id": "g13-04-graded-mlp-blocks123-960-unmatched-lr-on-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 70732608,
+        "num_params_total": 31449578,
+        "peak_vram_bytes": 22390211584,
+        "total_tokens": 804519936,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0464983313646168
+      }
+    },
+    {
+      "launch_seq": 94,
+      "candidate_id": "g13-05-graded-mlp-block1-960-on-832-block0-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 70732608,
+        "num_params_total": 31449578,
+        "peak_vram_bytes": 22392473600,
+        "total_tokens": 795607040,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0475061195013096
+      }
+    },
+    {
+      "launch_seq": 95,
+      "candidate_id": "g13-06-graded-mlp-blocks123-960-matched-lr-on-window128-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 70142784,
+        "num_params_total": 31449578,
+        "peak_vram_bytes": 22390211584,
+        "total_tokens": 809762816,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0459792841168127
+      }
+    },
+    {
+      "launch_seq": 96,
+      "candidate_id": "g13-07-graded-mlp-blocks0123-960-unmatched-lr-on-window128-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 70142784,
+        "num_params_total": 31449578,
+        "peak_vram_bytes": 22390211584,
+        "total_tokens": 804519936,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0459968121356962
+      }
+    },
+    {
+      "launch_seq": 97,
+      "candidate_id": "g13-08-graded-mlp-blocks123-896-double-dose-on-depth5-256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 69847872,
+        "num_params_total": 31302122,
+        "peak_vram_bytes": 22188589056,
+        "total_tokens": 798490624,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0480364115605474
+      }
+    }
+  ]
+}

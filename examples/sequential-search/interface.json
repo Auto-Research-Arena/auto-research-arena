@@ -1,0 +1,39 @@
+{
+  "id": "sequential-search",
+  "entry_type": "prompt",
+  "start": [
+    "{python}",
+    "-m",
+    "examples.claude_transport",
+    "--",
+    "{agent}",
+    "--dangerously-skip-permissions",
+    "--model",
+    "{model}",
+    "--session-id",
+    "{session_id}"
+  ],
+  "resume": [
+    "{python}",
+    "-m",
+    "examples.claude_transport",
+    "--",
+    "{agent}",
+    "--dangerously-skip-permissions",
+    "--model",
+    "{model}",
+    "--resume",
+    "{session_id}"
+  ],
+  "prompt_file": "prompt.md",
+  "workers": 1,
+  "environment": {
+    "setup": [
+      ["{uv}", "venv", "--no-project", "--seed", "--python", "3.12", ".venv"]
+    ],
+    "check": [
+      ".venv/bin/python",
+      "check.py"
+    ]
+  }
+}

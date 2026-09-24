@@ -1,0 +1,33 @@
+--- a/autoresearch_automl/core/runner.py
++++ b/autoresearch_automl/core/runner.py
+@@ -43,4 +43,6 @@
+     # Auto-resume from existing trials.jsonl
+     resume: bool = True
++    search_space_include: list[str] | None = None
++    baseline_config: dict[str, Any] | None = None
+
+
+@@ -48,7 +50,7 @@
+     """Main orchestration loop: suggest → inject → run → tell → repeat."""
+
+-    def __init__(self, config: RunConfig):
++    def __init__(self, config: RunConfig, experiment_runner=None):
+         self.config = config
+-        self.runner = ExperimentRunner(
++        self.runner = experiment_runner if experiment_runner is not None else ExperimentRunner(
+             train_py_path=config.train_py_path,
+             run_command=config.run_command,
+@@ -71,5 +73,5 @@
+         # Build search space
+         space_builder = SearchSpaceBuilder(cfg.train_py_path)
+-        space = space_builder.build_configspace()
++        space = space_builder.build_configspace(include=cfg.search_space_include)
+         logger.info("ConfigSpace with %d HPs: %s", len(space), list(space.keys()))
+
+@@ -97,5 +99,5 @@
+         # (train.py may have been modified by previous experiments)
+         if start_trial_id == 0:
+-            baseline = dict(KARPATHY_STARTING_CONFIG)
++            baseline = dict(cfg.baseline_config if cfg.baseline_config is not None else KARPATHY_STARTING_CONFIG)
+             baseline = snap_to_power_of_2(baseline)
+             logger.info("Running baseline config as trial 0: %s", baseline)

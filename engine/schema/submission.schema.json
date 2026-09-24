@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://autoarena/engine/schema/submission.schema.json",
+  "title": "AutoArena public submission",
+  "description": "One task and method run exported by python3 -m engine submission. Artifact paths are relative to the submission directory. Task rules and audit results determine eligibility.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "verdict", "headline", "eligibility", "obligations", "setup", "history", "trajectory", "cost", "outcome", "winning_implementation", "evidence", "task_definition", "identity", "audit", "reconciliation", "limits", "nonfinite_values"],
+  "properties": {
+    "schema": {"const": "autoarena/submission"},
+    "verdict": {
+      "type": "object", "additionalProperties": false,
+      "required": ["publishable", "reasons", "caveats"],
+      "properties": {
+        "publishable": {"type": "boolean"},
+        "reasons": {"$ref": "#/$defs/strings"},
+        "caveats": {"$ref": "#/$defs/strings"}
+      }
+    },
+    "headline": {
+      "type": "object", "additionalProperties": false,
+      "required": ["task_id", "task_title", "method_id", "metric", "unit", "direction", "best_value", "reference_value", "relative_improvement", "best_candidate_id", "best_launch_seq", "best_is_reference"],
+      "properties": {
+        "task_id": {"type": "string"}, "task_title": {"type": "string"},
+        "method_id": {"type": "string"}, "metric": {"type": "string"},
+        "unit": {"$ref": "#/$defs/text"},
+        "direction": {"enum": ["minimize", "maximize"]},
+        "best_value": {"$ref": "#/$defs/number"},
+        "reference_value": {"$ref": "#/$defs/number"},
+        "absolute_improvement": {"$ref": "#/$defs/number"},
+        "relative_improvement": {"$ref": "#/$defs/number"},
+        "best_candidate_id": {"$ref": "#/$defs/text"},
+        "best_launch_seq": {"type": ["integer", "null"]},
+        "best_is_reference": {"type": ["boolean", "null"]},
+        "strictly_better_than_reference": {"type": ["boolean", "null"]},
+        "reference_admissible": {"type": ["boolean", "null"]},
+        "gate_margin": {"$ref": "#/$defs/number"},
+        "rank_key": {"type": ["array", "null"], "items": {"$ref": "#/$defs/number"}},
+        "tiebreaks": {"type": "array", "items": {"type": "object"}}
+      }
+    },
+    "eligibility": {
+      "type": "object", "required": ["clauses", "engine_verdict", "scope"],
+      "properties": {
+        "scope": {"const": "frozen task definition"},
+        "engine_verdict": {"type": ["object", "null"]},
+        "clauses": {"type": "array", "items": {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "metric", "operator", "bound", "measured", "satisfied", "basis"],
+          "properties": {
+            "kind": {"enum": ["quality_gate", "constraint"]},
+            "metric": {"type": "string"},
+            "operator": {"enum": ["<", "<=", ">", ">=", "=="]},
+            "bound": {"type": "number"},
+            "measured": {"type": ["number", "boolean", "null"]},
+            "satisfied": {"type": ["boolean", "null"]},
+            "basis": {"$ref": "#/$defs/text"}
+          }
+        }}
+      }
+    },
+    "obligations": {"type": "object"},
+    "setup": {
+      "type": "object", "additionalProperties": false,
+      "required": ["compute", "research_llm"],
+      "properties": {
+        "compute": {
+          "type": "object", "additionalProperties": false,
+          "required": ["backend", "gpu_instance_type", "gpu_model", "workers", "gpus_per_evaluation", "evaluation_capacity_gpus"],
+          "properties": {
+            "backend": {"$ref": "#/$defs/text"},
+            "gpu_instance_type": {"$ref": "#/$defs/text"},
+            "gpu_model": {"anyOf": [{"$ref": "#/$defs/text"}, {"$ref": "#/$defs/strings"}]},
+            "workers": {"type": ["integer", "null"], "minimum": 1},
+            "gpus_per_evaluation": {"type": ["integer", "null"], "minimum": 1},
+            "evaluation_capacity_gpus": {"type": ["integer", "null"], "minimum": 1}
+          }
+        },
+        "research_llm": {
+          "type": "object", "additionalProperties": false, "required": ["model", "provider"],
+          "properties": {
+            "model": {"$ref": "#/$defs/text"}, "provider": {"$ref": "#/$defs/text"},
+            "used": {"type": "boolean"}, "generation_settings": {"type": "object"},
+            "usage": {"type": "object", "required": ["coverage", "records"], "properties": {
+              "coverage": {"type": "string"}, "records": {"type": "array", "items": {"type": "object"}}
+            }}
+          }
+        }
+      }
+    },
+    "history": {"type": "array", "items": {"$ref": "#/$defs/evaluation"}},
+    "trajectory": {"type": "array", "items": {"type": "object"}},
+    "cost": {
+      "type": "object", "required": ["budget", "status_counts", "totals", "evaluation_gpu_hours", "gpu_time_coverage"],
+      "properties": {
+        "budget": {"type": "object", "required": ["max_launches", "spent", "refunded", "unresolved", "remaining"], "properties": {
+          "max_launches": {"type": "integer", "minimum": 1},
+          "spent": {"$ref": "#/$defs/count"}, "refunded": {"$ref": "#/$defs/count"},
+          "unresolved": {"$ref": "#/$defs/count"}, "remaining": {"type": "integer"}
+        }},
+        "status_counts": {"type": "object", "additionalProperties": {"$ref": "#/$defs/count"}},
+        "totals": {"type": "object"}, "evaluation_gpu_hours": {"$ref": "#/$defs/number"},
+        "gpu_time_coverage": {"type": "string"}
+      }
+    },
+    "outcome": {
+      "type": "object", "additionalProperties": false,
+      "required": ["category", "recorded_status", "method_declared_complete", "stop_requested"],
+      "properties": {
+        "category": {"type": "string"}, "recorded_status": {"type": "string"},
+        "method_declared_complete": {"type": "boolean"}, "stop_requested": {"type": "boolean"},
+        "stop_reason": {"$ref": "#/$defs/text"},
+        "process_exit_code": {"type": ["integer", "null"]},
+        "anomalies": {"$ref": "#/$defs/strings"}
+      }
+    },
+    "winning_implementation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_id", "source_verified", "files", "changed_files"],
+      "properties": {
+        "candidate_id": {"$ref": "#/$defs/text"}, "source_verified": {"type": "boolean"},
+        "files": {"type": "array", "items": {
+          "type": "object", "additionalProperties": false, "required": ["name", "path", "bytes"],
+          "properties": {"name": {"type": "string"}, "path": {"type": "string"}, "bytes": {"$ref": "#/$defs/count"}}
+        }},
+        "changed_files": {"$ref": "#/$defs/strings"},
+        "source": {"type": "string"}, "download": {"type": "string"},
+        "reproduce": {"type": "string"}, "reference": {"type": "string"}, "diff": {"type": "string"}
+      }
+    },
+    "evidence": {"type": "array", "items": {
+      "type": "object", "required": ["role", "launch_seq", "candidate_id", "source_identity", "stdout", "stderr"],
+      "properties": {
+        "role": {"enum": ["reference", "best", "reference and best"]},
+        "launch_seq": {"type": "integer", "minimum": 1}, "candidate_id": {"type": "string"},
+        "source_identity": {"$ref": "#/$defs/source_identity"},
+        "stdout": {"$ref": "#/$defs/text"}, "stderr": {"$ref": "#/$defs/text"}
+      }
+    }},
+    "task_definition": {"$ref": "https://autoarena/tasks/schema/task.schema.json"},
+    "identity": {"type": "object"},
+    "audit": {"type": "object", "required": ["verification", "integrity", "evidence_status"], "properties": {
+      "verification": {"type": "object"}, "integrity": {"type": "array"},
+      "evidence_status": {"enum": ["verified", "incomplete", "failed"]}
+    }},
+    "reconciliation": {"type": "object", "required": ["checks", "disagreements"], "properties": {
+      "disagreements": {"$ref": "#/$defs/count"}, "checks": {"type": "array", "items": {
+        "type": "object", "required": ["check", "expected", "observed", "agrees"],
+        "properties": {"check": {"type": "string"}, "agrees": {"type": "boolean"}}
+      }}
+    }},
+    "limits": {"$ref": "#/$defs/strings"},
+    "nonfinite_values": {
+      "description": "Non-finite values replaced by null. Paths are JSON Pointers into this submission record.",
+      "type": "array", "items": {
+      "type": "object", "required": ["path", "value"],
+      "properties": {"path": {"type": "string"}, "value": {"enum": ["nan", "inf", "-inf"]}}
+    }}
+  },
+  "allOf": [{
+    "if": {"properties": {"verdict": {"properties": {"publishable": {"const": true}}}}},
+    "then": {"properties": {"winning_implementation": {
+      "required": ["source", "reference", "download", "reproduce", "diff"],
+      "properties": {"source_verified": {"const": true}, "files": {"minItems": 1}}
+    }}}
+  }],
+  "$defs": {
+    "text": {"type": ["string", "null"]},
+    "number": {"type": ["number", "null"]},
+    "count": {"type": "integer", "minimum": 0},
+    "strings": {"type": "array", "items": {"type": "string"}},
+    "source_identity": {"type": ["object", "null"], "required": ["sha256", "files"], "properties": {
+      "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+      "files": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+    }},
+    "evaluation": {
+      "type": "object",
+      "required": ["launch_seq", "candidate_id", "is_reference", "status", "admissible", "charged", "metrics", "research_log", "source_identity", "source", "wall_time_seconds", "research_account", "stdout", "stderr"],
+      "properties": {
+        "launch_seq": {"type": "integer", "minimum": 1}, "candidate_id": {"type": "string"},
+        "is_reference": {"type": "boolean"}, "status": {"type": "string"},
+        "admissible": {"type": "boolean"}, "charged": {"type": "boolean"},
+        "metrics": {"type": "object"}, "research_log": {"type": ["object", "null"]},
+        "source_identity": {"$ref": "#/$defs/source_identity"},
+        "source": {"type": "object", "required": ["path", "archived_in_run", "included_in_submission"], "properties": {
+          "path": {"$ref": "#/$defs/text"}, "archived_in_run": {"type": "boolean"},
+          "included_in_submission": {"type": "boolean"}
+        }},
+        "wall_time_seconds": {"$ref": "#/$defs/number"}, "research_account": {"type": "string"},
+        "stdout": {"$ref": "#/$defs/text"}, "stderr": {"$ref": "#/$defs/text"}
+      }
+    }
+  }
+}

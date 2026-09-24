@@ -1,0 +1,37 @@
+{
+  "id": "gear",
+  "entry_type": "prompt",
+  "environment": {
+    "setup": [],
+    "check": [
+      "python",
+      "check.py"
+    ]
+  },
+  "start": [
+    "python",
+    "-m",
+    "examples.claude_transport",
+    "--",
+    "claude",
+    "--dangerously-skip-permissions",
+    "--model",
+    "us.anthropic.claude-opus-5[1m]",
+    "--session-id",
+    "{session_id}"
+  ],
+  "resume": [
+    "python",
+    "-m",
+    "examples.claude_transport",
+    "--",
+    "claude",
+    "--dangerously-skip-permissions",
+    "--model",
+    "us.anthropic.claude-opus-5[1m]",
+    "--resume",
+    "{session_id}"
+  ],
+  "workers": 1,
+  "prompt_file": "prompt.md"
+}

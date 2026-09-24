@@ -1,0 +1,7 @@
+{
+  "retrieval": true,
+  "max_cycles": 100,
+  "model": "bedrock/us.anthropic.claude-opus-5",
+  "source_revision": "65ffcc8fdf23a64a781940e6a3cfb6369d6d887e",
+  "reasoning_effort": "medium"
+}

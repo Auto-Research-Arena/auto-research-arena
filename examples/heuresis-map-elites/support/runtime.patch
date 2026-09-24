@@ -1,0 +1,323 @@
+--- a/src/heuresis/_bwrap.py
++++ b/src/heuresis/_bwrap.py
+@@ -4,6 +4,7 @@
+ 
+ import logging
+ import os
++import subprocess
+ import time
+ from pathlib import Path
+ from typing import TYPE_CHECKING
+@@ -52,6 +53,11 @@
+     "OPENROUTER_API_KEY",
+     "CURSOR_API_KEY",
+     "HF_TOKEN",
++    # Forward Claude's Bedrock authentication and region settings.
++    "AWS_BEARER_TOKEN_BEDROCK",
++    "CLAUDE_CODE_USE_BEDROCK",
++    "AWS_REGION",
++    "AWS_DEFAULT_REGION",
+ ]
+ 
+ # Task-tunable env vars forwarded into the sandbox when set on the host.
+@@ -62,6 +68,69 @@
+ ]
+ 
+ _HF_CACHE_SANDBOX = "/tmp/huggingface"
++
++_FRESH_PROC_OK: bool | None = None
++
++
++def _can_mount_fresh_proc() -> bool:
++    """Check whether bwrap can mount procfs in a new PID namespace."""
++    global _FRESH_PROC_OK
++    if _FRESH_PROC_OK is None:
++        try:
++            _FRESH_PROC_OK = subprocess.run(
++                ["bwrap", "--ro-bind", "/usr", "/usr", "--unshare-pid",
++                 "--proc", "/proc", "--", "/bin/true"],
++                capture_output=True, timeout=30).returncode == 0
++        except (OSError, subprocess.SubprocessError):
++            _FRESH_PROC_OK = False
++        if not _FRESH_PROC_OK:
++            print("WARN: bwrap cannot mount a fresh /proc under --unshare-pid on "
++                  "this host (masked /proc overmounts), so --unshare-pid is "
++                  "DROPPED and the sandbox runs in the host PID namespace.",
++                  flush=True)
++    return _FRESH_PROC_OK
++
++
++def _cuda_index_to_device_minor() -> dict[int, int]:
++    """Match CUDA indices to device minors by PCI bus address."""
++    try:
++        out = subprocess.run(
++            ["nvidia-smi", "--query-gpu=index,pci.bus_id",
++             "--format=csv,noheader,nounits"],
++            capture_output=True, text=True, timeout=15, check=True).stdout
++    except (OSError, subprocess.SubprocessError):
++        return {}
++
++    def _norm(bus: str) -> str:
++        parts = bus.strip().lower().split(":")
++        return ":".join(parts[-2:]) if len(parts) >= 2 else bus.strip().lower()
++
++    minor_by_bus: dict[str, int] = {}
++    for info in Path("/proc/driver/nvidia/gpus").glob("*/information"):
++        try:
++            text = info.read_text()
++        except OSError:
++            continue
++        for line in text.splitlines():
++            if "Device Minor" in line:
++                try:
++                    minor_by_bus[_norm(info.parent.name)] = int(
++                        line.split(":", 1)[1].strip())
++                except (IndexError, ValueError):
++                    pass
++    mapping: dict[int, int] = {}
++    for line in out.strip().splitlines():
++        if "," not in line:
++            continue
++        idx_s, bus = (p.strip() for p in line.split(",", 1))
++        try:
++            idx = int(idx_s)
++        except ValueError:
++            continue
++        m = minor_by_bus.get(_norm(bus))
++        if m is not None:
++            mapping[idx] = m
++    return mapping
+ 
+ 
+ def build_command(
+@@ -87,7 +156,10 @@
+ 
+     cmd: list[str] = ["bwrap"]
+ 
+-    cmd.extend(["--unshare-pid", "--die-with-parent"])
++    # Use a new PID namespace only when a matching procfs can be mounted.
++    if _can_mount_fresh_proc():
++        cmd.append("--unshare-pid")
++    cmd.append("--die-with-parent")
+ 
+     for path in _SYSTEM_RO_BINDS:
+         p = Path(path)
+@@ -137,9 +209,12 @@
+             cmd.extend(["--ro-bind", str(run_path), f"/workspace/runs/{run_id}"])
+ 
+     if extra_mounts:
+-        for source, target in extra_mounts:
++        for entry in extra_mounts:
++            source, target = entry[0], entry[1]
++            readonly = entry[2] if len(entry) > 2 else True
+             if source.exists():
+-                cmd.extend(["--ro-bind", str(source), target])
++                cmd.extend(["--ro-bind" if readonly else "--bind",
++                            str(source), target])
+ 
+     _mount_python_includes(cmd)
+     _mount_hf_cache(cmd, gpu_ids)
+@@ -193,6 +268,10 @@
+     if not gpu_ids:
+         return
+ 
++    # --gpus means a CUDA index everywhere (reserve_gpus, the nanogpt preflight);
++    # the /dev nodes are named by MINOR. Identity on a fully-exposed host.
++    _minor_of = _cuda_index_to_device_minor()
++
+     cmd.extend(["--dir", "/dev/dri"])
+ 
+     if Path("/sys").is_dir():
+@@ -206,10 +285,15 @@
+     if nvidia_caps.is_dir():
+         cmd.extend(["--dev-bind", str(nvidia_caps), str(nvidia_caps)])
+ 
+-    for gid in gpu_ids:
++    for cuda_idx in gpu_ids:
++        gid = _minor_of.get(cuda_idx, cuda_idx)
+         nvidia_dev = f"/dev/nvidia{gid}"
+         if Path(nvidia_dev).exists():
+             cmd.extend(["--dev-bind", nvidia_dev, nvidia_dev])
++        else:
++            # Report requested devices that cannot be mounted.
++            print(f"WARN: CUDA index {cuda_idx} -> {nvidia_dev} does not exist; "
++                  f"sandbox will have no device node for it.", flush=True)
+ 
+         card = f"/dev/dri/card{gid}"
+         if Path(card).exists():
+@@ -633,6 +717,9 @@
+         env["WORKSPACE_VENV_EXTRA"] = "/workspace/.venv_extra"
+ 
+     env["OPENCODE_EXPERIMENTAL_BASH_DEFAULT_TIMEOUT_MS"] = str(bash_timeout_ms)
++    # Apply the configured shell timeout to Claude Code.
++    env["BASH_DEFAULT_TIMEOUT_MS"] = str(bash_timeout_ms)
++    env["BASH_MAX_TIMEOUT_MS"] = str(bash_timeout_ms)
+ 
+     # Session start time so the agent can track elapsed time
+     env["SESSION_START_EPOCH"] = str(int(time.time()))
+@@ -685,10 +772,11 @@
+     """
+     from heuresis.workspace import Mount  # lazy: avoid circular import
+ 
+-    explicit_mounts: list[tuple[_Path, str]] = []
++    explicit_mounts: list[tuple[_Path, str, bool]] = []
+     for m in mounts or []:
+         if isinstance(m, Mount):
+-            explicit_mounts.append((_Path(m.source), m.target))
++            explicit_mounts.append((_Path(m.source), m.target,
++                                    getattr(m, "readonly", True)))
+ 
+     bwrap_cmd = build_command(
+         workspace=workspace,
+--- a/src/heuresis/experiment.py
++++ b/src/heuresis/experiment.py
+@@ -578,6 +578,11 @@
+             if fb.get("score") is not None:
+                 info["best_score"] = fb["score"]
+                 info["valid"] = fb.get("valid", False)
++                # Carry the selected score's measurement details into feedback.
++                if fb.get("details"):
++                    merged = dict(info.get("details") or {})
++                    merged.update(fb["details"])
++                    info["details"] = merged
+ 
+     return result, info
+ 
+--- a/src/heuresis/harness.py
++++ b/src/heuresis/harness.py
+@@ -381,19 +381,22 @@
+ 
+ 
+ def _normalize_mounts(mounts: list[Path | Mount]) -> tuple[
+-    list[tuple[str, Path]], list[tuple[Path, str]]
++    list[tuple[str, Path]], list[tuple[Path, str, bool]]
+ ]:
+     """Split mounts into reference runs and explicit bind mounts.
+ 
+     Returns (reference_runs, explicit_mounts):
+       - reference_runs: [(run_id, path)] mounted at /workspace/runs/<run_id>
+-      - explicit_mounts: [(source, target)] mounted at exact target path
++      - explicit_mounts: [(source, target, readonly)] at the exact target path
++
++    Preserve each explicit mount's readonly flag.
+     """
+     refs: list[tuple[str, Path]] = []
+-    explicit: list[tuple[Path, str]] = []
++    explicit: list[tuple[Path, str, bool]] = []
+     for m in mounts:
+         if isinstance(m, Mount):
+-            explicit.append((Path(m.source), m.target))
++            explicit.append((Path(m.source), m.target,
++                             getattr(m, "readonly", True)))
+         elif isinstance(m, Path):
+             refs.append((m.name, m))
+         else:
+--- a/src/heuresis/loops/map_elites.py
++++ b/src/heuresis/loops/map_elites.py
+@@ -56,6 +56,11 @@
+             f"task {adapter.name!r} does not support cell-based strategies "
+             f"(no feature classifier / cell ideator prompt)")
+     classifier = adapter.make_classifier()
++    # A task may supply a gated objective (a primary threshold plus a distinct
++    # ranking key). Tasks that do not keep native single-metric behaviour.
++    objective = getattr(adapter, "make_objective", lambda _s: None)(settings)
++    if objective is not None:
++        print(f"Objective: gated ({adapter.objective_label})")
+     features = classifier.features
+     name_fn = feature_namer(features)
+     strategy = make_strategy(features, name_fn, adapter, settings, cfg)
+@@ -155,12 +160,37 @@
+                 info=info, gpu_ids=harness.gpus)
+             score = info.get("best_score")
+ 
+-            features = classifier.classify(idea, result.workspace) if score is not None else None
++            # --- Task objective --------------------------------------------
++            # The supplied task defines the quality gate and ranking target.
++            # Gate failure is INADMISSIBLE, not "worse": passing features=None
++            # makes on_result record archive_status="invalid" and return before
++            # archive.add, i.e. an outright reject with no comparison against the
++            # incumbent, which is exactly the required semantics.
++            if objective is None:
++                features = (classifier.classify(idea, result.workspace)
++                            if score is not None else None)
++                fitness = score
++            else:
++                # NB: not named `verdict` -- that name holds the JUDGE verdict,
++                # which is written to save_judge_review() below.
++                obj_verdict = objective(info, result.workspace)
++                fitness = obj_verdict.fitness
++                features = (classifier.classify_metrics(obj_verdict.metrics)
++                            if obj_verdict.admissible else None)
++                info.setdefault("details", {})
++                info["details"]["objective_status"] = obj_verdict.status
++                info["details"]["num_params"] = obj_verdict.metrics.get("num_params")
+ 
+             with strategy_lock:
+-                qd_meta = strategy.on_result(run_id, score, features=features,
++                qd_meta = strategy.on_result(run_id, fitness, features=features,
+                                              idea=idea, parent_ids=parent_ids,
+                                              ideator_id=tid)
++                if objective is not None:
++                    qd_meta["objective_status"] = obj_verdict.status
++                    for _k in ("val_bpb", "num_params", "total_tokens",
++                               "peak_vram_mb", "total_tokens_M",
++                               "training_seconds"):
++                        qd_meta[_k] = obj_verdict.metrics.get(_k)
+                 record_run(exp, run_id, result=result, info=info,
+                            strategy_meta=qd_meta, iteration=i,
+                            run_type="executor", idea=idea, parent_ids=parent_ids,
+--- a/src/heuresis/parsing.py
++++ b/src/heuresis/parsing.py
+@@ -91,6 +91,9 @@
+ 
+     attempts: list[dict[str, Any]] = []
+     best_score: float | None = None
++    # Details of the attempt that supplied best_score. Kept in lockstep with
++    # best_score below so the two always describe the same attempt.
++    best_details: dict[str, Any] = {}
+     any_valid = False
+ 
+     for attempt_dir in attempt_dirs:
+@@ -133,10 +136,14 @@
+                 )
+                 if is_better:
+                     best_score = score
++                    best_details = entry["details"]
+ 
+     result["attempts"] = attempts
+     result["num_attempts"] = len(attempts)
+     result["best_score"] = best_score
+     result["valid"] = any_valid
++    # Include measurement details when the selected attempt supplied them.
++    if best_details:
++        result["details"] = best_details
+ 
+     return result
+--- a/src/heuresis/qd/map_elites/search.py
++++ b/src/heuresis/qd/map_elites/search.py
+@@ -99,6 +99,8 @@
+             metadata["archive_status"] = "invalid"
+             return metadata
+ 
++        # Persist the fitness used for archive selection.
++        metadata["archive_fitness"] = score
+         added = self.archive.add(run_id, score, features)
+         if added:
+             self._n_elites += 1
+@@ -114,10 +116,14 @@
+         return metadata
+ 
+     def rebuild(self, records: list[tuple[str, float | None, dict[str, Any]]]) -> None:
++        """Restore archive entries using their recorded archive_fitness."""
+         for run_id, score, metadata in records:
+             feats = metadata.get("qd_features")
+-            if feats and score is not None:
+-                self.archive.add(run_id, score, feats)
++            if not feats:
++                continue
++            fitness = metadata.get("archive_fitness")
++            if fitness is not None:
++                self.archive.add(run_id, fitness, feats)
+             gen = metadata.get("generation", 0)
+             self._generation_map[run_id] = gen
+             idea = metadata.get("idea")

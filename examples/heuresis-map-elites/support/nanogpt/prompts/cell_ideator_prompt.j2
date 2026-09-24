@@ -1,0 +1,21 @@
+{% include "heuresis/prompts/common/ideator_guidelines.j2" %}
+
+{% include "heuresis/tasks/nanogpt/prompts/ideator_task.j2" %}
+
+{% include "heuresis/prompts/common/local_memory.j2" %}
+
+{% include "heuresis/prompts/common/shared_memory_ideator.j2" %}
+
+{% include "heuresis/prompts/search/cell_targeted.j2" %}
+
+## Workflow
+
+Work entirely by reading files and writing `memory.md` / `idea.md`. Do not
+execute code. Read parent workspaces at `/workspace/runs/<run_id>/` when they
+look relevant.
+
+## Output Contract
+
+{% include "heuresis/tasks/nanogpt/idea_schema.md" %}
+
+Update `memory.md` first, then write `idea.md`.

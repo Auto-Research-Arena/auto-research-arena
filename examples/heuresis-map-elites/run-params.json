@@ -1,0 +1,19 @@
+{
+  "task": "params",
+  "method": "examples/heuresis-map-elites/interface.json",
+  "source": "examples/heuresis-map-elites",
+  "run_dir": "runs/heuresis-params",
+  "compute": {
+    "backend": "local",
+    "visible_devices": [
+      0
+    ],
+    "mounts": {
+      "~/.cache/autoresearch": "data/autoresearch"
+    },
+    "env": {
+      "UV_PROJECT_ENVIRONMENT": ".local/measurement",
+      "UV_NO_SYNC": "1"
+    }
+  }
+}

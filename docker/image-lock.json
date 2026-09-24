@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "platform": "linux/amd64",
+  "source_image_evidence": {
+    "reference": "docker.io/chrisyang7524/videotraj:sudo",
+    "oci_index_digest": "sha256:4f26abd0edc971d41b98600dbe01594b0ce4a7b8e25b6798f8e2283a966c7ba3",
+    "linux_amd64_manifest_digest": "sha256:32931ae6a817651e76bf0e0e33c86f371f109ffde2704b28aeb1c43061d6a8c2",
+    "config_digest": "sha256:f523735fe3fc0292b43163ad9a7059ff37e7ee8f1a0d92439dbb548b91e1722f",
+    "created": "2026-06-16T19:38:05.770482221-04:00",
+    "inspection_note": "The first 12 linux/amd64 layers exactly match the locked NVIDIA CUDA base. The uv executable extracted from its installation layer reports uv 0.11.6."
+  },
+  "cuda_base": {
+    "reference": "docker.io/nvidia/cuda:12.8.1-cudnn-devel-ubuntu22.04",
+    "oci_index_digest": "sha256:ad6d59a3bbf3e82c1c849c9ac09cfc2a3e0bbb8655042fd899be6681b3fe2a85",
+    "linux_amd64_manifest_digest": "sha256:61f6c08f2b59036cb935e56d1e31a6b64e3ae2c7ddb86d33fa0b044c7917b719",
+    "cuda_version": "12.8.1",
+    "cudnn_version": "9.8.0.87-1",
+    "nccl_version": "2.25.1-1"
+  },
+  "uv_stage": {
+    "reference": "ghcr.io/astral-sh/uv:0.11.6",
+    "oci_index_digest": "sha256:b1e699368d24c57cda93c338a57a8c5a119009ba809305cc8e86986d4a006754",
+    "linux_amd64_manifest_digest": "sha256:43cb71695fcad1516c2fbe0f56e500184c42d8bce838d9f64593b8aff2c16298",
+    "uv_version": "0.11.6"
+  },
+  "substrate_environment": {
+    "python": "3.10",
+    "pyproject_sha256": "675c150a9e0769f0e39a43eb7d836934266fa348d6e2403521f1ff99f9b9f1af",
+    "uv_lock_sha256": "03174c5cce6387418c5b6cc9bbe8f71ad0ae1e1d6fedeaecae5cdcf7321da0a3",
+    "note": "The training and serving substrate dependency files are byte-identical. Their packages are hydrated from the immutable lock and are not globally baked into this base image."
+  }
+}
