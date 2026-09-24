@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="206" viewBox="0 0 840 206" role="img" aria-labelledby="title desc" data-transparent-canvas="true">
+<title id="title">How novel ideas develop during auto-research</title>
+<desc id="desc">A four-step path from routine tuning to a viable parent, then to a structural proposal and final adjudication.</desc>
+<style>
+svg { --ink:#17211d; --muted:#5c6862; --line:#cbd2cd; --green:#18644e; --blue:#315f7d; --neutral:#eef0ee; --soft:#dfece6; --cool:#e3edf3; }
+text { font-family:Arial,Helvetica,sans-serif; fill:var(--ink); font-variant-numeric:tabular-nums; }
+.route { fill:none; stroke:var(--line); stroke-width:2.5; }
+.node { stroke:var(--line); stroke-width:1.5; }
+.node-routine { fill:var(--neutral); }
+.node-parent, .node-proposal { fill:var(--soft); }
+.node-check { fill:var(--cool); }
+.number { font-size:17px; font-weight:500; text-anchor:middle; dominant-baseline:middle; }
+.label { font-size:18px; font-weight:500; text-anchor:middle; }
+.detail { fill:var(--muted); font-size:14px; text-anchor:middle; }
+@media(prefers-color-scheme:dark){svg{--ink:#e6eee8;--muted:#b4c2b9;--line:#526057;--green:#7ac8a4;--blue:#91bed8;--neutral:#252a27;--soft:#203129;--cool:#202f38;}}
+@media print{svg{--ink:#17211d;--muted:#5c6862;--line:#cbd2cd;--green:#18644e;--blue:#315f7d;--neutral:#eef0ee;--soft:#dfece6;--cool:#e3edf3;}}
+</style>
+<defs>
+  <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L11 6 L1 11 Z" fill="var(--line)"/></marker>
+</defs>
+
+<path d="M104 70 H276" class="route" marker-end="url(#arrow)"/>
+<path d="M324 70 H496" class="route" marker-end="url(#arrow)"/>
+<path d="M544 70 H716" class="route" marker-end="url(#arrow)"/>
+
+<circle cx="80" cy="70" r="24" class="node node-routine"/>
+<text x="80" y="70" class="number">1</text>
+<text x="80" y="124" class="label">Routine tuning</text>
+<text x="80" y="151" class="detail">Width · depth · batch · LR</text>
+
+<circle cx="300" cy="70" r="24" class="node node-parent"/>
+<text x="300" y="70" class="number">2</text>
+<text x="300" y="124" class="label">Viable parent</text>
+<text x="300" y="151" class="detail">Quality + limits satisfied</text>
+
+<circle cx="520" cy="70" r="24" class="node node-proposal"/>
+<text x="520" y="70" class="number">3</text>
+<text x="520" y="124" class="label">Structural proposal</text>
+<text x="520" y="151" class="detail">New representation or computation</text>
+
+<circle cx="740" cy="70" r="24" class="node node-check"/>
+<text x="740" y="70" class="number">4</text>
+<text x="740" y="124" class="label">Adjudication</text>
+<text x="740" y="151" class="detail">Quality · correctness</text>
+<text x="740" y="174" class="detail">Metric validity</text>
+</svg>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Submit your method's AutoArena JSON records in one pull request. Link large artifacts; no hosted report or separate website is required.">
+  <title>Submit a run · AutoArena</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip" href="#guide">Skip to submission guide</a>
+  <header class="topbar">
+    <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true"><path d="M3 22 11 6h6l8 16h-6l-5-10-5 10Z" fill="currentColor"/><path d="M11 20h6v3h-6z" fill="currentColor" opacity=".4"/></svg>AutoArena</a>
+    <nav aria-label="Main navigation"><a href="index.html#leaderboard">Leaderboard</a><a href="index.html#target-details">By target</a><a href="submit.html" aria-current="page">Submit a result ↗</a></nav>
+  </header>
+  <main id="guide">
+    <article class="guide">
+      <p class="eyebrow">Public submissions</p>
+      <h1>Submit to AutoArena</h1>
+      <p class="intro">Submit your method’s JSON records together in one pull request. Keep large artifacts at download links. You do not need to host a separate website or HTML report.</p>
+      <section>
+        <h2>1. Prepare your record and artifacts</h2>
+        <p>Start with the exported <code>submission.json</code>. If you have not exported your completed run yet:</p>
+        <pre><code>python3 -m engine submission \
+  --run runs/my-method-params \
+  --output runs/my-method-params/submission</code></pre>
+        <p>When artifact downloads are ready, archive the export and upload it to a file or artifact host:</p>
+        <pre><code>tar -czf runs/my-method-params/artifacts.tar.gz \
+  -C runs/my-method-params/submission .</code></pre>
+        <p>Get a public HTTPS download link. Keep the code, measurement logs and reproduction files at their exported paths inside the archive. The files do not need to be served individually. Use a link without credentials or expiring authentication parameters.</p>
+      </section>
+      <section>
+        <h2>2. Add the JSON to your PR</h2>
+        <p>Fork the <a href="https://github.com/Auto-Research-Arena/auto-research-arena">repository</a>, clone your fork, and create a branch. From its root, install the check dependencies and run:</p>
+        <pre><code>python3 -m pip install -r site/requirements.txt
+git switch -c submit/my-method
+
+python3 scripts/leaderboard.py add \
+  --submission runs/my-method-params/submission/submission.json \
+  --output site/submissions/my-method/params
+
+python3 scripts/leaderboard.py check \
+  site/submissions/my-method/params/submission.json</code></pre>
+        <p>Replace the paths with yours. The helper converts the exported results to the common <code>autoarena/site-submission/1</code> format and creates an empty <code>artifacts.json</code>. Add <code>--artifacts-url URL</code> when the code and logs archive is available. The page shows only supplied download links.</p>
+        <pre><code>site/submissions/my-method/
+  params/
+    submission.json
+    artifacts.json
+  flops/
+    submission.json
+    artifacts.json</code></pre>
+        <p>Repeat for each completed run. Use a new folder for each run, such as <code>params/</code>, <code>flops/</code>, or <code>params-run-2/</code>. If code and logs are separate downloads, use <code>--code-url URL --logs-url URL</code> instead of <code>--artifacts-url</code>. You may add <code>--report-url URL</code> for an existing HTML report; it is optional.</p>
+      </section>
+      <section>
+        <h2>3. Open a pull request</h2>
+        <pre><code>git add site/submissions/my-method/
+git commit -m "Submit my-method results"
+git push -u origin submit/my-method</code></pre>
+        <p>On GitHub, open one pull request for the method’s results across its targets. Use the title <code>Submit: my-method</code> and include:</p>
+        <ol>
+          <li>Your public method name and a link to its code or description. Include a license link if available for the Open source column.</li>
+          <li>Artifact download links, when available.</li>
+          <li>Relevant method and evaluation details.</li>
+        </ol>
+        <p>Commit both JSON files for each run. The build checks result consistency and recalculates rankings and curves without contacting artifact hosts. Publish the generated directory to update the leaderboard.</p>
+        <p>Display names and public source/license links are recorded separately in <code>site/methods.json</code>, keyed by your existing method ID. You may include that small metadata edit or provide the links in your PR for maintainers to add. Open-source availability does not affect ranking or submission eligibility.</p>
+      </section>
+      <section>
+        <h2>What the checks and curves mean</h2>
+        <p>The checks verify the common JSON format, ordered measurement sequences, budget counts, and agreement of the winner and reference with the recorded measurements. The page uses the supplied qualification flags and ranking keys.</p>
+        <p>The overall table shows one row per method, using its best run on each target. Each cell includes the method’s rank and value. Overall Elo gives every target equal weight, uses proportional improvement margins, and averages 4,000 shuffled comparison orders. The cohort mean stays at 1500, with no fixed maximum. Training time is rounded to 30-second checkpoints for rankings, tables and curves; matching checkpoints tie. Downloaded submissions retain raw measurements. Missing targets are excluded and coverage is shown. The leaderboard includes the full rating calculation.</p>
+        <p>The horizontal axis counts <strong>charged experiment launches</strong>, including charged failures and the reference. Lines show the best qualifying value so far and end at the run’s recorded budget usage. Individual experiments can be shown with the chart toggle. All accepted runs, including repeated runs of a method, remain available under Run records.</p>
+        <p>Keep accepted artifacts available and unchanged. Submit a new run folder for a new run. If an existing record needs correction, explain it in a follow-up PR and retain the original evidence.</p>
+      </section>
+    </article>
+  </main>
+  <footer><a class="brand" href="index.html">AutoArena</a><p>Benchmark-owned measurement. Method-owned research.</p><a href="index.html">View leaderboard →</a></footer>
+</body>
+</html>

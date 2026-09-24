@@ -1,0 +1,21 @@
+/* Keep the requested text-heavy tables and science visuals aligned to the prose column. */
+.arena-page .article > #karpathy-discoveries,
+.arena-page .article > #table-3,
+.arena-page .article > .discovery-tabs,
+.arena-page .article > .science-figure,
+.arena-page .article > .science-data {
+  width: min(100%, var(--prose-measure));
+  max-width: var(--prose-measure);
+  margin-inline: auto;
+}
+.arena-page .discovery-tabs [role="tablist"] { flex-wrap: nowrap; overflow-x: auto; }
+.arena-page .discovery-tabs [role="tab"] { font-size: .8125rem; white-space: nowrap; padding: .45rem .55rem; }
+.arena-page .discovery-tabs > #table-4-caption { margin: 0 0 .75rem; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 1rem; line-height: 1.5; }
+.science-figure picture, .science-figure img { display: block; width: 100%; }
+.science-figure img { height: auto; }
+.science-data { border-block: 1px solid var(--line); }
+.science-data > summary { padding: .8rem 0; color: var(--accent); font-size: .9375rem; cursor: pointer; }
+.science-data > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.science-data > .research-budget-table { width: 100%; max-width: 100%; margin: 0 0 1rem; }
+.science-data .research-budget-table table { min-width: 44rem; }
+@media print { .science-figure { break-inside: avoid; } }

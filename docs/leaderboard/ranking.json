@@ -1,0 +1,508 @@
+{
+  "methods": [
+    {
+      "method_id": "autoscientists",
+      "cells": {
+        "params": {
+          "rank": 2,
+          "value": 13910060,
+          "run_id": "autoscientists--params",
+          "report_url": null
+        },
+        "flops": {
+          "rank": 1,
+          "value": 52148760,
+          "run_id": "autoscientists--flops",
+          "report_url": null
+        },
+        "memory": {
+          "rank": 3,
+          "value": 559877120,
+          "run_id": "autoscientists--memory",
+          "report_url": null
+        },
+        "traintime": {
+          "rank": 2,
+          "value": 240,
+          "run_id": "autoscientists--traintime",
+          "report_url": null
+        },
+        "steps": {
+          "rank": 1,
+          "value": 267,
+          "run_id": "autoscientists--steps",
+          "report_url": null
+        },
+        "data": {
+          "rank": 5,
+          "value": 184549376,
+          "run_id": "autoscientists--data",
+          "report_url": null
+        },
+        "kvcache": {
+          "rank": 2,
+          "value": 59392,
+          "run_id": "autoscientists--kvcache",
+          "report_url": null
+        },
+        "decode": {
+          "rank": 1,
+          "value": 49.695491790771484,
+          "run_id": "autoscientists--decode",
+          "report_url": null
+        },
+        "request": {
+          "rank": 1,
+          "value": 29.457807540893555,
+          "run_id": "autoscientists--request",
+          "report_url": null
+        }
+      },
+      "coverage": 9,
+      "matches": 54,
+      "elo": 1729.3701786268632,
+      "match_order_sd": 16.007790631060917,
+      "rank": 1
+    },
+    {
+      "method_id": "sequential-search",
+      "cells": {
+        "params": {
+          "rank": 5,
+          "value": 15151312,
+          "run_id": "sequential-search--params",
+          "report_url": null
+        },
+        "flops": {
+          "rank": 2,
+          "value": 56663808,
+          "run_id": "sequential-search--flops",
+          "report_url": null
+        },
+        "memory": {
+          "rank": 4,
+          "value": 608924672,
+          "run_id": "sequential-search--memory",
+          "report_url": null
+        },
+        "traintime": {
+          "rank": 1,
+          "value": 210,
+          "run_id": "sequential-search--traintime",
+          "report_url": null
+        },
+        "steps": {
+          "rank": 2,
+          "value": 295,
+          "run_id": "sequential-search--steps",
+          "report_url": null
+        },
+        "data": {
+          "rank": 1,
+          "value": 152455168,
+          "run_id": "sequential-search--data",
+          "report_url": null
+        },
+        "kvcache": {
+          "rank": 1,
+          "value": 1024,
+          "run_id": "sequential-search--kvcache",
+          "report_url": null
+        },
+        "decode": {
+          "rank": 6,
+          "value": 98.5555648803711,
+          "run_id": "sequential-search--decode",
+          "report_url": null
+        },
+        "request": {
+          "rank": 3,
+          "value": 61.29932403564453,
+          "run_id": "sequential-search--request",
+          "report_url": null
+        }
+      },
+      "coverage": 9,
+      "matches": 54,
+      "elo": 1687.6113691095902,
+      "match_order_sd": 17.939556954840572,
+      "rank": 2
+    },
+    {
+      "method_id": "arbor",
+      "cells": {
+        "params": {
+          "rank": 4,
+          "value": 14549136,
+          "run_id": "arbor--params",
+          "report_url": null
+        },
+        "flops": {
+          "rank": 3,
+          "value": 58296576,
+          "run_id": "arbor--flops",
+          "report_url": null
+        },
+        "memory": {
+          "rank": 1,
+          "value": 400084992,
+          "run_id": "arbor--memory",
+          "report_url": null
+        },
+        "traintime": {
+          "rank": 3,
+          "value": 270,
+          "run_id": "arbor--traintime",
+          "report_url": null
+        },
+        "steps": {
+          "rank": 5,
+          "value": 337,
+          "run_id": "arbor--steps",
+          "report_url": null
+        },
+        "data": {
+          "rank": 3,
+          "value": 159776768,
+          "run_id": "arbor--data",
+          "report_url": null
+        },
+        "kvcache": {
+          "rank": 4,
+          "value": 96768,
+          "run_id": "arbor--kvcache",
+          "report_url": null
+        },
+        "decode": {
+          "rank": 3,
+          "value": 57.08944797515869,
+          "run_id": "arbor--decode",
+          "report_url": null
+        },
+        "request": {
+          "rank": 2,
+          "value": 57.88278579711914,
+          "run_id": "arbor--request",
+          "report_url": null
+        }
+      },
+      "coverage": 9,
+      "matches": 54,
+      "elo": 1632.374102089888,
+      "match_order_sd": 12.447135436229603,
+      "rank": 3
+    },
+    {
+      "method_id": "gear",
+      "cells": {
+        "params": {
+          "rank": 1,
+          "value": 13197712,
+          "run_id": "gear--params",
+          "report_url": null
+        },
+        "flops": {
+          "rank": 4,
+          "value": 62233344,
+          "run_id": "gear--flops",
+          "report_url": null
+        },
+        "memory": {
+          "rank": 2,
+          "value": 466297856,
+          "run_id": "gear--memory",
+          "report_url": null
+        },
+        "traintime": {
+          "rank": 3,
+          "value": 270,
+          "run_id": "gear--traintime",
+          "report_url": null
+        },
+        "steps": {
+          "rank": 3,
+          "value": 306,
+          "run_id": "gear--steps",
+          "report_url": null
+        },
+        "data": {
+          "rank": 4,
+          "value": 164429824,
+          "run_id": "gear--data",
+          "report_url": null
+        },
+        "kvcache": {
+          "rank": 5,
+          "value": 124416,
+          "run_id": "gear--kvcache",
+          "report_url": null
+        },
+        "decode": {
+          "rank": 2,
+          "value": 56.014180183410645,
+          "run_id": "gear--decode",
+          "report_url": null
+        },
+        "request": {
+          "rank": 4,
+          "value": 97.84162044525146,
+          "run_id": "gear--request",
+          "report_url": null
+        }
+      },
+      "coverage": 9,
+      "matches": 54,
+      "elo": 1622.4111446669015,
+      "match_order_sd": 13.475478386820553,
+      "rank": 4
+    },
+    {
+      "method_id": "beam-search",
+      "cells": {
+        "params": {
+          "rank": 3,
+          "value": 14221456,
+          "run_id": "beam-search--params",
+          "report_url": null
+        },
+        "flops": {
+          "rank": 5,
+          "value": 69847872,
+          "run_id": "beam-search--flops",
+          "report_url": null
+        },
+        "memory": {
+          "rank": 5,
+          "value": 1020860928,
+          "run_id": "beam-search--memory",
+          "report_url": null
+        },
+        "traintime": {
+          "rank": 3,
+          "value": 270,
+          "run_id": "beam-search--traintime",
+          "report_url": null
+        },
+        "steps": {
+          "rank": 4,
+          "value": 335,
+          "run_id": "beam-search--steps",
+          "report_url": null
+        },
+        "data": {
+          "rank": 6,
+          "value": 197656576,
+          "run_id": "beam-search--data",
+          "report_url": null
+        },
+        "kvcache": {
+          "rank": 3,
+          "value": 69632,
+          "run_id": "beam-search--kvcache",
+          "report_url": null
+        },
+        "decode": {
+          "rank": 4,
+          "value": 65.14537334442139,
+          "run_id": "beam-search--decode",
+          "report_url": null
+        },
+        "request": {
+          "rank": 6,
+          "value": 180.55975437164307,
+          "run_id": "beam-search--request",
+          "report_url": null
+        }
+      },
+      "coverage": 9,
+      "matches": 54,
+      "elo": 1438.6132957487964,
+      "match_order_sd": 13.550908028890996,
+      "rank": 5
+    },
+    {
+      "method_id": "heuresis-map-elites",
+      "cells": {
+        "params": {
+          "rank": 6,
+          "value": 17826840,
+          "run_id": "heuresis-map-elites--params",
+          "report_url": null
+        },
+        "flops": {
+          "rank": 6,
+          "value": 84154368,
+          "run_id": "heuresis-map-elites--flops",
+          "report_url": null
+        },
+        "memory": {
+          "rank": 6,
+          "value": 1698522112,
+          "run_id": "heuresis-map-elites--memory",
+          "report_url": null
+        },
+        "traintime": {
+          "rank": 3,
+          "value": 270,
+          "run_id": "heuresis-map-elites--traintime",
+          "report_url": null
+        },
+        "steps": {
+          "rank": 6,
+          "value": 377,
+          "run_id": "heuresis-map-elites--steps",
+          "report_url": null
+        },
+        "data": {
+          "rank": 2,
+          "value": 156172288,
+          "run_id": "heuresis-map-elites--data",
+          "report_url": null
+        },
+        "kvcache": {
+          "rank": 6,
+          "value": 500224,
+          "run_id": "heuresis-map-elites--kvcache",
+          "report_url": null
+        },
+        "decode": {
+          "rank": 5,
+          "value": 97.81789779663086,
+          "run_id": "heuresis-map-elites--decode",
+          "report_url": null
+        },
+        "request": {
+          "rank": 5,
+          "value": 129.0278434753418,
+          "run_id": "heuresis-map-elites--request",
+          "report_url": null
+        }
+      },
+      "coverage": 9,
+      "matches": 54,
+      "elo": 1350.4494901637602,
+      "match_order_sd": 14.18883770983771,
+      "rank": 6
+    },
+    {
+      "method_id": "tpe",
+      "cells": {
+        "params": {
+          "rank": 7,
+          "value": 26345772,
+          "run_id": "tpe--params",
+          "report_url": null
+        },
+        "flops": {
+          "rank": 7,
+          "value": 100271808,
+          "run_id": "tpe--flops",
+          "report_url": null
+        },
+        "memory": {
+          "rank": 7,
+          "value": 6387505664,
+          "run_id": "tpe--memory",
+          "report_url": null
+        },
+        "traintime": {
+          "rank": 7,
+          "value": 510,
+          "run_id": "tpe--traintime",
+          "report_url": null
+        },
+        "steps": {
+          "rank": 7,
+          "value": 753,
+          "run_id": "tpe--steps",
+          "report_url": null
+        },
+        "data": {
+          "rank": 7,
+          "value": 387710976,
+          "run_id": "tpe--data",
+          "report_url": null
+        },
+        "kvcache": {
+          "rank": 7,
+          "value": 18219520,
+          "run_id": "tpe--kvcache",
+          "report_url": null
+        },
+        "decode": {
+          "rank": 7,
+          "value": 230.74018955230713,
+          "run_id": "tpe--decode",
+          "report_url": null
+        },
+        "request": {
+          "rank": 7,
+          "value": 295.38750648498535,
+          "run_id": "tpe--request",
+          "report_url": null
+        }
+      },
+      "coverage": 9,
+      "matches": 54,
+      "elo": 1039.1704195942107,
+      "match_order_sd": 6.855684393795971,
+      "rank": 7
+    }
+  ],
+  "status": "ready",
+  "task_count": 9,
+  "comparison_count": 189,
+  "rating": {
+    "method": "Order-averaged margin-aware Elo",
+    "base": 1500,
+    "scale": 400,
+    "cohort_mean": 1500,
+    "leader_anchor": null,
+    "shuffles": 4000,
+    "seed": 20260902,
+    "k_factor": 32.0,
+    "method_order": [
+      "sequential-search",
+      "beam-search",
+      "autoscientists",
+      "arbor",
+      "gear",
+      "heuresis-map-elites",
+      "tpe"
+    ],
+    "target_order": [
+      "params",
+      "flops",
+      "memory",
+      "traintime",
+      "steps",
+      "data",
+      "kvcache",
+      "decode",
+      "request"
+    ],
+    "weighting": "equal_per_included_target",
+    "target_weights": {
+      "params": 0.1111111111111111,
+      "flops": 0.1111111111111111,
+      "memory": 0.1111111111111111,
+      "traintime": 0.1111111111111111,
+      "steps": 0.1111111111111111,
+      "data": 0.1111111111111111,
+      "kvcache": 0.1111111111111111,
+      "decode": 0.1111111111111111,
+      "request": 0.1111111111111111
+    },
+    "rounding_steps": {
+      "traintime": 30
+    },
+    "rounding_formula": "step * floor(raw_value / step + 0.5)",
+    "margin": "min(3, log1p(abs(log(right / left)) / target_scale) / log(2))",
+    "target_scale": "median nonzero absolute pairwise log gap, floored at 1e-9; 1 if all tied",
+    "comparison_order": "configured target and method order; new methods appended by ID",
+    "run_selection": "best accepted run per method and task",
+    "missing_targets": "excluded from comparisons",
+    "ties": "equal target values: outcome 0.5, zero margin and zero update",
+    "match_order_sd": "population standard deviation across shuffled passes; order sensitivity"
+  }
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="482" viewBox="0 0 840 482" role="img" aria-labelledby="title desc" data-transparent-canvas="true">
+<title id="title">Cumulative research across objectives</title>
+<desc id="desc">Two parameter-seeded search examples at 24 candidate evaluations. Parameters-to-FLOPs: 113.80M to 78.42M FLOPs/token while parameters fall from 14.09M to 13.90M. Parameters-to-training-time: about 570 to 450 seconds while parameters rise from 14.09M to 17.56M.</desc>
+<style>
+svg { --ink:#17211d; --muted:#5c6862; --line:#d9ddd8; --green:#18644e; --orange:#b35e2d; --soft:#e9f1ed; --warm:#f7eee6; }
+text { font-family:Arial,Helvetica,sans-serif; fill:var(--ink); font-size:17px; font-variant-numeric:tabular-nums; }
+.heading { font-size:22px; font-weight:700; }
+.label { font-size:17px; fill:var(--muted); }
+.value { font-size:17px; font-weight:600; }
+.grid { stroke:var(--line); stroke-width:1; }
+.beam { stroke:var(--green); fill:var(--green); }
+.vanilla { stroke:var(--orange); fill:var(--orange); }
+.route { stroke:var(--muted); stroke-width:2.5; fill:none; }
+.state { fill:var(--soft); }
+.state.tradeoff { fill:var(--warm); }
+.metric-label { font-size:17px; fill:var(--muted); }
+.metric-value { font-size:24px; font-weight:650; }
+.stage { font-size:18px; font-weight:600; }
+.outcome { font-size:18px; font-weight:600; fill:var(--green); }
+.outcome.tradeoff { fill:var(--orange); }
+@media(prefers-color-scheme:dark){svg{--ink:#e6eee8;--muted:#b4c2b9;--line:#425247;--green:#7ac8a4;--orange:#edb07c;--soft:#202e26;--warm:#352b22;}}
+@media print{svg{--ink:#17211d;--muted:#5c6862;--line:#d9ddd8;--green:#18644e;--orange:#b35e2d;--soft:#e9f1ed;--warm:#f7eee6;}}
+</style>
+<defs><marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L11 6 L1 11 Z" fill="var(--muted)"/></marker></defs><g transform="translate(0 0)" data-example="flops"><text x="12" y="28" class="heading" text-anchor="start" >(a) Parameters → training FLOPs</text><text x="12" y="66" class="stage" text-anchor="start" >Parameter-optimized model</text><text x="536" y="66" class="stage" text-anchor="start" >After FLOPs search</text><rect x="12" y="82" width="292" height="116" rx="6" class="state "/><text x="30" y="109" class="metric-label" text-anchor="start" >FLOPs / token</text><text x="286" y="136" class="metric-value" text-anchor="end" >113.80M</text><text x="30" y="160" class="metric-label" text-anchor="start" >Parameters</text><text x="286" y="187" class="metric-value" text-anchor="end" >14.09M</text><rect x="536" y="82" width="292" height="116" rx="6" class="state "/><text x="554" y="109" class="metric-label" text-anchor="start" >FLOPs / token</text><text x="810" y="136" class="metric-value" text-anchor="end" >78.42M</text><text x="554" y="160" class="metric-label" text-anchor="start" >Parameters</text><text x="810" y="187" class="metric-value" text-anchor="end" >13.90M</text><line x1="324" y1="140" x2="515" y2="140" class="route" marker-end="url(#arrow)"/><text x="420" y="119" class="label" text-anchor="middle" >Optimize FLOPs</text><text x="536" y="227" class="outcome " text-anchor="start" >Earlier gain preserved</text></g><g transform="translate(0 246)" data-example="active"><text x="12" y="28" class="heading" text-anchor="start" >(b) Parameters → training time</text><text x="12" y="66" class="stage" text-anchor="start" >Parameter-optimized model</text><text x="536" y="66" class="stage" text-anchor="start" >After training-time search</text><rect x="12" y="82" width="292" height="116" rx="6" class="state "/><text x="30" y="109" class="metric-label" text-anchor="start" >Time to quality</text><text x="286" y="136" class="metric-value" text-anchor="end" >~570 s</text><text x="30" y="160" class="metric-label" text-anchor="start" >Parameters</text><text x="286" y="187" class="metric-value" text-anchor="end" >14.09M</text><rect x="536" y="82" width="292" height="116" rx="6" class="state tradeoff"/><text x="554" y="109" class="metric-label" text-anchor="start" >Time to quality</text><text x="810" y="136" class="metric-value" text-anchor="end" >~450 s</text><text x="554" y="160" class="metric-label" text-anchor="start" >Parameters</text><text x="810" y="187" class="metric-value" text-anchor="end" >17.56M</text><line x1="324" y1="140" x2="515" y2="140" class="route" marker-end="url(#arrow)"/><text x="420" y="119" class="label" text-anchor="middle" >Optimize time</text><text x="536" y="227" class="outcome tradeoff" text-anchor="start" >Faster, more parameters</text></g>
+</svg>

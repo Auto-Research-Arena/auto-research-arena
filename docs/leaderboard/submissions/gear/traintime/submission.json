@@ -1,0 +1,1741 @@
+{
+  "schema": "autoarena/site-submission/1",
+  "run_id": "gear--traintime",
+  "method_id": "gear",
+  "task_id": "traintime",
+  "metric": "train_seconds_to_target",
+  "unit": "s",
+  "direction": "minimize",
+  "best_value": 270.0019431114197,
+  "reference_value": 570.4027774333954,
+  "relative_improvement": 0.5266468646482929,
+  "rank_key": [
+    270.0019431114197,
+    232390656.0,
+    -0.007882662718292632
+  ],
+  "best_launch_seq": 64,
+  "best_candidate_id": "exp0064-3eda371",
+  "best_is_reference": false,
+  "budget": {
+    "spent": 100,
+    "max_launches": 100
+  },
+  "compute": {
+    "backend": "pluto",
+    "gpu_instance_type": "p4de.24xlarge",
+    "gpu_model": [
+      "NVIDIA A100-SXM4-80GB"
+    ],
+    "workers": 1,
+    "gpus_per_evaluation": 1,
+    "evaluation_capacity_gpus": 1
+  },
+  "research_llm": {
+    "model": "us.anthropic.claude-opus-5[1m]",
+    "provider": null
+  },
+  "evaluation_gpu_hours": 16.825998611111107,
+  "measurements": [
+    {
+      "launch_seq": 1,
+      "candidate_id": "reference",
+      "is_reference": true,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47198976512,
+        "target_val_bpb": 1.05,
+        "total_tokens": 375914496,
+        "train_seconds_to_target": 570.4027774333954,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.047139205745066
+      }
+    },
+    {
+      "launch_seq": 2,
+      "candidate_id": "exp0002-bd5fa04",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47039589888,
+        "target_val_bpb": 1.05,
+        "total_tokens": 274464768,
+        "train_seconds_to_target": 420.3981921672821,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.049575493874819
+      }
+    },
+    {
+      "launch_seq": 3,
+      "candidate_id": "exp0003-2e827a7",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 286130176,
+        "train_seconds_to_target": 450.10880303382874,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0499147721677888
+      }
+    },
+    {
+      "launch_seq": 4,
+      "candidate_id": "exp0004-8c78a95",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47198976512,
+        "target_val_bpb": 1.05,
+        "total_tokens": 375914496,
+        "train_seconds_to_target": 570.3047413825989,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0489438866928826
+      }
+    },
+    {
+      "launch_seq": 5,
+      "candidate_id": "exp0005-045790d",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23913249280,
+        "target_val_bpb": 1.05,
+        "total_tokens": 352845824,
+        "train_seconds_to_target": 540.2610373497009,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0458978399039112
+      }
+    },
+    {
+      "launch_seq": 6,
+      "candidate_id": "exp0006-cc84256",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47039589888,
+        "target_val_bpb": 1.05,
+        "total_tokens": 216268800,
+        "train_seconds_to_target": 330.40467834472656,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0491746326941904
+      }
+    },
+    {
+      "launch_seq": 7,
+      "candidate_id": "exp0007-8e92f0c",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 286261248,
+        "train_seconds_to_target": 450.1710741519928,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0390885980668834
+      }
+    },
+    {
+      "launch_seq": 8,
+      "candidate_id": "exp0008-c36521e",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23913249280,
+        "target_val_bpb": 1.05,
+        "total_tokens": 348389376,
+        "train_seconds_to_target": 540.0452387332916,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.042088874351961
+      }
+    },
+    {
+      "launch_seq": 9,
+      "candidate_id": "exp0009-065128d",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 229113856,
+        "train_seconds_to_target": 360.026460647583,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0370314780778016
+      }
+    },
+    {
+      "launch_seq": 10,
+      "candidate_id": "exp0010-8c7250c",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 229113856,
+        "train_seconds_to_target": 360.1252980232239,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.046170024190824
+      }
+    },
+    {
+      "launch_seq": 11,
+      "candidate_id": "exp0011-0056a20",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 191234048,
+        "train_seconds_to_target": 300.1294014453888,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0405522435535453
+      }
+    },
+    {
+      "launch_seq": 12,
+      "candidate_id": "exp0012-0157779",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 172228608,
+        "train_seconds_to_target": 270.2079088687897,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0473222781760878
+      }
+    },
+    {
+      "launch_seq": 13,
+      "candidate_id": "exp0013-db86fe4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 209846272,
+        "train_seconds_to_target": 330.0749764442444,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0481739701407256
+      }
+    },
+    {
+      "launch_seq": 14,
+      "candidate_id": "exp0014-915cfd1",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47039589888,
+        "target_val_bpb": 1.05,
+        "total_tokens": 235143168,
+        "train_seconds_to_target": 360.32998490333557,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0433323456000865
+      }
+    },
+    {
+      "launch_seq": 15,
+      "candidate_id": "exp0015-5965da5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 172490752,
+        "train_seconds_to_target": 270.0774726867676,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.046883998897672
+      }
+    },
+    {
+      "launch_seq": 16,
+      "candidate_id": "exp0016-81826ea",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 210763776,
+        "train_seconds_to_target": 330.16536259651184,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0455526436814842
+      }
+    },
+    {
+      "launch_seq": 17,
+      "candidate_id": "exp0017-fe025cf",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 191365120,
+        "train_seconds_to_target": 300.19601464271545,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0466652687318985
+      }
+    },
+    {
+      "launch_seq": 18,
+      "candidate_id": "exp0018-e77c936",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 191365120,
+        "train_seconds_to_target": 300.18219804763794,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0461706642260236
+      }
+    },
+    {
+      "launch_seq": 19,
+      "candidate_id": "exp0019-f08ea9a",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 229638144,
+        "train_seconds_to_target": 360.01911878585815,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0485996233670194
+      }
+    },
+    {
+      "launch_seq": 20,
+      "candidate_id": "exp0020-3af45d7",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 191496192,
+        "train_seconds_to_target": 300.1864438056946,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0473842774593587
+      }
+    },
+    {
+      "launch_seq": 21,
+      "candidate_id": "exp0021-b99f0bd",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 172228608,
+        "train_seconds_to_target": 270.133017539978,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0455016570504567
+      }
+    },
+    {
+      "launch_seq": 22,
+      "candidate_id": "exp0022-648812a",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 191365120,
+        "train_seconds_to_target": 300.0717303752899,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.047663488289111
+      }
+    },
+    {
+      "launch_seq": 23,
+      "candidate_id": "exp0023-a69a0e4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 172359680,
+        "train_seconds_to_target": 270.2022342681885,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0479587479216197
+      }
+    },
+    {
+      "launch_seq": 24,
+      "candidate_id": "exp0024-16846f2",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47039589888,
+        "target_val_bpb": 1.05,
+        "total_tokens": 215744512,
+        "train_seconds_to_target": 330.33419013023376,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0474281406370591
+      }
+    },
+    {
+      "launch_seq": 25,
+      "candidate_id": "exp0025-ff860dc",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 12110999040,
+        "target_val_bpb": 1.05,
+        "total_tokens": 202047488,
+        "train_seconds_to_target": 330.089359998703,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.049338188843904
+      }
+    },
+    {
+      "launch_seq": 26,
+      "candidate_id": "exp0026-38a14da",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23804718592,
+        "target_val_bpb": 1.05,
+        "total_tokens": 206307328,
+        "train_seconds_to_target": 330.2084403038025,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0456944972066868
+      }
+    },
+    {
+      "launch_seq": 27,
+      "candidate_id": "exp0027-8934ff0",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 190447616,
+        "train_seconds_to_target": 300.08310985565186,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0447564803613947
+      }
+    },
+    {
+      "launch_seq": 28,
+      "candidate_id": "exp0028-3f43ff2",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 171835392,
+        "train_seconds_to_target": 270.1815152168274,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0483889644604425
+      }
+    },
+    {
+      "launch_seq": 29,
+      "candidate_id": "exp0029-fddea92",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 213912576,
+        "num_params_total": 47186446,
+        "peak_vram_bytes": 21163855360,
+        "target_val_bpb": 1.05,
+        "total_tokens": 192413696,
+        "train_seconds_to_target": 270.1173813343048,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0478940543137987
+      }
+    },
+    {
+      "launch_seq": 30,
+      "candidate_id": "exp0030-46080a9",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 213912576,
+        "num_params_total": 47186446,
+        "peak_vram_bytes": 21163855360,
+        "target_val_bpb": 1.05,
+        "total_tokens": 192020480,
+        "train_seconds_to_target": 270.03067660331726,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0464465162021663
+      }
+    },
+    {
+      "launch_seq": 31,
+      "candidate_id": "exp0031-c8c5188",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 25860251136,
+        "target_val_bpb": 1.05,
+        "total_tokens": 175374336,
+        "train_seconds_to_target": 270.09358620643616,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0471989345540516
+      }
+    },
+    {
+      "launch_seq": 32,
+      "candidate_id": "exp0032-5e2bb86",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 213912576,
+        "num_params_total": 47186446,
+        "peak_vram_bytes": 21163855360,
+        "target_val_bpb": 1.05,
+        "total_tokens": 212992000,
+        "train_seconds_to_target": 300.1491448879242,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0442287910409715
+      }
+    },
+    {
+      "launch_seq": 33,
+      "candidate_id": "exp0033-dde70fd",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 174850048,
+        "train_seconds_to_target": 270.14933681488037,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.044302470700396
+      }
+    },
+    {
+      "launch_seq": 34,
+      "candidate_id": "exp0034-971fbaa",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 213912576,
+        "num_params_total": 47186446,
+        "peak_vram_bytes": 21163855360,
+        "target_val_bpb": 1.05,
+        "total_tokens": 217579520,
+        "train_seconds_to_target": 300.09343791007996,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0449732552782058
+      }
+    },
+    {
+      "launch_seq": 35,
+      "candidate_id": "exp0035-879050e",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 213912576,
+        "num_params_total": 47186446,
+        "peak_vram_bytes": 21163855360,
+        "target_val_bpb": 1.05,
+        "total_tokens": 196345856,
+        "train_seconds_to_target": 270.13649582862854,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0446569096274765
+      }
+    },
+    {
+      "launch_seq": 36,
+      "candidate_id": "exp0036-9f1d905",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 171048960,
+        "train_seconds_to_target": 270.1850390434265,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0475699973571129
+      }
+    },
+    {
+      "launch_seq": 37,
+      "candidate_id": "exp0037-1c3c642",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 213912576,
+        "num_params_total": 47186446,
+        "peak_vram_bytes": 21163855360,
+        "target_val_bpb": 1.05,
+        "total_tokens": 212336640,
+        "train_seconds_to_target": 300.12102913856506,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0454251637920353
+      }
+    },
+    {
+      "launch_seq": 38,
+      "candidate_id": "exp0038-e9df306",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 220204032,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 184811520,
+        "train_seconds_to_target": 270.0037693977356,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0395449719178038
+      }
+    },
+    {
+      "launch_seq": 39,
+      "candidate_id": "exp0039-47bc76f",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 220204032,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 185073664,
+        "train_seconds_to_target": 270.1429913043976,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.043669202195812
+      }
+    },
+    {
+      "launch_seq": 40,
+      "candidate_id": "exp0040-1c80c4f",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 198183936,
+        "num_params_total": 47186446,
+        "peak_vram_bytes": 21163855360,
+        "target_val_bpb": 1.05,
+        "total_tokens": 201064448,
+        "train_seconds_to_target": 270.1103172302246,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0421643292837275
+      }
+    },
+    {
+      "launch_seq": 41,
+      "candidate_id": "exp0041-ff2b52d",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 210766848,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 190971904,
+        "train_seconds_to_target": 270.17867636680603,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0421206045495812
+      }
+    },
+    {
+      "launch_seq": 42,
+      "candidate_id": "exp0042-15d1e7a",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 176816128,
+        "train_seconds_to_target": 270.12420654296875,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0492491494046414
+      }
+    },
+    {
+      "launch_seq": 43,
+      "candidate_id": "exp0043-8007e34",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 213912576,
+        "num_params_total": 47186446,
+        "peak_vram_bytes": 21163855360,
+        "target_val_bpb": 1.05,
+        "total_tokens": 192937984,
+        "train_seconds_to_target": 270.1389129161835,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0477316376610293
+      }
+    },
+    {
+      "launch_seq": 44,
+      "candidate_id": "exp0044-fefa746",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 220204032,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 183631872,
+        "train_seconds_to_target": 270.0671741962433,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0454555159438184
+      }
+    },
+    {
+      "launch_seq": 45,
+      "candidate_id": "exp0045-822653a",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 188745984,
+        "num_params_total": 39846284,
+        "peak_vram_bytes": 18415511552,
+        "target_val_bpb": 1.05,
+        "total_tokens": 222822400,
+        "train_seconds_to_target": 270.1175820827484,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0482514495432314
+      }
+    },
+    {
+      "launch_seq": 46,
+      "candidate_id": "exp0046-e24eb09",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 220204032,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 184811520,
+        "train_seconds_to_target": 270.1782660484314,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.044614844086077
+      }
+    },
+    {
+      "launch_seq": 47,
+      "candidate_id": "exp0047-e0285c4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 210766848,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 189136896,
+        "train_seconds_to_target": 270.15098905563354,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0376914022912775
+      }
+    },
+    {
+      "launch_seq": 48,
+      "candidate_id": "exp0048-afe0ef6",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 195428352,
+        "train_seconds_to_target": 300.19044303894043,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0456844142561559
+      }
+    },
+    {
+      "launch_seq": 49,
+      "candidate_id": "exp0049-6dbd42b",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 220204032,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 184680448,
+        "train_seconds_to_target": 270.0727958679199,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.04684959673946
+      }
+    },
+    {
+      "launch_seq": 50,
+      "candidate_id": "exp0050-8d08a2b",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 213912576,
+        "num_params_total": 47186446,
+        "peak_vram_bytes": 21163855360,
+        "target_val_bpb": 1.05,
+        "total_tokens": 212336640,
+        "train_seconds_to_target": 300.1674852371216,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0469214776976332
+      }
+    },
+    {
+      "launch_seq": 51,
+      "candidate_id": "exp0051-40de571",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 220204032,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 184680448,
+        "train_seconds_to_target": 270.17496609687805,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0416092377241715
+      }
+    },
+    {
+      "launch_seq": 52,
+      "candidate_id": "exp0052-595122c",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 220204032,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 184156160,
+        "train_seconds_to_target": 270.1673436164856,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0459645643721742
+      }
+    },
+    {
+      "launch_seq": 53,
+      "candidate_id": "exp0053-aebdff9",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 220204032,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 182583296,
+        "train_seconds_to_target": 270.0226380825043,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.048205570414395
+      }
+    },
+    {
+      "launch_seq": 54,
+      "candidate_id": "exp0054-427d120",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 220204032,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 183107584,
+        "train_seconds_to_target": 270.1814663410187,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0433284883496825
+      }
+    },
+    {
+      "launch_seq": 55,
+      "candidate_id": "exp0055-aa89f4b",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 186387456,
+        "num_params_total": 47186446,
+        "peak_vram_bytes": 21163855360,
+        "target_val_bpb": 1.05,
+        "total_tokens": 207618048,
+        "train_seconds_to_target": 270.0039129257202,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0383937456096906
+      }
+    },
+    {
+      "launch_seq": 56,
+      "candidate_id": "exp0056-645abbe",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 198183936,
+        "num_params_total": 47186446,
+        "peak_vram_bytes": 21163855360,
+        "target_val_bpb": 1.05,
+        "total_tokens": 203554816,
+        "train_seconds_to_target": 270.0913348197937,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0481318311177474
+      }
+    },
+    {
+      "launch_seq": 57,
+      "candidate_id": "exp0057-14cc04a",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 203688960,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 23753862656,
+        "target_val_bpb": 1.05,
+        "total_tokens": 193855488,
+        "train_seconds_to_target": 270.0223877429962,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0438795597214214
+      }
+    },
+    {
+      "launch_seq": 58,
+      "candidate_id": "exp0058-2d5d4b5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 166725888,
+        "num_params_total": 39846284,
+        "peak_vram_bytes": 18415511552,
+        "target_val_bpb": 1.05,
+        "total_tokens": 235667456,
+        "train_seconds_to_target": 270.04667830467224,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0415001101252273
+      }
+    },
+    {
+      "launch_seq": 59,
+      "candidate_id": "exp0059-bf03247",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 198183936,
+        "num_params_total": 47186446,
+        "peak_vram_bytes": 21163855360,
+        "target_val_bpb": 1.05,
+        "total_tokens": 204210176,
+        "train_seconds_to_target": 270.0759494304657,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0412332484604896
+      }
+    },
+    {
+      "launch_seq": 60,
+      "candidate_id": "exp0060-f144e6f",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 147065088,
+        "num_params_total": 36700554,
+        "peak_vram_bytes": 15826552832,
+        "target_val_bpb": 1.05,
+        "total_tokens": 265814016,
+        "train_seconds_to_target": 270.0198311805725,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0464426131588946
+      }
+    },
+    {
+      "launch_seq": 61,
+      "candidate_id": "exp0061-6b379a6",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 186387456,
+        "num_params_total": 47186446,
+        "peak_vram_bytes": 21163855360,
+        "target_val_bpb": 1.05,
+        "total_tokens": 214171648,
+        "train_seconds_to_target": 270.0451536178589,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.03649532772633
+      }
+    },
+    {
+      "launch_seq": 62,
+      "candidate_id": "exp0062-3bf71a1",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 176163072,
+        "num_params_total": 39846284,
+        "peak_vram_bytes": 18415511552,
+        "target_val_bpb": 1.05,
+        "total_tokens": 231997440,
+        "train_seconds_to_target": 270.00210762023926,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.046620032833113
+      }
+    },
+    {
+      "launch_seq": 63,
+      "candidate_id": "exp0063-774bc4d",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 115607040,
+        "num_params_total": 29360392,
+        "peak_vram_bytes": 13079257600,
+        "target_val_bpb": 1.05,
+        "total_tokens": 386138112,
+        "train_seconds_to_target": 330.0430223941803,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0483527082235577
+      }
+    },
+    {
+      "launch_seq": 64,
+      "candidate_id": "exp0064-3eda371",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 176163072,
+        "num_params_total": 39846284,
+        "peak_vram_bytes": 18415511552,
+        "target_val_bpb": 1.05,
+        "total_tokens": 232390656,
+        "train_seconds_to_target": 270.0019431114197,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0421173372817074
+      }
+    },
+    {
+      "launch_seq": 65,
+      "candidate_id": "exp0065-64524f4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 213911808,
+        "num_params_total": 39846284,
+        "peak_vram_bytes": 18415511552,
+        "target_val_bpb": 1.05,
+        "total_tokens": 243138560,
+        "train_seconds_to_target": 300.03380036354065,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0468542782614851
+      }
+    },
+    {
+      "launch_seq": 66,
+      "candidate_id": "exp0066-b1e56c8",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 147067392,
+        "num_params_total": 36700938,
+        "peak_vram_bytes": 15857488896,
+        "target_val_bpb": 1.05,
+        "total_tokens": 268566528,
+        "train_seconds_to_target": 270.0963521003723,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.047472592732339
+      }
+    },
+    {
+      "launch_seq": 67,
+      "candidate_id": "exp0067-685c7b6",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 166728192,
+        "num_params_total": 39846668,
+        "peak_vram_bytes": 18454311936,
+        "target_val_bpb": 1.05,
+        "total_tokens": 233308160,
+        "train_seconds_to_target": 270.01066422462463,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0454051693479904
+      }
+    },
+    {
+      "launch_seq": 68,
+      "candidate_id": "exp0068-b90ea68",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 176163072,
+        "num_params_total": 39846284,
+        "peak_vram_bytes": 18541343232,
+        "target_val_bpb": 1.05,
+        "total_tokens": 289144832,
+        "train_seconds_to_target": 330.159126996994,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.04888649970986
+      }
+    },
+    {
+      "launch_seq": 69,
+      "candidate_id": "exp0069-44d979b",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 147072000,
+        "num_params_total": 36701706,
+        "peak_vram_bytes": 15925391872,
+        "target_val_bpb": 1.05,
+        "total_tokens": 482738176,
+        "train_seconds_to_target": 570.0890734195709,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0492098910725363
+      }
+    },
+    {
+      "launch_seq": 70,
+      "candidate_id": "exp0070-379d72c",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 166728192,
+        "num_params_total": 39846668,
+        "peak_vram_bytes": 18580145152,
+        "target_val_bpb": 1.05,
+        "total_tokens": 262930432,
+        "train_seconds_to_target": 300.0704951286316,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.049168773337006
+      }
+    },
+    {
+      "launch_seq": 71,
+      "candidate_id": "exp0071-a596c4a",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 176163072,
+        "num_params_total": 39846284,
+        "peak_vram_bytes": 18541343232,
+        "target_val_bpb": 1.05,
+        "total_tokens": 289144832,
+        "train_seconds_to_target": 330.2703125476837,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.047660592688932
+      }
+    },
+    {
+      "launch_seq": 72,
+      "candidate_id": "exp0072-efa50b4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 147067392,
+        "num_params_total": 36700938,
+        "peak_vram_bytes": 31370122240,
+        "target_val_bpb": 1.05,
+        "total_tokens": 303562752,
+        "train_seconds_to_target": 300.080632686615,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0499061354199217
+      }
+    },
+    {
+      "launch_seq": 73,
+      "candidate_id": "exp0073-a860f22",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 168103680,
+        "num_params_total": 40632968,
+        "peak_vram_bytes": 15872824320,
+        "target_val_bpb": 1.05,
+        "total_tokens": 244318208,
+        "train_seconds_to_target": 270.1306324005127,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0491437544569024
+      }
+    },
+    {
+      "launch_seq": 74,
+      "candidate_id": "exp0074-676ff4b",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 176949120,
+        "num_params_total": 40632648,
+        "peak_vram_bytes": 18015984128,
+        "target_val_bpb": 1.05,
+        "total_tokens": 272629760,
+        "train_seconds_to_target": 300.053991317749,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0459285679831907
+      }
+    },
+    {
+      "launch_seq": 75,
+      "candidate_id": "exp0075-554256a",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 186388992,
+        "num_params_total": 46400262,
+        "peak_vram_bytes": 14747952640,
+        "target_val_bpb": 1.05,
+        "total_tokens": 289800192,
+        "train_seconds_to_target": 330.0146133899689,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.046831162447773
+      }
+    },
+    {
+      "launch_seq": 76,
+      "candidate_id": "exp0076-262652d",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 175769856,
+        "num_params_total": 38338950,
+        "peak_vram_bytes": 13573806080,
+        "target_val_bpb": 1.05,
+        "total_tokens": 334102528,
+        "train_seconds_to_target": 360.1019666194916,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0482245126874299
+      }
+    },
+    {
+      "launch_seq": 77,
+      "candidate_id": "exp0077-f124620",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 157288704,
+        "num_params_total": 31981964,
+        "peak_vram_bytes": 16975685632,
+        "target_val_bpb": 1.05,
+        "total_tokens": 273022976,
+        "train_seconds_to_target": 300.1110644340515,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0443260593520922
+      }
+    },
+    {
+      "launch_seq": 78,
+      "candidate_id": "exp0078-353f919",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 207425280,
+        "num_params_total": 47186568,
+        "peak_vram_bytes": 18623542272,
+        "target_val_bpb": 1.05,
+        "total_tokens": 209059840,
+        "train_seconds_to_target": 270.1176538467407,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.047843272153251
+      }
+    },
+    {
+      "launch_seq": 79,
+      "candidate_id": "exp0079-958fad4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 213911808,
+        "num_params_total": 46137740,
+        "peak_vram_bytes": 23948696064,
+        "target_val_bpb": 1.05,
+        "total_tokens": 201719808,
+        "train_seconds_to_target": 270.084867477417,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0456474104240796
+      }
+    },
+    {
+      "launch_seq": 80,
+      "candidate_id": "exp0080-c8eedad",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 166728192,
+        "num_params_total": 39846668,
+        "peak_vram_bytes": 18454311936,
+        "target_val_bpb": 1.05,
+        "total_tokens": 232259584,
+        "train_seconds_to_target": 270.10338854789734,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0475693264383512
+      }
+    },
+    {
+      "launch_seq": 81,
+      "candidate_id": "exp0081-6bae83b",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 147067392,
+        "num_params_total": 36700938,
+        "peak_vram_bytes": 15857488896,
+        "target_val_bpb": 1.05,
+        "total_tokens": 265945088,
+        "train_seconds_to_target": 270.0335817337036,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0492864173444205
+      }
+    },
+    {
+      "launch_seq": 82,
+      "candidate_id": "exp0082-c6dec3e",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 147067392,
+        "num_params_total": 36700938,
+        "peak_vram_bytes": 15857488896,
+        "target_val_bpb": 1.05,
+        "total_tokens": 265945088,
+        "train_seconds_to_target": 270.06566190719604,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0484686227514979
+      }
+    },
+    {
+      "launch_seq": 83,
+      "candidate_id": "exp0083-8dd92d4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 115608576,
+        "num_params_total": 29360648,
+        "peak_vram_bytes": 13102328320,
+        "target_val_bpb": 1.05,
+        "total_tokens": 431751168,
+        "train_seconds_to_target": 360.0351252555847,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0481297427499832
+      }
+    },
+    {
+      "launch_seq": 84,
+      "candidate_id": "exp0084-3bf8e3e",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 147067392,
+        "num_params_total": 36700938,
+        "peak_vram_bytes": 15970739200,
+        "target_val_bpb": 1.05,
+        "total_tokens": 360185856,
+        "train_seconds_to_target": 360.0271713733673,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0486578836093825
+      }
+    },
+    {
+      "launch_seq": 85,
+      "candidate_id": "exp0085-0ebbc55",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 145887744,
+        "num_params_total": 36700938,
+        "peak_vram_bytes": 15857488896,
+        "target_val_bpb": 1.05,
+        "total_tokens": 298450944,
+        "train_seconds_to_target": 300.0436010360718,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0451831900185002
+      }
+    },
+    {
+      "launch_seq": 86,
+      "candidate_id": "exp0086-53d2228",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 166728192,
+        "num_params_total": 39846668,
+        "peak_vram_bytes": 18454311936,
+        "target_val_bpb": 1.05,
+        "total_tokens": 234618880,
+        "train_seconds_to_target": 270.15167474746704,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.04760472113035
+      }
+    },
+    {
+      "launch_seq": 87,
+      "candidate_id": "exp0087-462d34c",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 147067392,
+        "num_params_total": 36700938,
+        "peak_vram_bytes": 15857488896,
+        "target_val_bpb": 1.05,
+        "total_tokens": 298450944,
+        "train_seconds_to_target": 300.0085415840149,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0478372168451902
+      }
+    },
+    {
+      "launch_seq": 88,
+      "candidate_id": "exp0088-f2c4f4c",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 147065088,
+        "num_params_total": 36700554,
+        "peak_vram_bytes": 15826552832,
+        "target_val_bpb": 1.05,
+        "total_tokens": 280625152,
+        "train_seconds_to_target": 270.0748062133789,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0429041567268542
+      }
+    },
+    {
+      "launch_seq": 89,
+      "candidate_id": "exp0089-6edfed6",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 166728192,
+        "num_params_total": 39846668,
+        "peak_vram_bytes": 18454311936,
+        "target_val_bpb": 1.05,
+        "total_tokens": 243138560,
+        "train_seconds_to_target": 270.0602605342865,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0454142629595855
+      }
+    },
+    {
+      "launch_seq": 90,
+      "candidate_id": "exp0090-d61d265",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 115608576,
+        "num_params_total": 29360648,
+        "peak_vram_bytes": 13102328320,
+        "target_val_bpb": 1.05,
+        "total_tokens": 401866752,
+        "train_seconds_to_target": 330.0926158428192,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.048543537753404
+      }
+    },
+    {
+      "launch_seq": 91,
+      "candidate_id": "exp0091-54c372f",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 149426688,
+        "num_params_total": 36700938,
+        "peak_vram_bytes": 15857488896,
+        "target_val_bpb": 1.05,
+        "total_tokens": 263454720,
+        "train_seconds_to_target": 270.0156247615814,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0485528805633964
+      }
+    },
+    {
+      "launch_seq": 92,
+      "candidate_id": "exp0092-8a139a0",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 147067392,
+        "num_params_total": 36700938,
+        "peak_vram_bytes": 15857488896,
+        "target_val_bpb": 1.05,
+        "total_tokens": 268173312,
+        "train_seconds_to_target": 270.0955767631531,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0485734639250208
+      }
+    },
+    {
+      "launch_seq": 93,
+      "candidate_id": "exp0093-a83671d",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 154145280,
+        "num_params_total": 36700938,
+        "peak_vram_bytes": 15857488896,
+        "target_val_bpb": 1.05,
+        "total_tokens": 285999104,
+        "train_seconds_to_target": 300.03417706489563,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.046367635324914
+      }
+    },
+    {
+      "launch_seq": 94,
+      "candidate_id": "exp0094-06536f0",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 147067392,
+        "num_params_total": 36700938,
+        "peak_vram_bytes": 15857488896,
+        "target_val_bpb": 1.05,
+        "total_tokens": 291504128,
+        "train_seconds_to_target": 300.1185965538025,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0459954117259003
+      }
+    },
+    {
+      "launch_seq": 95,
+      "candidate_id": "exp0095-15f9b6c",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 166725888,
+        "num_params_total": 39846284,
+        "peak_vram_bytes": 18415511552,
+        "target_val_bpb": 1.05,
+        "total_tokens": 241303552,
+        "train_seconds_to_target": 270.07759833335876,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0418778395178876
+      }
+    },
+    {
+      "launch_seq": 96,
+      "candidate_id": "exp0096-f41190d",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 149426688,
+        "num_params_total": 36700938,
+        "peak_vram_bytes": 15857488896,
+        "target_val_bpb": 1.05,
+        "total_tokens": 262930432,
+        "train_seconds_to_target": 270.02907824516296,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0485631903483656
+      }
+    },
+    {
+      "launch_seq": 97,
+      "candidate_id": "exp0097-62c5f74",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 147065088,
+        "num_params_total": 36700554,
+        "peak_vram_bytes": 15826552832,
+        "target_val_bpb": 1.05,
+        "total_tokens": 271712256,
+        "train_seconds_to_target": 270.02827763557434,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0466419782663186
+      }
+    },
+    {
+      "launch_seq": 98,
+      "candidate_id": "exp0098-f9cc2d5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 169873920,
+        "num_params_total": 39846668,
+        "peak_vram_bytes": 18454311936,
+        "target_val_bpb": 1.05,
+        "total_tokens": 237502464,
+        "train_seconds_to_target": 270.1274800300598,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0470229227442822
+      }
+    },
+    {
+      "launch_seq": 99,
+      "candidate_id": "exp0099-0d46b84",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 147065088,
+        "num_params_total": 36700554,
+        "peak_vram_bytes": 15826552832,
+        "target_val_bpb": 1.05,
+        "total_tokens": 271450112,
+        "train_seconds_to_target": 270.0875720977783,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0464753060716903
+      }
+    },
+    {
+      "launch_seq": 100,
+      "candidate_id": "exp0100-8778e8a",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 147067392,
+        "num_params_total": 36700938,
+        "peak_vram_bytes": 15857488896,
+        "target_val_bpb": 1.05,
+        "total_tokens": 276430848,
+        "train_seconds_to_target": 270.05520725250244,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0474100716233647
+      }
+    }
+  ]
+}

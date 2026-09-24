@@ -1,0 +1,1542 @@
+{
+  "schema": "autoarena/site-submission/1",
+  "run_id": "autoscientists--flops",
+  "method_id": "autoscientists",
+  "task_id": "flops",
+  "metric": "flops_per_token_measured",
+  "unit": "FLOPs/token",
+  "direction": "minimize",
+  "best_value": 52148760,
+  "reference_value": 239078400,
+  "relative_improvement": 0.7818759034693222,
+  "rank_key": [
+    52148760.0,
+    1073479680.0,
+    -0.0008626639992499463
+  ],
+  "best_launch_seq": 100,
+  "best_candidate_id": "exp-1ba9d8174dcf3345e024ef26",
+  "best_is_reference": false,
+  "budget": {
+    "spent": 100,
+    "max_launches": 100
+  },
+  "compute": {
+    "backend": "pluto",
+    "gpu_instance_type": "p4de.24xlarge",
+    "gpu_model": [
+      "NVIDIA A100-SXM4-80GB",
+      "NVIDIA A100-SXM4-80GB"
+    ],
+    "workers": 2,
+    "gpus_per_evaluation": 1,
+    "evaluation_capacity_gpus": 2
+  },
+  "research_llm": {
+    "model": "us.anthropic.claude-opus-5[1m]",
+    "provider": "bedrock"
+  },
+  "evaluation_gpu_hours": 19.990911944444438,
+  "measurements": [
+    {
+      "launch_seq": 1,
+      "candidate_id": "reference",
+      "is_reference": true,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 239078400,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47198976512,
+        "total_tokens": 395313152,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.04691946920115
+      }
+    },
+    {
+      "launch_seq": 2,
+      "candidate_id": "exp-1df9eb83be3334c02e3cbd52",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 213912576,
+        "num_params_total": 47186446,
+        "peak_vram_bytes": 42038909440,
+        "total_tokens": 443023360,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0400644983932947
+      }
+    },
+    {
+      "launch_seq": 3,
+      "candidate_id": "exp-360431e45fee5eb15c7fd886",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 220204032,
+        "num_params_total": 50332176,
+        "peak_vram_bytes": 47198976512,
+        "total_tokens": 414711808,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0435198045618685
+      }
+    },
+    {
+      "launch_seq": 4,
+      "candidate_id": "exp-88749888bcfd88873a23b066",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 135661824,
+        "num_params_total": 31261070,
+        "peak_vram_bytes": 32566292480,
+        "total_tokens": 628621312,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0187447011926813
+      }
+    },
+    {
+      "launch_seq": 5,
+      "candidate_id": "exp-bf8159a86ffdfe2d753be606",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 185601024,
+        "num_params_total": 47186446,
+        "peak_vram_bytes": 21308824064,
+        "total_tokens": 476053504,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0234079720975882
+      }
+    },
+    {
+      "launch_seq": 6,
+      "candidate_id": "exp-993a42fae456297a91c2c4bf",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 102041856,
+        "num_params_total": 22905230,
+        "peak_vram_bytes": 27856285696,
+        "total_tokens": 782237696,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0325111586619753
+      }
+    },
+    {
+      "launch_seq": 7,
+      "candidate_id": "exp-49e825f554d20057b65816ec",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 97324992,
+        "num_params_total": 40698542,
+        "peak_vram_bytes": 33254033920,
+        "total_tokens": 711983104,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0575278896958127
+      }
+    },
+    {
+      "launch_seq": 8,
+      "candidate_id": "exp-d78a9f26748a2887c71fe477",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 89655552,
+        "num_params_total": 20840846,
+        "peak_vram_bytes": 25004727296,
+        "total_tokens": 848822272,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0397219198189882
+      }
+    },
+    {
+      "launch_seq": 9,
+      "candidate_id": "exp-c7357d8fdec5ab6e5a709734",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 96143616,
+        "num_params_total": 22905230,
+        "peak_vram_bytes": 27856285696,
+        "total_tokens": 803733504,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0313712708809326
+      }
+    },
+    {
+      "launch_seq": 10,
+      "candidate_id": "exp-d79b22837bc7140c26616e8a",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 80217792,
+        "num_params_total": 18088236,
+        "peak_vram_bytes": 22043597312,
+        "total_tokens": 929038336,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.053544266951021
+      }
+    },
+    {
+      "launch_seq": 11,
+      "candidate_id": "exp-d1de4f6142e2c41f4085d302",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 83757312,
+        "num_params_total": 20840846,
+        "peak_vram_bytes": 25004727296,
+        "total_tokens": 836239360,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0400906493156898
+      }
+    },
+    {
+      "launch_seq": 12,
+      "candidate_id": "exp-a063831620c4abdf0187da90",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 48760320,
+        "num_params_total": 12058894,
+        "peak_vram_bytes": 18085793280,
+        "total_tokens": 942669824,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.1015566639908705
+      }
+    },
+    {
+      "launch_seq": 13,
+      "candidate_id": "exp-144668fba88f73d0fb8a6c2d",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 69896448,
+        "num_params_total": 16662926,
+        "peak_vram_bytes": 22649773056,
+        "total_tokens": 912785408,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0817649098285247
+      }
+    },
+    {
+      "launch_seq": 14,
+      "candidate_id": "exp-2080a5f4ee1b05dd3b4eddad",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 76089600,
+        "num_params_total": 20840846,
+        "peak_vram_bytes": 12638149632,
+        "total_tokens": 753401856,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0485105157709302
+      }
+    },
+    {
+      "launch_seq": 15,
+      "candidate_id": "exp-a0d878b4d05dc37c0e764b53",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 74615040,
+        "num_params_total": 20840846,
+        "peak_vram_bytes": 25002269696,
+        "total_tokens": 825229312,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.04440159415514
+      }
+    },
+    {
+      "launch_seq": 16,
+      "candidate_id": "exp-32b55b1c6c00d365d44a7e22",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 74613888,
+        "num_params_total": 20840654,
+        "peak_vram_bytes": 24936959488,
+        "total_tokens": 795607040,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.038500791230573
+      }
+    },
+    {
+      "launch_seq": 17,
+      "candidate_id": "exp-53e3c87fe88723de41178569",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 68913408,
+        "num_params_total": 19890574,
+        "peak_vram_bytes": 25119153152,
+        "total_tokens": 827326464,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0543323345180544
+      }
+    },
+    {
+      "launch_seq": 18,
+      "candidate_id": "exp-fd11384be21ff84f848aecc0",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 68420736,
+        "num_params_total": 19808462,
+        "peak_vram_bytes": 23515899392,
+        "total_tokens": 845414400,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.043136057134412
+      }
+    },
+    {
+      "launch_seq": 19,
+      "candidate_id": "exp-8fc592a840be7e0e98fc3f50",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 66012288,
+        "num_params_total": 19407054,
+        "peak_vram_bytes": 23674807808,
+        "total_tokens": 850395136,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0471658327002966
+      }
+    },
+    {
+      "launch_seq": 20,
+      "candidate_id": "exp-fe79db843ff642ad692c887e",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 65840256,
+        "num_params_total": 19378382,
+        "peak_vram_bytes": 22923744768,
+        "total_tokens": 851968000,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0496750805829933
+      }
+    },
+    {
+      "launch_seq": 21,
+      "candidate_id": "exp-31ee44b90ff73486a4801ce3",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 64832640,
+        "num_params_total": 19407054,
+        "peak_vram_bytes": 23674807808,
+        "total_tokens": 851968000,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0472733799128247
+      }
+    },
+    {
+      "launch_seq": 22,
+      "candidate_id": "exp-3331515762a0a3f2d386be18",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 64832064,
+        "num_params_total": 19406958,
+        "peak_vram_bytes": 23674577920,
+        "total_tokens": 848035840,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0476010907143847
+      }
+    },
+    {
+      "launch_seq": 23,
+      "candidate_id": "exp-bdc9c8e647aecbb475b18e87",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 63652992,
+        "num_params_total": 19407054,
+        "peak_vram_bytes": 23674807808,
+        "total_tokens": 839385088,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0536759597843124
+      }
+    },
+    {
+      "launch_seq": 24,
+      "candidate_id": "exp-f75939579b4d17d659581113",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 64537152,
+        "num_params_total": 19406958,
+        "peak_vram_bytes": 23674087936,
+        "total_tokens": 848560128,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0454966262246954
+      }
+    },
+    {
+      "launch_seq": 25,
+      "candidate_id": "exp-f7662c5dd10dbdb21362875b",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 62890560,
+        "num_params_total": 19132526,
+        "peak_vram_bytes": 23655090688,
+        "total_tokens": 840957952,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.049820306806161
+      }
+    },
+    {
+      "launch_seq": 26,
+      "candidate_id": "exp-c0c1bbdd893dd9ca45b70a64",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 62890488,
+        "num_params_total": 19137876,
+        "peak_vram_bytes": 27696822784,
+        "total_tokens": 834666496,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0499383288709725
+      }
+    },
+    {
+      "launch_seq": 27,
+      "candidate_id": "exp-7f0c3bbcd7db5b00502e4c38",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 62890416,
+        "num_params_total": 19132502,
+        "peak_vram_bytes": 23653550592,
+        "total_tokens": 836501504,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.050173847980041
+      }
+    },
+    {
+      "launch_seq": 28,
+      "candidate_id": "exp-84c2981fd8791e4be53e95e2",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 61858296,
+        "num_params_total": 18965844,
+        "peak_vram_bytes": 13823652352,
+        "total_tokens": 738721792,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0550773940625708
+      }
+    },
+    {
+      "launch_seq": 29,
+      "candidate_id": "exp-ed66e5da4ab794e9e35d567f",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 62890416,
+        "num_params_total": 19137864,
+        "peak_vram_bytes": 32401329664,
+        "total_tokens": 837287936,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0524688565928653
+      }
+    },
+    {
+      "launch_seq": 30,
+      "candidate_id": "exp-cc083ce59f1bc2aaf7b2d0f1",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 61440576,
+        "num_params_total": 18890862,
+        "peak_vram_bytes": 22965949952,
+        "total_tokens": 848297984,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0491482879508198
+      }
+    },
+    {
+      "launch_seq": 31,
+      "candidate_id": "exp-b74cf36ba5714adac12f11a3",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 60408000,
+        "num_params_total": 14524462,
+        "peak_vram_bytes": 21947804160,
+        "total_tokens": 842530816,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0664750429202194
+      }
+    },
+    {
+      "launch_seq": 32,
+      "candidate_id": "exp-af858c87b055c4cfe119fd69",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 61440504,
+        "num_params_total": 18890850,
+        "peak_vram_bytes": 22965671424,
+        "total_tokens": 849084416,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0514946080045482
+      }
+    },
+    {
+      "launch_seq": 33,
+      "candidate_id": "exp-a26d435af0b20215126e20d4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 61182528,
+        "num_params_total": 18847854,
+        "peak_vram_bytes": 22906970624,
+        "total_tokens": 841744384,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0551382559787983
+      }
+    },
+    {
+      "launch_seq": 34,
+      "candidate_id": "exp-5d76356b5e61d1d4e056073c",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 61440432,
+        "num_params_total": 18890838,
+        "peak_vram_bytes": 22965671424,
+        "total_tokens": 847773696,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0505622513707127
+      }
+    },
+    {
+      "launch_seq": 35,
+      "candidate_id": "exp-67ff1e97fa3986e0af43bf55",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 61182528,
+        "num_params_total": 18847854,
+        "peak_vram_bytes": 22906970624,
+        "total_tokens": 849608704,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.049757504550277
+      }
+    },
+    {
+      "launch_seq": 36,
+      "candidate_id": "exp-6b220c26b8368dbbac5db740",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 61440504,
+        "num_params_total": 18890850,
+        "peak_vram_bytes": 22965671424,
+        "total_tokens": 838074368,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0473358765279392
+      }
+    },
+    {
+      "launch_seq": 37,
+      "candidate_id": "exp-996562b4f3c610b913850acb",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 60924408,
+        "num_params_total": 18804834,
+        "peak_vram_bytes": 22846976512,
+        "total_tokens": 832831488,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0484585887886861
+      }
+    },
+    {
+      "launch_seq": 38,
+      "candidate_id": "exp-3c419093c559f89d777d0d06",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 60776952,
+        "num_params_total": 18890850,
+        "peak_vram_bytes": 22763358208,
+        "total_tokens": 811597824,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0532454961769935
+      }
+    },
+    {
+      "launch_seq": 39,
+      "candidate_id": "exp-b7edfcb469cca61c5c2011ff",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 60666360,
+        "num_params_total": 18761826,
+        "peak_vram_bytes": 22788288000,
+        "total_tokens": 830996480,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.048917013734106
+      }
+    },
+    {
+      "launch_seq": 40,
+      "candidate_id": "exp-688915615fc5bdefcee8b744",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 60666288,
+        "num_params_total": 18761814,
+        "peak_vram_bytes": 22788288000,
+        "total_tokens": 803733504,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0521773338713634
+      }
+    },
+    {
+      "launch_seq": 41,
+      "candidate_id": "exp-61530fc64f955a92fa918410",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 60666216,
+        "num_params_total": 18761802,
+        "peak_vram_bytes": 22788771328,
+        "total_tokens": 812908544,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0506479788141843
+      }
+    },
+    {
+      "launch_seq": 42,
+      "candidate_id": "exp-01d83b51ad09ca8d37dad19d",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 60666144,
+        "num_params_total": 18761790,
+        "peak_vram_bytes": 22788288000,
+        "total_tokens": 785383424,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.052222015995933
+      }
+    },
+    {
+      "launch_seq": 43,
+      "candidate_id": "exp-55d3874b86eb6ba95b7e5c95",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 60666288,
+        "num_params_total": 18761814,
+        "peak_vram_bytes": 22790520320,
+        "total_tokens": 906231808,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0460643023033076
+      }
+    },
+    {
+      "launch_seq": 44,
+      "candidate_id": "exp-c63397751abe3ce508a626cb",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 60408312,
+        "num_params_total": 18718818,
+        "peak_vram_bytes": 22731312640,
+        "total_tokens": 832045056,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0505726559362691
+      }
+    },
+    {
+      "launch_seq": 45,
+      "candidate_id": "exp-b0247fcb65aa757b5fd82969",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 60408312,
+        "num_params_total": 18718818,
+        "peak_vram_bytes": 22731312640,
+        "total_tokens": 819200000,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0501932226229445
+      }
+    },
+    {
+      "launch_seq": 46,
+      "candidate_id": "exp-c50ea6f9e50ac4304b99594e",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 59634096,
+        "num_params_total": 18589782,
+        "peak_vram_bytes": 22555507200,
+        "total_tokens": 950534144,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.046092359486946
+      }
+    },
+    {
+      "launch_seq": 47,
+      "candidate_id": "exp-d1378fc55fc9293e2177b20c",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 58343856,
+        "num_params_total": 18374742,
+        "peak_vram_bytes": 22258236928,
+        "total_tokens": 969146368,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0476712890509021
+      }
+    },
+    {
+      "launch_seq": 48,
+      "candidate_id": "exp-c869e1a69fae5b31db57ed04",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 58343856,
+        "num_params_total": 18374742,
+        "peak_vram_bytes": 22258236928,
+        "total_tokens": 940310528,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.048404846065984
+      }
+    },
+    {
+      "launch_seq": 49,
+      "candidate_id": "exp-29b92d0269b2526abfbfcd2c",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 56537520,
+        "num_params_total": 18073686,
+        "peak_vram_bytes": 21844673024,
+        "total_tokens": 952631296,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.051023929739651
+      }
+    },
+    {
+      "launch_seq": 50,
+      "candidate_id": "exp-44bd6a2f03d1607f8355f1ab",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 57053616,
+        "num_params_total": 18159702,
+        "peak_vram_bytes": 21962384896,
+        "total_tokens": 949223424,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0501739534101322
+      }
+    },
+    {
+      "launch_seq": 51,
+      "candidate_id": "exp-262a433bed57d4b53e211063",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 58085808,
+        "num_params_total": 18331734,
+        "peak_vram_bytes": 22199062016,
+        "total_tokens": 942407680,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0478599173282401
+      }
+    },
+    {
+      "launch_seq": 52,
+      "candidate_id": "exp-7aaab61e33410bfc3c98aa2e",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 58343784,
+        "num_params_total": 18374730,
+        "peak_vram_bytes": 22259285504,
+        "total_tokens": 955514880,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0505154542546187
+      }
+    },
+    {
+      "launch_seq": 53,
+      "candidate_id": "exp-a676adbd5605656c4f6c2c35",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 57827760,
+        "num_params_total": 18288726,
+        "peak_vram_bytes": 11160272384,
+        "total_tokens": 871890944,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.054189559810743
+      }
+    },
+    {
+      "launch_seq": 54,
+      "candidate_id": "exp-82bc328615fedec0b0dc4a7d",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 57201072,
+        "num_params_total": 21330006,
+        "peak_vram_bytes": 22215832064,
+        "total_tokens": 962068480,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.057054005930166
+      }
+    },
+    {
+      "launch_seq": 55,
+      "candidate_id": "exp-d34b96a03ae1675eb27b2200",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 57643440,
+        "num_params_total": 18258006,
+        "peak_vram_bytes": 22200973312,
+        "total_tokens": 958660608,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.047704077809235
+      }
+    },
+    {
+      "launch_seq": 56,
+      "candidate_id": "exp-950bf45c250b55bcbc4dedb5",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 57827760,
+        "num_params_total": 18288726,
+        "peak_vram_bytes": 22139543040,
+        "total_tokens": 930611200,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0545144303895457
+      }
+    },
+    {
+      "launch_seq": 57,
+      "candidate_id": "exp-aa22ea0ab5e0cc70b6a13119",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 57828084,
+        "num_params_total": 23007372,
+        "peak_vram_bytes": 22476753408,
+        "total_tokens": 937689088,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0484681648228193
+      }
+    },
+    {
+      "launch_seq": 58,
+      "candidate_id": "exp-d3d6b8352fc274be4a7239ce",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 57127344,
+        "num_params_total": 18171990,
+        "peak_vram_bytes": 22078743552,
+        "total_tokens": 947912704,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0489050362367864
+      }
+    },
+    {
+      "launch_seq": 59,
+      "candidate_id": "exp-bf001668b8eed73c868751ba",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 57643368,
+        "num_params_total": 18257994,
+        "peak_vram_bytes": 22203090944,
+        "total_tokens": 954466304,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0559507833269675
+      }
+    },
+    {
+      "launch_seq": 60,
+      "candidate_id": "exp-1839e7f83d81af4a235a6f2d",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 57256368,
+        "num_params_total": 18193494,
+        "peak_vram_bytes": 22124985344,
+        "total_tokens": 914620416,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0511869704533636
+      }
+    },
+    {
+      "launch_seq": 61,
+      "candidate_id": "exp-b62803754eb0368c4eddd51a",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 57127272,
+        "num_params_total": 18171978,
+        "peak_vram_bytes": 22080279552,
+        "total_tokens": 898629632,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0512543456063304
+      }
+    },
+    {
+      "launch_seq": 62,
+      "candidate_id": "exp-c38942b5ddd8852e059fb1e4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 56715696,
+        "num_params_total": 18103382,
+        "peak_vram_bytes": 22075624448,
+        "total_tokens": 900464640,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0520384164144554
+      }
+    },
+    {
+      "launch_seq": 63,
+      "candidate_id": "exp-9b273002cdba2053a0f577d6",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 56869296,
+        "num_params_total": 18128982,
+        "peak_vram_bytes": 22020502528,
+        "total_tokens": 914620416,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0508004839734393
+      }
+    },
+    {
+      "launch_seq": 64,
+      "candidate_id": "exp-3a7c950a1e10e40677b3e456",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 57127344,
+        "num_params_total": 18171990,
+        "peak_vram_bytes": 22078743552,
+        "total_tokens": 1020264448,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.049159025845856
+      }
+    },
+    {
+      "launch_seq": 65,
+      "candidate_id": "exp-2c8ccaf8e5ae1f28eca6e4bf",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 56684976,
+        "num_params_total": 18098262,
+        "peak_vram_bytes": 22078299648,
+        "total_tokens": 958660608,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.050911877786867
+      }
+    },
+    {
+      "launch_seq": 66,
+      "candidate_id": "exp-61e512efd317887a877589ce",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 57125040,
+        "num_params_total": 18171990,
+        "peak_vram_bytes": 22078743552,
+        "total_tokens": 971505664,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0482776739472053
+      }
+    },
+    {
+      "launch_seq": 67,
+      "candidate_id": "exp-5d321f7761f8add36c270121",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 55044528,
+        "num_params_total": 17136726,
+        "peak_vram_bytes": 21497863168,
+        "total_tokens": 958398464,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0537448024389513
+      }
+    },
+    {
+      "launch_seq": 68,
+      "candidate_id": "exp-1d3ef0c36b563d7a94fbff7c",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 57124896,
+        "num_params_total": 18171966,
+        "peak_vram_bytes": 22078743552,
+        "total_tokens": 984088576,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0486899620457883
+      }
+    },
+    {
+      "launch_seq": 69,
+      "candidate_id": "exp-29bf3f1365b4bdca27a6cc62",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 56866848,
+        "num_params_total": 18128958,
+        "peak_vram_bytes": 22023189504,
+        "total_tokens": 1039925248,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0497674788758655
+      }
+    },
+    {
+      "launch_seq": 70,
+      "candidate_id": "exp-d24ca1b859efc2b5fc798b93",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 56866848,
+        "num_params_total": 18128958,
+        "peak_vram_bytes": 22023189504,
+        "total_tokens": 1079771136,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0488078808104098
+      }
+    },
+    {
+      "launch_seq": 71,
+      "candidate_id": "exp-3f4330924464e5567bb1e2de",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 56719392,
+        "num_params_total": 18128958,
+        "peak_vram_bytes": 22023189504,
+        "total_tokens": 1049100288,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0491688936764032
+      }
+    },
+    {
+      "launch_seq": 72,
+      "candidate_id": "exp-8759db7d37409b4758061c45",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 56664384,
+        "num_params_total": 17904702,
+        "peak_vram_bytes": 21940222976,
+        "total_tokens": 1045430272,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.047365263834646
+      }
+    },
+    {
+      "launch_seq": 73,
+      "candidate_id": "exp-8d57895660787d3d337f7ec4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 56562720,
+        "num_params_total": 18128958,
+        "peak_vram_bytes": 22023189504,
+        "total_tokens": 1085538304,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0504318875955396
+      }
+    },
+    {
+      "launch_seq": 74,
+      "candidate_id": "exp-98f0bd51c03962dcce5d75b3",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 56239872,
+        "num_params_total": 17671230,
+        "peak_vram_bytes": 21851220992,
+        "total_tokens": 1072431104,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0490857508675893
+      }
+    },
+    {
+      "launch_seq": 75,
+      "candidate_id": "exp-d361babb8f8b50f99cfe6afa",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 56101632,
+        "num_params_total": 17867838,
+        "peak_vram_bytes": 21865098240,
+        "total_tokens": 1043595264,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0494546795100186
+      }
+    },
+    {
+      "launch_seq": 76,
+      "candidate_id": "exp-38f84346dc85ee111cfdf811",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 55909536,
+        "num_params_total": 17231934,
+        "peak_vram_bytes": 21666944000,
+        "total_tokens": 1057226752,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0515444828273421
+      }
+    },
+    {
+      "launch_seq": 77,
+      "candidate_id": "exp-40355a98a63c3419cffd9755",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 55843872,
+        "num_params_total": 17634366,
+        "peak_vram_bytes": 21773515776,
+        "total_tokens": 1042546688,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0490933365093966
+      }
+    },
+    {
+      "launch_seq": 78,
+      "candidate_id": "exp-3d6fed310270a76cc463b1de",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": null,
+        "num_params_total": null,
+        "peak_vram_bytes": null,
+        "total_tokens": null,
+        "training_data_tokens_available": null,
+        "val_bpb": null
+      }
+    },
+    {
+      "launch_seq": 79,
+      "candidate_id": "exp-62fcf4b0264e690b70da709e",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 55070592,
+        "num_params_total": 17327166,
+        "peak_vram_bytes": 21531524096,
+        "total_tokens": 1067974656,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0496811582550127
+      }
+    },
+    {
+      "launch_seq": 80,
+      "candidate_id": "exp-43e7f0d72bb588ddf9b12681",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 55586112,
+        "num_params_total": 17597502,
+        "peak_vram_bytes": 21698104320,
+        "total_tokens": 1042284544,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0500349816407533
+      }
+    },
+    {
+      "launch_seq": 81,
+      "candidate_id": "exp-f6bd7b94ee7ba613fe7cc240",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 55070592,
+        "num_params_total": 17335358,
+        "peak_vram_bytes": 21695712256,
+        "total_tokens": 1049886720,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0506992977097411
+      }
+    },
+    {
+      "launch_seq": 82,
+      "candidate_id": "exp-eec9e5c6de1ea152a346580c",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 55070808,
+        "num_params_total": 21455970,
+        "peak_vram_bytes": 21824575488,
+        "total_tokens": 1057751040,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0488456641861899
+      }
+    },
+    {
+      "launch_seq": 83,
+      "candidate_id": "exp-268dc47f07c0d9533dbb0b3f",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 55033728,
+        "num_params_total": 17321022,
+        "peak_vram_bytes": 21526014976,
+        "total_tokens": 1068761088,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0500195185607248
+      }
+    },
+    {
+      "launch_seq": 84,
+      "candidate_id": "exp-011200ee192a34161be87a3d",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 55072608,
+        "num_params_total": 17327502,
+        "peak_vram_bytes": 21532430336,
+        "total_tokens": 1070858240,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.050218433194123
+      }
+    },
+    {
+      "launch_seq": 85,
+      "candidate_id": "exp-9034e2990a011ffc609a504f",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 54997080,
+        "num_params_total": 21443682,
+        "peak_vram_bytes": 21807405056,
+        "total_tokens": 1052770304,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0489614498551298
+      }
+    },
+    {
+      "launch_seq": 86,
+      "candidate_id": "exp-44959268fbe4eab773dc3d6a",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 54997080,
+        "num_params_total": 21443682,
+        "peak_vram_bytes": 21807405056,
+        "total_tokens": 1048838144,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0491420473413868
+      }
+    },
+    {
+      "launch_seq": 87,
+      "candidate_id": "exp-dd3bbf69bdc832d5cd56be14",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 54886488,
+        "num_params_total": 21425250,
+        "peak_vram_bytes": 21784967168,
+        "total_tokens": 1042808832,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0497418902472895
+      }
+    },
+    {
+      "launch_seq": 88,
+      "candidate_id": "exp-6d08db1897bf3f7fc383f523",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 54839544,
+        "num_params_total": 21443682,
+        "peak_vram_bytes": 21807405056,
+        "total_tokens": 1047003136,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0515088059234834
+      }
+    },
+    {
+      "launch_seq": 89,
+      "candidate_id": "exp-cc23812eb751c2006c7a3159",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 54849624,
+        "num_params_total": 21419106,
+        "peak_vram_bytes": 21775964160,
+        "total_tokens": 1041498112,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0496986394160779
+      }
+    },
+    {
+      "launch_seq": 90,
+      "candidate_id": "exp-8cacd7a8f9900815ac596173",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 54849624,
+        "num_params_total": 24564841,
+        "peak_vram_bytes": 22000285696,
+        "total_tokens": 1026818048,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0456972511684604
+      }
+    },
+    {
+      "launch_seq": 91,
+      "candidate_id": "exp-1ad80ff82c03412f8ddf9de2",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 54775896,
+        "num_params_total": 21406818,
+        "peak_vram_bytes": 21760154624,
+        "total_tokens": 1040973824,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.049926892368464
+      }
+    },
+    {
+      "launch_seq": 92,
+      "candidate_id": "exp-abdd66bc13f078f7d2ad0c95",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": false,
+      "metrics": {
+        "flops_per_token_measured": 54849498,
+        "num_params_total": 21419085,
+        "peak_vram_bytes": 21775964160,
+        "total_tokens": 1043595264,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.050052607635075
+      }
+    },
+    {
+      "launch_seq": 93,
+      "candidate_id": "exp-f0469f5d30f347c3d0619d6d",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 54739032,
+        "num_params_total": 21400674,
+        "peak_vram_bytes": 21750712320,
+        "total_tokens": 1048576000,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0498525300758232
+      }
+    },
+    {
+      "launch_seq": 94,
+      "candidate_id": "exp-53b51a5a2e93851aabd671b2",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 54333528,
+        "num_params_total": 24478825,
+        "peak_vram_bytes": 21881000960,
+        "total_tokens": 1044381696,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0454548791034701
+      }
+    },
+    {
+      "launch_seq": 95,
+      "candidate_id": "exp-7542e4456160bfb547f27367",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 54434328,
+        "num_params_total": 24331369,
+        "peak_vram_bytes": 21908838400,
+        "total_tokens": 1030488064,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.046356549191092
+      }
+    },
+    {
+      "launch_seq": 96,
+      "candidate_id": "exp-ea4b52e476ed03dfd735247c",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 54102552,
+        "num_params_total": 24276073,
+        "peak_vram_bytes": 21833843712,
+        "total_tokens": 1029701632,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0471674642043327
+      }
+    },
+    {
+      "launch_seq": 97,
+      "candidate_id": "exp-b95be5d9b30b89f4008c3fd4",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 53596248,
+        "num_params_total": 24355945,
+        "peak_vram_bytes": 21711147008,
+        "total_tokens": 1045954560,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0467091244549458
+      }
+    },
+    {
+      "launch_seq": 98,
+      "candidate_id": "exp-d797b1182279871b060de549",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 53733912,
+        "num_params_total": 24214633,
+        "peak_vram_bytes": 21749883904,
+        "total_tokens": 1035468800,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0477284119262218
+      }
+    },
+    {
+      "launch_seq": 99,
+      "candidate_id": "exp-6ec392d74374489f7914d868",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 53301336,
+        "num_params_total": 24306793,
+        "peak_vram_bytes": 21643938816,
+        "total_tokens": 1052508160,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.0469750904963844
+      }
+    },
+    {
+      "launch_seq": 100,
+      "candidate_id": "exp-1ba9d8174dcf3345e024ef26",
+      "is_reference": false,
+      "charged": true,
+      "qualifying": true,
+      "metrics": {
+        "flops_per_token_measured": 52148760,
+        "num_params_total": 23950441,
+        "peak_vram_bytes": 21385618432,
+        "total_tokens": 1073479680,
+        "training_data_tokens_available": 631241817,
+        "val_bpb": 1.04913733600075
+      }
+    }
+  ]
+}

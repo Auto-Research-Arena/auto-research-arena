@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="734" viewBox="0 0 420 734" role="img" aria-labelledby="title desc" data-transparent-canvas="true" data-budget-gpu-hours="20">
+<title id="title">Research budget allocation at 20 GPU-hours</title>
+<desc id="desc">Equal nominal candidate-training budget of 20 GPU-hours per search. Candidates are counted in actual completion order. The smallest measured model with validation BPB below 2.0 is selected from that prefix, including partial generations. Baseline, attempts without complete measurements, in-flight work, and research overhead are excluded. This is not an equal wall-clock comparison. 20 minutes per candidate: 60 completed candidates, 123,272 parameters. 40 minutes per candidate: 30 completed candidates, 3,194,960 parameters. 80 minutes per candidate: 15 completed candidates, 11,542,672 parameters. 100 minutes per candidate: 12 completed candidates, 7,864,464 parameters.</desc>
+<metadata>{&quot;budget_hours&quot;: 20, &quot;budget_metric&quot;: &quot;completed candidates times configured training seconds / 3600&quot;, &quot;ordering&quot;: &quot;completion_time&quot;, &quot;rows&quot;: [{&quot;candidate_count&quot;: 60, &quot;measured_training_gpu_hours&quot;: 20.00380555555554, &quot;nominal_training_gpu_hours&quot;: 20.0, &quot;ordering&quot;: &quot;completion_time&quot;, &quot;run_id&quot;: &quot;beam-tb1200-params-20260819&quot;, &quot;seconds_per_candidate&quot;: 1200, &quot;winner&quot;: {&quot;attempt&quot;: 1, &quot;candidate_number&quot;: 64, &quot;finished_at&quot;: &quot;2026-08-21T03:42:47.444870+00:00&quot;, &quot;id&quot;: &quot;0064-eight-private-channels-plus-a-block-shared-remainder&quot;, &quot;ledger&quot;: {&quot;bpb&quot;: 1.986241, &quot;eventual_decision&quot;: &quot;accept&quot;, &quot;generation&quot;: 9, &quot;line&quot;: 65, &quot;params&quot;: 123272}, &quot;num_params_total&quot;: 123272, &quot;training_seconds&quot;: 1200.1, &quot;val_bpb&quot;: 1.986241}}, {&quot;candidate_count&quot;: 30, &quot;measured_training_gpu_hours&quot;: 20.00258333333333, &quot;nominal_training_gpu_hours&quot;: 20.0, &quot;ordering&quot;: &quot;completion_time&quot;, &quot;run_id&quot;: &quot;beam-tb2400-params-20260819&quot;, &quot;seconds_per_candidate&quot;: 2400, &quot;winner&quot;: {&quot;attempt&quot;: 1, &quot;candidate_number&quot;: 26, &quot;finished_at&quot;: &quot;2026-08-20T10:35:28.227894+00:00&quot;, &quot;id&quot;: &quot;0026-rank64-tied-vocabulary-interface&quot;, &quot;ledger&quot;: {&quot;bpb&quot;: 1.201839, &quot;eventual_decision&quot;: &quot;accept&quot;, &quot;generation&quot;: 5, &quot;line&quot;: 40, &quot;params&quot;: 3194960}, &quot;num_params_total&quot;: 3194960, &quot;training_seconds&quot;: 2400.0, &quot;val_bpb&quot;: 1.201839}}, {&quot;candidate_count&quot;: 15, &quot;measured_training_gpu_hours&quot;: 20.001444444444445, &quot;nominal_training_gpu_hours&quot;: 20.0, &quot;ordering&quot;: &quot;completion_time&quot;, &quot;run_id&quot;: &quot;beam-tb4800-params-20260819&quot;, &quot;seconds_per_candidate&quot;: 4800, &quot;winner&quot;: {&quot;attempt&quot;: 1, &quot;candidate_number&quot;: 3, &quot;finished_at&quot;: &quot;2026-08-19T23:27:29.670517+00:00&quot;, &quot;id&quot;: &quot;0003-fold-value-embeds-on-shared-block&quot;, &quot;ledger&quot;: {&quot;bpb&quot;: 1.060628, &quot;eventual_decision&quot;: &quot;accept&quot;, &quot;generation&quot;: 2, &quot;line&quot;: 8, &quot;params&quot;: 11542672}, &quot;num_params_total&quot;: 11542672, &quot;training_seconds&quot;: 4800.8, &quot;val_bpb&quot;: 1.060628}}, {&quot;candidate_count&quot;: 12, &quot;measured_training_gpu_hours&quot;: 20.001055555555556, &quot;nominal_training_gpu_hours&quot;: 20.0, &quot;ordering&quot;: &quot;completion_time&quot;, &quot;run_id&quot;: &quot;beam-tb6000-params-20260819&quot;, &quot;seconds_per_candidate&quot;: 6000, &quot;winner&quot;: {&quot;attempt&quot;: 1, &quot;candidate_number&quot;: 12, &quot;finished_at&quot;: &quot;2026-08-20T06:07:51.926880+00:00&quot;, &quot;id&quot;: &quot;0012-quarter-width-model-dim-128&quot;, &quot;ledger&quot;: {&quot;bpb&quot;: 1.151816, &quot;eventual_decision&quot;: &quot;accept&quot;, &quot;generation&quot;: 3, &quot;line&quot;: 10, &quot;params&quot;: 7864464}, &quot;num_params_total&quot;: 7864464, &quot;training_seconds&quot;: 6000.1, &quot;val_bpb&quot;: 1.151816}}], &quot;selection&quot;: &quot;smallest measured parameter count with val_bpb &lt; 2.0&quot;, &quot;source&quot;: &quot;runs/research-budget-cutoffs-20260924/evidence.json&quot;, &quot;source_sha256&quot;: &quot;1dcd6be2bb2a0b76cd9f1f15b867c68d723b4d59b56ec6f0801b6e6a0b361c03&quot;}</metadata>
+<style>
+svg { --ink:#17211d; --muted:#5c6862; --line:#d9ddd8; --green:#18644e; }
+text { font-family:Arial,Helvetica,sans-serif; fill:var(--ink); font-size:17px;
+       font-variant-numeric:tabular-nums; }
+.heading { font-size:22px; font-weight:700; }
+.label { fill:var(--muted); }
+.subtitle { font-size:16px; fill:var(--muted); }
+.value { font-weight:600; }
+.grid { stroke:var(--line); stroke-width:1; }
+@media(prefers-color-scheme:dark) {
+  svg { --ink:#e6eee8; --muted:#b4c2b9; --line:#425247; --green:#7ac8a4; }
+}
+@media print {
+  svg { --ink:#17211d; --muted:#5c6862; --line:#d9ddd8; --green:#18644e; }
+}
+</style>
+<g transform="translate(0 0)" data-panel="parameters" data-scale="linear">
+<text x="12" y="28" class="heading" text-anchor="start">Smallest eligible model</text>
+<text x="12" y="51" class="subtitle" text-anchor="start">Parameters · validation BPB &lt; 2.0</text>
+<line x1="62" y1="286.000" x2="396" y2="286.000" class="grid"/>
+<text x="52" y="292" class="label" text-anchor="end">0</text>
+<line x1="62" y1="236.500" x2="396" y2="236.500" class="grid"/>
+<text x="52" y="242.5" class="label" text-anchor="end">3M</text>
+<line x1="62" y1="187.000" x2="396" y2="187.000" class="grid"/>
+<text x="52" y="193" class="label" text-anchor="end">6M</text>
+<line x1="62" y1="137.500" x2="396" y2="137.500" class="grid"/>
+<text x="52" y="143.5" class="label" text-anchor="end">9M</text>
+<line x1="62" y1="88.000" x2="396" y2="88.000" class="grid"/>
+<text x="52" y="94" class="label" text-anchor="end">12M</text>
+<rect x="69" y="283.966" width="50" height="2.034" fill="var(--green)" opacity="1" data-value="123272" data-seconds="1200" data-series="parameters"><title>20 minutes per candidate; 60 completed candidates; 20 nominal GPU-hours; 123,272 parameters; validation BPB 1.986241</title></rect>
+<text x="94" y="271.966" class="value" text-anchor="middle">123,272</text>
+<text x="94" y="314" class="label" text-anchor="middle">20</text>
+<rect x="157" y="233.283" width="50" height="52.717" fill="var(--green)" opacity="1" data-value="3194960" data-seconds="2400" data-series="parameters"><title>40 minutes per candidate; 30 completed candidates; 20 nominal GPU-hours; 3,194,960 parameters; validation BPB 1.201839</title></rect>
+<text x="182" y="221.283" class="value" text-anchor="middle">3,194,960</text>
+<text x="182" y="314" class="label" text-anchor="middle">40</text>
+<rect x="245" y="95.546" width="50" height="190.454" fill="var(--green)" opacity="1" data-value="11542672" data-seconds="4800" data-series="parameters"><title>80 minutes per candidate; 15 completed candidates; 20 nominal GPU-hours; 11,542,672 parameters; validation BPB 1.060628</title></rect>
+<text x="270" y="83.5459" class="value" text-anchor="middle">11,542,672</text>
+<text x="270" y="314" class="label" text-anchor="middle">80</text>
+<rect x="333" y="156.236" width="50" height="129.764" fill="var(--green)" opacity="1" data-value="7864464" data-seconds="6000" data-series="parameters"><title>100 minutes per candidate; 12 completed candidates; 20 nominal GPU-hours; 7,864,464 parameters; validation BPB 1.151816</title></rect>
+<text x="358" y="144.236" class="value" text-anchor="middle">7,864,464</text>
+<text x="358" y="314" class="label" text-anchor="middle">100</text>
+<text x="224" y="346" class="label" text-anchor="middle">Training time per candidate (min)</text>
+</g>
+<g transform="translate(0 370)" data-panel="experiments" data-scale="linear">
+<text x="12" y="28" class="heading" text-anchor="start">Completed experiments</text>
+<text x="12" y="51" class="subtitle" text-anchor="start">Number of completed candidates</text>
+<line x1="62" y1="286.000" x2="396" y2="286.000" class="grid"/>
+<text x="52" y="292" class="label" text-anchor="end">0</text>
+<line x1="62" y1="236.500" x2="396" y2="236.500" class="grid"/>
+<text x="52" y="242.5" class="label" text-anchor="end">15</text>
+<line x1="62" y1="187.000" x2="396" y2="187.000" class="grid"/>
+<text x="52" y="193" class="label" text-anchor="end">30</text>
+<line x1="62" y1="137.500" x2="396" y2="137.500" class="grid"/>
+<text x="52" y="143.5" class="label" text-anchor="end">45</text>
+<line x1="62" y1="88.000" x2="396" y2="88.000" class="grid"/>
+<text x="52" y="94" class="label" text-anchor="end">60</text>
+<rect x="69" y="88.000" width="50" height="198.000" fill="var(--green)" opacity="0.62" data-value="60" data-seconds="1200" data-series="experiments"><title>20 minutes per candidate; 60 completed candidates; 20 nominal GPU-hours</title></rect>
+<text x="94" y="76" class="value" text-anchor="middle">60</text>
+<text x="94" y="314" class="label" text-anchor="middle">20</text>
+<rect x="157" y="187.000" width="50" height="99.000" fill="var(--green)" opacity="0.62" data-value="30" data-seconds="2400" data-series="experiments"><title>40 minutes per candidate; 30 completed candidates; 20 nominal GPU-hours</title></rect>
+<text x="182" y="175" class="value" text-anchor="middle">30</text>
+<text x="182" y="314" class="label" text-anchor="middle">40</text>
+<rect x="245" y="236.500" width="50" height="49.500" fill="var(--green)" opacity="0.62" data-value="15" data-seconds="4800" data-series="experiments"><title>80 minutes per candidate; 15 completed candidates; 20 nominal GPU-hours</title></rect>
+<text x="270" y="224.5" class="value" text-anchor="middle">15</text>
+<text x="270" y="314" class="label" text-anchor="middle">80</text>
+<rect x="333" y="246.400" width="50" height="39.600" fill="var(--green)" opacity="0.62" data-value="12" data-seconds="6000" data-series="experiments"><title>100 minutes per candidate; 12 completed candidates; 20 nominal GPU-hours</title></rect>
+<text x="358" y="234.4" class="value" text-anchor="middle">12</text>
+<text x="358" y="314" class="label" text-anchor="middle">100</text>
+<text x="224" y="346" class="label" text-anchor="middle">Training time per candidate (min)</text>
+</g>
+</svg>

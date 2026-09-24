@@ -1,0 +1,36 @@
+/* Section 7 conclusions: restrained cards inspired by the supplied reference. */
+.article > .science-takeaway {
+  width: min(100%, var(--prose-measure));
+  margin-block: 1.5rem 2.25rem;
+  padding: 1.3rem 1.65rem;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  background: var(--code);
+  color: var(--ink);
+  break-inside: avoid;
+}
+.science-takeaway .science-takeaway-label {
+  margin: 0 0 .65rem;
+  color: var(--accent);
+  font-family: Inter, Helvetica, Arial, sans-serif;
+  font-size: .8125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.science-takeaway .science-takeaway-text {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+@media (max-width: 520px) {
+  .article > .science-takeaway { padding: 1rem 1.1rem; }
+  .science-takeaway .science-takeaway-text { font-size: 1rem; }
+  .science-takeaway .science-takeaway-label { letter-spacing: .06em; }
+}
+@media print {
+  .article > .science-takeaway { background: #eff2ee; color: #17211d; border-color: #d9ddd8; border-left-color: #18644e; }
+  .science-takeaway .science-takeaway-label { color: #18644e; }
+}

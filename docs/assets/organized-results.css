@@ -1,0 +1,7 @@
+
+.run-status{display:block;font-size:.75rem;font-weight:400;color:var(--muted)}
+.idea-inventory{min-width:1100px}.idea-inventory td{vertical-align:top;min-width:130px}
+.benchmark-target-results .run-status{line-height:1.35}[data-method="arbor-search"]{--harness-color:#cc79a7}
+.overview-selected-endpoint{position:absolute;width:11px;height:11px;background:var(--harness-color);border:2px solid var(--paper);transform:translate(-50%,-50%) rotate(45deg);z-index:5;pointer-events:none}
+.benchmark-equation{overflow-x:auto}
+.curve-selection-note{font-size:12px;color:var(--muted);line-height:1.6}
